@@ -1,0 +1,771 @@
+/*fontes*/
+@import url('https://fonts.googleapis.com/css2?family=ABeeZee&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+/*config. gerais da página*/
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 1200px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+/*config. header*/
+header {
+    background-color: #F2F1F1;
+}
+
+header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header .container .logo-e-barra {
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+}
+/*config. logo*/
+header .container .logo img {
+    width: 120px;
+    margin-right: 45px;
+}
+/*config. barra de pesquisa*/
+header .container .barra {
+    position: relative;
+    margin: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+header .container .barra form{
+    margin: 0;
+}
+
+header .container .barra form input{
+    padding: 0 0 0 20px;
+    width: 450px;
+    height: 40px;
+    border-radius: 20px;
+    border: solid 2px #419488;
+    background-color: #FFFFFF;
+    position: relative;
+}
+
+header .container .barra form input:focus-visible{
+    outline-color: transparent;
+    outline-width: 0px;
+}
+
+header .container .barra form button {
+    position: absolute;
+    top: 3px;
+    bottom: 0px;
+    left: 404px;
+    border: transparent;
+    background-color: transparent;
+    padding-right: 20px;
+}
+
+header .container .barra form button img{
+    width: 20px;
+    cursor: pointer;
+}
+
+/*config. botoes de anunciar e menu*/
+header .container .botoes {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header .container .botoes button {
+    background-color: transparent;
+    border: solid 2px #FF5722;
+    cursor: pointer;
+}
+
+header .container .botoes button:hover {
+    opacity: 80%;
+}
+
+header .container .botoes button:active {
+    transform: scale(0.99);
+    transition: all 0.1s ease-in-out;
+}
+
+header .container .botoes a button { 
+    width: 130px;
+    height: 40px;
+    margin-right: 20px;
+    border-radius: 40px;
+    background-color: #FF5722;
+    color: #FFFFFF;
+    font-size: 20px;
+    font-weight: 700;
+    font-family: 'Roboto';
+}
+
+header .container .botoes .dropdown>button {
+    border-radius: 50%;
+    padding: 8px 12px;
+}
+
+header .container .botoes .dropdown>button img {
+    width: 20px;
+}
+
+/* menu */
+
+
+header .container .dropdown {
+    position: relative;
+}
+
+header .container .dropdown img {
+    pointer-events: none;
+}
+
+header .container .dropdown .dropdown-menu {
+    position: absolute;
+    right: 0;
+    width: 150px;
+    height: 150px;
+    top: calc(100% + .99rem);
+    background-color: #FFFFFF;
+    border-radius: 15px;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-10px);
+    transition: all 150ms ease-in-out;
+    box-shadow: 0px -2px 4px rgba(0, 0, 0, 0.25);
+}
+
+.dropdown.active>.login+.dropdown-menu {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+header .container .dropdown .dropdown-menu ul {
+    padding: 0px 10px;
+}
+
+header .container .dropdown .dropdown-menu ul li {
+    list-style: none;
+    margin: 10px;
+}
+
+.dropdown-menu ul a {
+    text-decoration: none;
+    color: #757575;
+    font-weight: bold;
+    font-size: 18px;
+    font-family: 'Roboto';
+}
+
+.dropdown-menu ul a:hover {
+    color: #FF5722;
+}
+
+.container-flex {
+    display: flex;
+    align-items: flex-start;
+    width: 1200px;
+    max-width: 100%;
+    margin: 50px auto;
+    gap: 150px;
+}
+
+/* section barra-lateral */
+section.barra-lateral{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 275px;
+}
+
+section.barra-lateral .infos{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+    background-color: #F2F1F1;
+    border-radius: 15px;
+    height: 400px;
+}
+
+section.barra-lateral .infos h3{
+    font-family: 'Roboto';
+    font-size: 34px;
+    font-weight: 400;
+    margin: 0;
+}
+
+section.barra-lateral .infos #foto_perfil{
+    width: 90%;
+}
+
+section.barra-lateral .infos .estrelas{
+    width: 95%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+}
+
+section.barra-lateral .infos .estrelas img{
+    width: 30px;
+    height: 25px;
+}
+
+section.barra-lateral .infos #linha_cinza{
+    width: 80%;
+    height: 1.5px;
+}
+
+section.barra-lateral .infos a{
+    font-family: 'Montserrat';
+    font-size: 24px;
+    font-weight: 400;
+    text-decoration: none;
+    color: black;
+}
+
+/*titulo do filtro e divisor*/
+section.barra-lateral .filtros {
+    width: 80%;
+}
+
+section.barra-lateral .filtros .titulo-filtro{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+/*nome do filtro*/
+section.barra-lateral .filtros h3{
+    font-family: Roboto;
+    color: #419488;
+}
+
+/*divisor*/
+section.barra-lateral .filtros img{
+    width: 100%;
+}
+
+/*lista com os filtros*/
+section.barra-lateral .filtros ul{
+    list-style: none;
+    padding: 0;
+    font-family: Roboto;
+    color: #419488;
+    line-height: 27px;
+}
+section.barra-lateral .filtros ul li a{
+    text-decoration: none;
+    color: #419488;
+}
+section.barra-lateral .filtros ul li a:hover{
+    color: #a9dbd4;
+    transition: 0.5s;
+}
+
+/* section conteudo */
+section.conteudo{
+    display: flex;
+    flex-direction: column;
+    width: 1200px;
+}
+
+section.conteudo h2{
+    font-size: 38px;
+    font-weight: 36;
+    font-family: 'ABeeZee';
+    color: #FF5722;
+    margin-top: 0;
+}
+
+/* section anuncios */
+section.anuncios{
+    display: flex;
+    justify-content: space-between;
+}
+
+section.anuncios .card-produto {
+    cursor: pointer;
+}
+
+section.anuncios .card-produto .thumb img {
+    width: 240px;
+    height: 150px;
+    background-size: cover;
+}
+
+section.anuncios .card-produto .info>div {
+    display: flex;
+    align-items: center;
+}
+
+section.anuncios .card-produto .info h3 {
+    color: #484848;
+    margin-bottom: 5px;
+}
+
+section.anuncios .card-produto .info {
+    color: #757575;
+}
+
+section.anuncios .card-produto .info img {
+    width: 25px;
+    height: 21px;
+    margin-right: 2px;
+}
+
+section.anuncios .card-produto .info small {
+    font-size: 15px;
+    margin-right: 5px;
+}
+
+section.anuncios .card-produto .info .pontuacao {
+    color: #484848;
+}
+
+section.anuncios .card-produto .localiz {
+    margin-top: 5px;
+}
+
+section.anuncios .card-produto .localiz img {
+    width: 17px;
+    height: 17px;
+    margin-right: 2px;
+}
+
+section.anuncios .card-produto .info .preco {
+    font-size: 20px;
+    color: #FF5722;
+}
+
+section.anuncios button{
+    padding: 0;
+    background-color: transparent;
+    border: none;
+
+    position: relative;
+    bottom: 80px;
+    cursor: pointer;
+}
+
+section.anuncios button:focus-visible{
+    outline-color: transparent;
+    outline-width: 0px;
+}
+
+section.anuncios button img{
+    width: 25px;
+}
+
+div.botao-ver-mais{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 30px;
+}
+
+div.botao-ver-mais span {
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    color: #FF5722;
+    font-size: 18px;
+    font-weight: 900;
+}
+
+div.botao-ver-mais img {
+    margin-left: 5px;
+    width: 10px;
+}
+
+div.botao-ver-mais a {
+    text-decoration: none;
+}
+
+/* section avaliacoes */
+section.avaliacoes{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#titulo_avaliacao{
+    margin-top: 35px;
+}
+
+section.avaliacoes button{
+    border: none;
+    background: transparent;
+    padding: 0;
+}
+
+section.avaliacoes button:focus-visible{
+    outline-color: transparent;
+    outline-width: 0px;
+}
+
+section.avaliacoes button img{
+    cursor: pointer;
+}
+
+section.avaliacoes .seta_esquerda button img{
+    transform: scaleX(-1);
+}
+
+section.avaliacoes .seta_esquerda button img,
+section.avaliacoes .seta_direita button img{
+    width: 25px;
+}
+
+section.avaliacoes .card-avaliacao{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    width: 550px;
+}
+
+section.avaliacoes .card-avaliacao .avaliador{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+section.avaliacoes .card-avaliacao .avaliador #perfil_avaliador{
+    width: 125px;
+    margin-right: 25px;
+}
+
+section.avaliacoes .card-avaliacao .avaliador .infos{
+    height: 125px;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: space-evenly;
+}
+
+section.avaliacoes .card-avaliacao .avaliador .infos h3{
+    font-size: 26px;
+    font-family: 'Roboto';
+    font-weight: 800px;
+    margin: 0;
+}
+
+section.avaliacoes .card-avaliacao .avaliador .infos .estrelas img{
+    width: 30px;
+    height: 25px;
+}
+
+section.avaliacoes .card-avaliacao p{
+    font-family: 'Montserrat';
+    font-weight: 400;
+    font-size: 16px;
+    text-align: center;
+}
+
+section.avaliacoes .card-avaliacao .seletores img{
+    margin-top: 40px;
+    width: 13px;
+}
+
+/*footer*/
+footer {
+    background-color: #484848;
+    width: 100vw;
+    padding-top: 30px;
+}
+
+footer .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+/*config. logo e menu*/
+footer .container .logo-e-menu {
+    display: flex;
+    align-items:center ;
+    justify-content: space-between;
+}
+/*logo*/
+footer .container .logo img {
+    width: 120px;
+    margin-right: 30px ;
+}
+/*menu*/
+footer .container .menu ul li {
+    list-style: none;
+    font-family:'Roboto';
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 30px;
+}
+
+footer .container .menu ul li a {
+    color: #FFFF;
+    text-decoration: none;
+}
+
+/*redes sociais*/
+/*título*/
+footer .container .redes-sociais small {
+    color: #FFFF;
+    font-family:'Roboto';
+    font-weight: 700;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+}
+
+/*lista de redes sociais*/
+footer .container .redes-sociais ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+}
+footer .container .redes-sociais ul li img {
+    width: 30px;
+    margin: 0 10px 10px 0;
+}
+/*copyright*/
+footer .copyright {
+    color: #FFFF;
+    font-family:'Roboto';
+    font-weight: 700;
+    font-size: 18px;
+    text-align: center;
+    padding-top: 40px;
+    padding-bottom: 20px;
+}
+
+
+
+@media (max-width: 1100px){
+
+    /* header e footer */
+    .container{
+        max-width: 100vw;
+    }
+
+    /* barra-lateral e conteudo */
+    .container-flex{
+        width: 100vw;
+        max-width: 100%;
+        gap: 100px;
+    }
+
+    section.barra-lateral{
+        max-width: 20vw;
+    }
+
+    /* no javascript, substituir por uma estrela com o valor numerico ao lado */
+    section.barra-lateral .infos .estrelas img{
+        aspect-ratio: 6 / 5;
+    }
+
+    /* no javascript, substituir por uma imagem de whatsapp com o link e tirar o numero */
+    section.barra-lateral .infos a{
+        text-align: center;
+    }
+
+    section.conteudo{
+        max-width: 70vw;
+        flex-wrap: wrap;
+    }
+
+    section.anuncios,
+    section.avaliacoes{
+        max-width: 70vw;
+    }
+
+    section.anuncios .card-produto{
+        max-width: 20vw;
+    }
+
+    section.anuncios .card-produto .thumb img {
+        width: 240px;
+        max-width: 20vw;
+        max-height: 16vw;
+    }
+
+    div.botao-ver-mais span {
+        font-size: 18px;
+    }
+    
+    div.botao-ver-mais img {
+        margin-left: 5px;
+        width: 10px;
+    }
+    
+    div.botao-ver-mais a {
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+
+    section.avaliacoes .card-avaliacao p{
+        word-wrap: break-word;
+    }
+
+}
+
+@media (max-width: 850px){
+
+    header{
+        width: 100vw;
+        max-width: 100%;
+    }
+
+    header .container{
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    header .container .botoes {
+        padding: 10px;
+    }
+
+    .container-flex{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    section.barra-lateral{
+        align-items: center;
+    }
+
+    section.barra-lateral .filtros{
+        display: none;
+    }
+
+    section.barra-lateral .infos{
+        width: 205px;
+        max-width: 205px;
+    }
+
+}
+
+@media (max-width: 685px){
+
+    section.anuncios{
+        justify-content: space-around;
+    }
+
+    section.anuncios{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    section.anuncios .card-produto{
+        max-height: 80%;
+        max-width: 80%;
+        cursor: pointer;
+    }
+
+    section.anuncios .card-produto .thumb img{
+        width: 200px;
+        height: 125px;
+        max-width: 30vw;
+        max-height: 24vw;
+    }
+
+    section.anuncios div.card-produto:nth-child(3){
+        display: none;
+    }
+
+    header .container .logo-e-barra {
+        max-width: 100vw;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    header .container .logo img {
+        width: 120px;
+        margin-right: 0;
+    }
+} 
+
+@media (max-width: 585px){
+
+    header .container .barra form input{
+        max-width: 80vw;
+    }
+
+    header .container .barra form button {
+        position: absolute;
+        left: 85%;
+        padding-right: 20px;
+    }
+
+    div.card-produto + div.card-produto{
+        display: none;
+    }
+
+    section.anuncios{
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    section.anuncios .card-produto{
+        max-height: 100%;
+        max-width: 100%;
+        cursor: pointer;
+    }
+
+    section.anuncios .card-produto .thumb img{
+        width: 240px;
+        height: 150px;
+        max-width: 60vw;
+        max-height: 48vw;
+    }
+
+    section.avaliacoes .card-avaliacao .avaliador{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    section.avaliacoes .card-avaliacao .avaliador #perfil_avaliador{
+        margin-right: 0;
+    }
+
+    section.avaliacoes .card-avaliacao .avaliador .infos{
+        align-items: center;
+    }
+
+    footer .container {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    footer .container .logo-e-menu {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    footer .container .redes-sociais{
+        padding-left: 30px;
+    }
+
+} 
+
+
