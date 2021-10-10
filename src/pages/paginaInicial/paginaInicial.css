@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=ABeeZee&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+h1,
+h2 {
+    font-family: 'ABeeZee', sans-serif;
+}
+
+input {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.parte-principal {
+    overflow: hidden;
+    background-repeat: repeat;
+    padding: 110px 0 110px;
+}
+
+.parte-principal .container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.parte-principal .container .frase-principal h1 {
+    color: #FFFFFF;
+    font-size: 60px;
+    text-align: center;
+    font-style: italic;
+}
+
+.parte-principal .container .barra-de-pesquisa {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.parte-principal .container .barra-de-pesquisa input,
+select {
+    color: #757575;
+    font-size: 16px;
+    font-weight: bolder;
+    border: none;
+    outline: none;
+}
+
+.parte-principal .container .barra-de-pesquisa select {
+    width: 150px;
+    background: transparent;
+}
+
+.parte-principal .container .barra-de-pesquisa input {
+    width: 70%;
+    padding: 8px;
+    font-size: 16px;
+}
+
+input::placeholder {
+    color: #757575;
+    opacity: 60%;
+    font-size: 16px;
+}
+
+.parte-principal .container .barra-de-pesquisa .barra {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFFFFF;
+    width: 60vw;
+    height: 60px;
+    padding: 0px 20px 0px 40px;
+    border-radius: 30px;
+}
+
+.parte-principal .container .barra-de-pesquisa .barra .opt-localizacao {
+    flex: 1;
+}
+
+.parte-principal .container .barra-de-pesquisa .barra .opt-categoria {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+}
+
+.parte-principal .container .barra-de-pesquisa .pesquisar-produto-mobile {
+    display: none;
+}
+
+.parte-principal .container .barra-de-pesquisa .barra .pesquisar-produto {
+    display: flex;
+    justify-content: space-around;
+    flex: 2;
+}
+
+.parte-principal .container .barra-de-pesquisa .lupa {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.parte-principal .container .barra-de-pesquisa .lupa button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.parte-principal .container .barra-de-pesquisa .lupa button img {
+    width: 30px;
+}
+
+.parte-principal .container .barra-de-pesquisa .lupa button:hover {
+    opacity: 80%;
+}

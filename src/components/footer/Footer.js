@@ -1,4 +1,5 @@
 import './footer.css';
+
 import logoAlugaki from '../../img/imagens/alugaKi-removebg-preview.png'
 import iconeInstagram from '../../img/icones/insta.png'
 import iconeTwitter from '../../img/icones/twitter.png'

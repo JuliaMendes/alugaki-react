@@ -1,4 +1,5 @@
 import './header.css';
+
 import logoAlugaki from '../../img/imagens/alugaKi-removebg-preview.png'
 import iconeUsuario from '../../img/icones/btn_login.png'
 

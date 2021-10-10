@@ -1,6 +1,6 @@
 import './App.css';
-import ProdutosPorCat from './pages/ProdutosPorCat';
-import PaginaInicial from './pages/PaginaInicial';
+import ProdutosPorCat from './pages/produtosPorCategoria/ProdutosPorCat';
+import PaginaInicial from './pages/paginaInicial/PaginaInicial';
 
 function App() {
   return (
