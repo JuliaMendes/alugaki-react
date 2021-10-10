@@ -3,23 +3,29 @@ import Footer from "../../components/footer/Footer"
 import './paginaInicial.css';
 
 import iconeLupa from '../../img/icones/search.png'
+import iconeSetaDireita from '../../img/icones/seta-direita.png'
 import backgroundGreen from '../../img/imagens/bg.jpeg'
+import backgroundBannerVioloes from '../../img/imagens/banner-violao.jpeg'
 
-function PaginaInicial(){
-    return(
+function PaginaInicial() {
+    return (
         <div>
-        <Header/>
+            <Header />
 
-        <PartePrincipal/>
+            <PartePrincipal />
 
-        <Footer/>
+            <ProdutosPorCategoria/>
+
+            <BannerExperimenteAnunciar/>
+
+            <Footer />
 
         </div>
     )
 }
 
 function PartePrincipal() {
-    return(
+    return (
         <section style={{ backgroundImage: `url(${backgroundGreen})` }} className="parte-principal">
             <div className="container">
                 <div className="frase-principal">
@@ -47,22 +53,61 @@ function PartePrincipal() {
                         </div>
 
                         <div className="pesquisar-produto">
-                            <input type="text" name="produto" id="produto" placeholder="O que você está procurando?"/>
+                            <input type="text" name="produto" id="produto" placeholder="O que você está procurando?" />
                             <div className="lupa">
-                                <button onclick="busca()"><img src={iconeLupa} alt="Botao de lupa"/></button>
+                                <button onclick="busca()"><img src={iconeLupa} alt="Botao de lupa" /></button>
                             </div>
                         </div>
                     </div>
-                    <div className="pesquisar-produto-mobile">
-                        <input type="text" name="produto" id="produto-mobile" placeholder="O que você está procurando?"/>
+                    {/* <div className="pesquisar-produto-mobile">
+                        <input type="text" name="produto" id="produto-mobile" placeholder="O que você está procurando?" />
                         <div className="lupa">
-                            <button onclick="buscaMobile()" ><img src="img/search.png" alt="Botao de lupa"/></button>
+                            <button onclick="buscaMobile()" ><img src={"img/search.png"} alt="Botao de lupa" /></button>
                         </div>
-                    </div>
+                    </div> */}
 
                 </div>
             </div>
         </section>
+    )
+}
+
+
+function ProdutosPorCategoria() {
+    return (
+        <section className="produtos-por-categoria">
+        <div className="container">
+            <div className="botoes-categoria">
+                <button className="ativo">Esporte e Lazer</button><span>|</span>
+                <button>Moda</button><span>|</span>
+                <button>Eletrônicos</button><span>|</span>
+                <button>Ferramentas e Utilitários</button>
+            </div>
+            <div className="lista-produtos"></div>
+            <div className="botao-ver-mais">
+                <a href="produtos-por-cat.html"><span>ver mais</span><img src={iconeSetaDireita}
+                    alt="botao ver mais" /></a>
+            </div>
+        </div>
+    </section>
+
+    )
+}
+
+function BannerExperimenteAnunciar(){
+    return(
+        <section style={{ backgroundImage: `url(${backgroundBannerVioloes})` }}  className="banner-anunciar">
+        <div className="gradient">
+            <div className="container">
+                <div className="frase-banner">
+                    <h2>Experimente anunciar</h2>
+                </div>
+                <div className="botao-saiba-mais">
+                    <a href="cadastro-produto.html"><button>Saiba mais</button></a>
+                </div>
+            </div>
+        </div>
+    </section>
     )
 }
 
