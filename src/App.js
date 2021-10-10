@@ -1,14 +1,16 @@
 import './App.css';
-import ProdutosPorCat from './pages/produtosPorCategoria/ProdutosPorCat';
-import PaginaInicial from './pages/paginaInicial/PaginaInicial';
+
+import { BrowserRouter } from 'react-router-dom';
+import Routes from './routes';
 
 function App() {
   return (
-    <div>
-      <PaginaInicial />
-    </div>
+    <BrowserRouter>
+      <Routes/>
+    </BrowserRouter>
   );
 }
+
 
 
 

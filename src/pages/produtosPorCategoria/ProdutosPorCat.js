@@ -1,5 +1,5 @@
-function produtosPorCat(){
+function ProdutosPorCat(){
     return (<h1>oi</h1>)
 }
 
-export default produtosPorCat
+export default ProdutosPorCat
