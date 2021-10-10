@@ -55,7 +55,7 @@ function PartePrincipal() {
                         <div className="pesquisar-produto">
                             <input type="text" name="produto" id="produto" placeholder="O que você está procurando?" />
                             <div className="lupa">
-                                <button onclick="busca()"><img src={iconeLupa} alt="Botao de lupa" /></button>
+                                <button onClick="busca()"><img src={iconeLupa} alt="Botao de lupa" /></button>
                             </div>
                         </div>
                     </div>
