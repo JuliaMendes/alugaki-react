@@ -57,11 +57,11 @@ function Corpo(){
                             <button>Editar</button>
                         </div>
 
-                        <label for="nome">Nome Completo</label>
+                        <label htmlFor="nome">Nome Completo</label>
                         <input type="text" id="nome" name="nome" placeholder="Nome Sobrenome" readonly />
                         <ul id="erros-nome"></ul>
             
-                        <label for="telefone">Telefone</label>
+                        <label htmlFor="telefone">Telefone</label>
                         <input type="tel" id="telefone" name="telefone" placeholder="(xx) 9xxxx-xxxx" readonly />
                         <ul id="erros-telefone"></ul>
                     </div>
@@ -69,11 +69,11 @@ function Corpo(){
                     <div className="login">
                         <h2>Login e Segurança</h2>
 
-                        <label for="email">E-mail</label><br />
+                        <label htmlFor="email">E-mail</label><br />
                         <input type="email" id="email" name="email" placeholder="meuemail@email.com" readonly />
                         <ul id="erros-email"></ul>
 
-                        <label for="pass">Senha</label><br />
+                        <label htmlFor="pass">Senha</label><br />
                         <input type="password" id="pass" name="password" placeholder="********" readonly />
                         <ul id="erros-senha"></ul>
                     </div>

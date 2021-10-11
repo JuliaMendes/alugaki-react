@@ -1,4 +1,3 @@
-
 import './perfilPublico.css';
 
 import Header from "../../components/header/Header"
@@ -122,5 +121,7 @@ function Corpo(){
         </body>
     )
 }
+
+
 
 export default PaginaPerfilPublico;
