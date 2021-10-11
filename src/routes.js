@@ -4,11 +4,16 @@ import PaginaInicial from './pages/paginaInicial/PaginaInicial';
 import PaginaLogin from './pages/login/Login';
 import PaginaCadastroUsuario from './pages/cadastroUsuario/CadastroUsuario';
 import ProdutosPorCat from './pages/produtosPorCategoria/ProdutosPorCat';
+import PaginaCadastroProduto from './pages/cadastroProduto/CadastroProduto';
+
 
 function Routes() {
     return(
 
         <Switch>
+            <Route path="/cadastro-produtos">
+                <PaginaCadastroProduto/>
+            </Route>
             <Route path="/produtos-por-categoria">
                 <ProdutosPorCat/>
             </Route>
