@@ -1,3 +1,4 @@
+
 import './perfilPublico.css';
 
 import Header from "../../components/header/Header"
@@ -27,13 +28,13 @@ function Corpo(){
 
         <body>
 
-            <div class="container-flex">
-                <section class="barra-lateral">
-                    <div class="infos">
+            <div className="container-flex">
+                <section className="barra-lateral">
+                    <div className="infos">
                         <h3>Nome</h3>
                         <img src={perfilBlank} alt="Foto de Perfil do Usuário" id="foto_perfil" />
 
-                        <div class="estrelas">
+                        <div className="estrelas">
                             <img src={Star} alt="Estrela de Avaliação" />
                             <img src={Star} alt="Estrela de Avaliação" />
                             <img src={Star} alt="Estrela de Avaliação" />
@@ -46,8 +47,8 @@ function Corpo(){
                         <a href="https://api.whatsapp.com/send?phone=550">(xx) 9xxxx-xxxx</a>
                     </div>
 
-                    <div class="filtros">
-                        <div class="titulo-filtro">
+                    <div className="filtros">
+                        <div className="titulo-filtro">
                             <h3>Categoria</h3>
                             <img src={linhaAzul} alt="" />
                         </div>
@@ -61,39 +62,39 @@ function Corpo(){
                     </div> 
                 </section>
 
-                <section class="conteudo">
+                <section className="conteudo">
 
                     <h2>Anúncios</h2>
-                    <section class="anuncios">
+                    <section classNameName="anuncios">
 
-                        <div class="card-produto">
+                        <div className="card-produto">
+                       </div>
+
+                        <div className="card-produto">
                         </div>
 
-                        <div class="card-produto">
-                        </div>
-
-                        <div class="card-produto">
+                        <div className="card-produto">
                         </div>
 
                         <button onclick="setaAnuncio(this)"><img src={botaoCar} alt="Seta - Ir para próximo anuncio" /></button>
                     
                     </section>
                     
-                    <div class="botao-ver-mais">
+                    <div className="botao-ver-mais">
                         <a href="produtos-por-cat.html"><span>ver mais</span><img src={seta} alt="botao ver mais" /></a>
                     </div>
             
                     <h2 id="titulo_avaliacao">Avaliações</h2>
-                    <section class="avaliacoes">
-                        <div class="seta_esquerda">
+                    <section className="avaliacoes">
+                        <div className="seta_esquerda">
                             <button><img src={botaoCar} alt="Seta - Ir para avaliação anterior" onclick="setaAvaliacaoEsquerda()" /></button>
                         </div>
-                        <div class="card-avaliacao">
-                            <div class="avaliador">
+                        <div className="card-avaliacao">
+                            <div className="avaliador">
                                 <img src={perfilBlank} alt="Foto de perfil do avaliador" id="perfil_avaliador" />
-                                <div class="infos">
+                                <div className="infos">
                                     <h3>Perfil 1</h3>
-                                    <div class="estrelas">
+                                    <div className="estrelas">
                                         <img src={Star} alt="Estrela de Avaliação" />
                                         <img src={Star} alt="Estrela de Avaliação" />
                                         <img src={Star} alt="Estrela de Avaliação" />
@@ -103,14 +104,14 @@ function Corpo(){
                                 </div>
                             </div>
                             <p>“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam hendrerit nulla nec mollis venenatis. Donec  ornare. Nam sit amet arcu posuere, pulvinar dolor et, porta diam.“</p>
-                            <div class="seletores">
+                            <div className="seletores">
                                 <button><img src={seletorCheio} alt="Seletor Avaliação" onclick="botaoAvaliacao(this)" /></button>
                                 <button><img src={seletorVazio} alt="Seletor Avaliação" onclick="botaoAvaliacao(this)" /></button>
                                 <button><img src={seletorVazio} alt="Seletor Avaliação" onclick="botaoAvaliacao(this)" /></button>
                                 <button><img src={seletorVazio} alt="Seletor Avaliação" onclick="botaoAvaliacao(this)" /></button>
                             </div>
                         </div>
-                        <div class="seta_direita">
+                        <div className="seta_direita">
                             <button><img src={botaoCar} alt="Seta - Ir para próxima avaliação" onclick="setaAvaliacaoDireita()" /></button>
                         </div>
                     </section>

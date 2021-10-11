@@ -20,22 +20,22 @@ function Corpo(){
     return(
         <body>
 
-        <section class="titulo">
+        <section className="titulo">
             <h1>Minha Conta</h1>
         </section>
 
-        <div class="container-flex">
+        <div className="container-flex">
 
-            <section class="barra-lateral">
-                    <div class="foto">
+            <section className="barra-lateral">
+                    <div className="foto">
                         <img src={perfilBlank} alt="Foto de Perfil" />
                         <form>
                             <input type="file" name="fotos" id="fotos" accept="image/*, .png .jpg" hidden />
-                            <div class="botao"><button>Alterar</button></div>
+                            <div className="botao"><button>Alterar</button></div>
                         </form>
                     </div>
-                    <div class="menu">
-                        <div class="titulo-menu">
+                    <div className="menu">
+                        <div className="titulo-menu">
                             <h3>Minha Conta</h3>
                             <img src={linhaAzul} />
                         </div>
@@ -49,10 +49,10 @@ function Corpo(){
                     </div>
             </section>
 
-            <section class="conteudo">
+            <section className="conteudo">
                 <form id="form_editar">
-                    <div class="dados">
-                        <div class="botao">
+                    <div className="dados">
+                        <div className="botao">
                             <h2>Dados Pessoais</h2>
                             <button>Editar</button>
                         </div>
@@ -66,7 +66,7 @@ function Corpo(){
                         <ul id="erros-telefone"></ul>
                     </div>
 
-                    <div class="login">
+                    <div className="login">
                         <h2>Login e Segurança</h2>
 
                         <label for="email">E-mail</label><br />
@@ -78,7 +78,7 @@ function Corpo(){
                         <ul id="erros-senha"></ul>
                     </div>
 
-                    <div class="privacidade">
+                    <div className="privacidade">
                         <h2>Privacidade</h2>
                         <div>
                             <input type="checkbox" id="priv" name="priv" disabled onclick="validaPrivacidade(this)" />
@@ -88,7 +88,7 @@ function Corpo(){
 
                 </form>
 
-                <div class="excluir">
+                <div className="excluir">
                     <h2>Excluir conta</h2>
                     <div>
                         <p>Todos os dados serão excluídos definitivamente.<br />
