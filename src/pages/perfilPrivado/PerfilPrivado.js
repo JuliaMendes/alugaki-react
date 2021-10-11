@@ -3,8 +3,8 @@ import './perfilPrivado.css';
 import Header from "../../components/header/Header"
 import Footer from "../../components/footer/Footer"
 
-import perfilBlank from "../../img/bolinha_perfil.png"
-import linha from "../../img/Line-azul.png"
+import perfilBlank from "../../img/icones/bolinha_perfil.png"
+import linhaAzul from "../../img/icones/Line-azul.png"
 
 function PaginaPerfilPrivado() {
     return (
@@ -37,7 +37,7 @@ function Corpo(){
                     <div class="menu">
                         <div class="titulo-menu">
                             <h3>Minha Conta</h3>
-                            <img src={linha} />
+                            <img src={linhaAzul} />
                         </div>
 
                         <ul>
