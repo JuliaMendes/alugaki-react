@@ -4,7 +4,7 @@ import logoAlugaki from '../../img/imagens/alugaKi-removebg-preview.png'
 import iconeUsuario from '../../img/icones/btn_login.png'
 import lupa from '../../img/icones/lupa.png'
 
-function headerSecundario() {
+function HeaderSecundario() {
     return (
         <header>
             <div className="container">
@@ -56,4 +56,4 @@ function headerSecundario() {
     )
 }
 
-export default headerSecundario;
+export default HeaderSecundario;
