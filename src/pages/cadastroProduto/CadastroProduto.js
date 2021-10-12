@@ -1,6 +1,6 @@
 import "./cadastroProduto.css"
 
-import Header from "../../components/header/Header"
+import HeaderSecundario from "../../components/header/HeaderSecundario"
 import Footer from "../../components/footer/Footer"
 
 import calendario from '../../img/imagens/calendario.png'
@@ -9,7 +9,7 @@ import camera from '../../img/icones/photo_camera.png'
 function PaginaCadastroProduto() {
     return (
         <div>
-            <Header />
+            <HeaderSecundario />
             <Formulario/>
             <Footer />
         </div>
