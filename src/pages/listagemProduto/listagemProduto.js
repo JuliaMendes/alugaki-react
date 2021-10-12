@@ -7,6 +7,10 @@ function PaginaListagemProduto(){
     return(
         <div>
             <HeaderSecundario/>
+            <Primeira/>
+            <Segunda/>
+            <Terceira/>
+            <Quarta/>
             <Footer/>
         </div>
     )

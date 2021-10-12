@@ -1,0 +1,321 @@
+
+/*primeiro container*/
+button:focus-visible{
+    outline-color: transparent;
+    outline-width: 0px;
+}
+
+.primeira .container{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 150px;
+    margin-top: 50px;
+}
+
+.primeira .produto .info h1{
+    font-family: Roboto;
+}
+.primeira .produto .info .subtitulo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.primeira .produto .info .subtitulo img{
+    width: 25px;
+    height: 21px;
+    margin-right: 2px;
+}
+.primeira .produto .info .subtitulo small{
+    font-family: Roboto;
+    font-size: 15px;
+    margin-right: 5px;
+}
+.primeira .produto .thumb{
+    width: 550px;
+    max-width: 100%;
+    height: 300px;
+    border-radius: 25px;
+}
+.primeira .produto .info2{
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+.primeira .produto .info2 .esq small{
+    font-family: Roboto;
+    font-size: 15px;
+    margin-right: 5px;
+}
+.primeira .produto .info2 .esq img{   
+    width: 25px;
+    height: 21px;
+    margin-right: 2px;
+}
+.primeira .produto .info2 .esq .price{
+    font-family: Roboto;
+    font-size: 20px;
+    color: #FF5722;
+    font-weight: bold;
+}
+.primeira .produto .info2 button{
+    background-color: #F2F1F1;
+    border-radius: 50%;
+    border: none;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+.primeira .produto .info2 button:hover{
+    background-color: #C4C4C4;
+    transition: 0.5s;
+}
+.primeira .produto .info2 .dir img{
+    width: 20px;
+    margin-top: 4px;
+}
+.primeira .calendario{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.primeira .calendario img{
+    width: 400px;
+    max-width: 100%;
+    height: 260px;
+}
+.primeira .calendario h2{
+    margin-top: 30px;
+    font-family: Roboto;
+}
+.primeira .calendario small{
+    font-family: Roboto;
+    color:#009688;
+    font-size: 20px;
+}
+.primeira .calendario a{
+    text-decoration: none;
+}
+.primeira .calendario .botao{
+    display: flex;
+    justify-content: flex-end;
+}
+.primeira .calendario button{
+    background-color: transparent;
+    border: solid 2px #FF5722;
+    border-radius: 40px;
+    color: #FF5722;
+    font-size: 20px;
+    font-family: 'Roboto';
+    width: 130px;
+    height: 40px;
+    cursor: pointer;
+}
+.primeira .calendario button:hover{
+    opacity: 80%;
+}
+.primeira .calendario button img{
+    width: 20px;
+    height: 20px;
+}
+.primeira .produto .thumb img{
+    width: 550px;
+    max-width: 100%;
+    height: 300px;
+    border-radius: 25px;
+}
+
+.segunda{
+    margin-top: 50px;
+}
+.segunda .descricao h2{
+    font-family: Roboto;
+}
+.segunda .descricao p{
+    font-family: Montserrat;
+    line-height: 23px;
+}
+.segunda a{
+    text-decoration: none;
+}
+.segunda .vendedor{
+    margin-top: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.segunda .vendedor .avatar{
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    margin-right: 10px;
+}
+.segunda .vendedor .info{
+    display: flex;
+    flex-direction: column;
+}
+.segunda .vendedor .info h3{
+    color:#009688;
+    font-family: Roboto;
+    font-weight: bold;
+    margin: 0;
+    font-size: 23px;
+}
+.segunda .vendedor .info img{
+    width: 25px;
+    height: 21px;
+}
+.segunda .vendedor .info small{
+    font-family: Roboto;
+    font-size: 15px;
+    margin-right: 5px;
+}
+
+
+
+.terceira {
+    margin-top: 100px;
+}
+.terceira .container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.terceira h2{
+    font-family: Roboto;
+    margin-left: 60px;
+}
+.terceira button {
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+.terceira .lista-produtos .card-produto{
+    width: 240px;
+    margin-bottom: 30px;
+}
+.terceira .lista-produtos .card-produto .thumb img{
+    width: 240px;
+    max-width: 100%;
+    height: 150px;
+}
+.terceira .lista-produtos .card-produto h3{
+    font-family: Roboto;
+    color: #484848;
+    margin-bottom: 5px;
+}
+.terceira .lista-produtos .card-produto .info > div {
+    display: flex;
+    align-items: center;
+}
+.terceira .lista-produtos .card-produto img{
+    width: 25px;
+    height: 21px;
+    margin-right: 2px;
+}
+.terceira .lista-produtos .card-produto .info small{
+    font-family: Roboto;
+    font-size: 15px;
+    margin-right: 5px;
+}
+.terceira .lista-produtos .card-produto .localiz{
+    margin-top: 5px;
+}
+.terceira .lista-produtos .card-produto .localiz img{
+    width: 17px;
+    height: 17px;
+    margin-right: 2px;
+}
+.terceira .lista-produtos .card-produto .preco{
+    font-family: Roboto;
+    font-size: 20px;
+    color: #FF5722;
+}
+
+
+.quarta{
+    margin-bottom: 120px;
+}
+.quarta h2{
+    font-family: Roboto;
+}
+/* colocado o display none para apresentacao sprint javascript */
+/* ativar depois de implementar api de avaliacoes */
+.quarta .classificacao{
+    display: flex;
+    align-items: center;
+    display: none;
+}
+.quarta .classificacao img{
+    width: 25px;
+    height: 21px;
+    margin-right: 5px;
+}
+.quarta .classificacao small{
+    font-family: Roboto;
+    font-weight: bold;
+    font-size: 20px;
+    margin-right: 5px;
+}
+.quarta .classificacao a{
+    text-decoration: none;
+    font-family: Roboto;
+    font-weight: bold;
+    color:#757575;
+    font-size: 15px;
+}
+.quarta .classificacao a img{
+    width: 10px;
+    height: 10px;
+}
+.quarta .classificacao a:hover{
+    text-decoration: underline;
+}
+
+.quarta .lista-aval .card-avaliacao{
+    display: flex;
+    flex-direction: column;
+}
+.quarta .lista-aval .card-avaliacao .perfil_avaliador{
+    width: 80px;
+    height: 80px;
+}
+.quarta .lista-aval .card-avaliacao .avaliador{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.quarta .lista-aval .card-avaliacao .avaliador h3{
+    font-family: Roboto;
+}
+.quarta .card-avaliacao .avaliador .infos{
+    margin-left: 20px;
+    margin-top: 30px;
+}
+.quarta .card-avaliacao .avaliador .infos .estrelas img{
+    width: 25px;
+    height: 20px;
+}
+.quarta .card-avaliacao .avaliador .infos p{
+    font-family: Montserrat;
+}
+.quarta button{
+    font-size: 16px;
+    text-decoration: none;
+    font-family: Roboto;
+    color:#757575;
+    font-weight: bold;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+.quarta button:hover{
+    text-decoration: underline;
+}
+.quarta button img{
+    margin-left: 5px;
+    width: 10px;
+    height: 10px;
+}
