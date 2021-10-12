@@ -15,7 +15,7 @@ import arduinoImage from "../../img/imagens/arduino.jpeg"
 import barracaImage from "../../img/imagens/barraca.jpg"
 import bicicletaImage from "../../img/imagens/bicicleta.jpg"
 import betoneiraImage from "../../img/imagens/betoneira.jpg"
-import perfilImage from "../../img/imagens/bolinha_perfil.png"
+import perfilImage from "../../img/icones/bolinha_perfil.png"
 import dropDown2 from "../../img/icones/drop_down2.png"
 
 function PaginaListagemProduto() {

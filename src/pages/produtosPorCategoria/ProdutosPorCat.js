@@ -1,13 +1,13 @@
-import Header from "../../components/headerSecundario/HeaderSecundario"
+import HeaderSecundario from "../../components/headerSecundario/HeaderSecundario"
 import Footer from "../../components/footer/Footer"
 import './produtosPorCat.css';
 import linha from "../../img/icones/Line-azul.png"
-import dropdown from "../../img/icones/drop_down 1.png"
+import dropdown from "../../img/icones/drop_down1.png"
 
 function ProdutosPorCat(){
     return (
         <>
-            <Header />
+            <HeaderSecundario />
             <Produtos />
             <Footer/>
         </>
