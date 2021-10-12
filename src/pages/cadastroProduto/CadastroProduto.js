@@ -18,24 +18,24 @@ function PaginaCadastroProduto() {
 
 function Formulario() {
     return (
-        <section class="formulario">
-            <div class="container">
+        <section className="formulario">
+            <div className="container">
                 <h1>Anuncie aki</h1>
                 <form>
-                    <div class="esq">
-                        <label for="titulo">Título</label> <br />
+                    <div className="esq">
+                        <label htmlFor="titulo">Título</label> <br />
                         <input type="" id="titulo" name="titulo" required /><br />
                         <ul id="erros-titulo"></ul>
-                        <label for="descricao" required maxlength="300">Descrição</label> <br />
+                        <label htmlFor="descricao" required maxLength="300">Descrição</label> <br />
                         <textarea id="descricao" name="descricao" required></textarea> <br />
                         <ul id="erros-descricao"></ul>
 
-                        <div class="preco-cat">
-                            <div class="preco">
-                                <label for="preco">Preço</label>
+                        <div className="preco-cat">
+                            <div className="preco">
+                                <label htmlFor="preco">Preço</label>
                                 <div>
                                     <input type="text" id="preco" placeholder="R$ " required />
-                                    <label for="periodo"></label>
+                                    <label htmlFor="periodo"></label>
                                     <select name="periodo" id="periodo" required>
                                         <option value="por-dia">/ Dia</option>
                                         <option value="por-mes">/ Mês</option>
@@ -44,10 +44,10 @@ function Formulario() {
                                 </div>
                             </div>
 
-                            <div class="cat">
-                                <label for="categoria"></label>
-                                <select name="categoria" id="categoria" required>
-                                    <option selected disabled value="">Categoria</option>
+                            <div className="cat">
+                                <label htmlFor="categoria"></label>
+                                <select defaultValue = "Categoria" name="categoria" id="categoria" required>
+                                    {/* <option selected disabled value="">Categoria</option> */}
                                     <option value="esporte-lazer">Esporte e Lazer</option>
                                     <option value="moda">Moda</option>
                                     <option value="eletronicos">Eletrônicos</option>
@@ -59,35 +59,35 @@ function Formulario() {
                         <ul id="erros-preco"></ul>
                         <ul id="erros-cat"></ul>
 
-                        <div class="upload-fotos">
+                        <div className="upload-fotos">
                             <p>Fotos (até 5)</p>
-                            <label for="fotos">
+                            <label htmlFor="fotos">
                                 <img src= {camera} alt="imagem de camera"/>
                                 <br />
                                 <span>Adicionar Fotos</span>
                             </label>
                             <input type="file" name="fotos" id="fotos" accept="image/*" multiple required
-                                onclick="validaFotos(this)" />
+                                onClick="validaFotos(this)" />
                         </div>
 
-                        <label for="localizacao">Localização</label>
+                        <label htmlFor="localizacao">Localização</label>
                         <br />
                         <input type="text" id="localizacao" placeholder="CEP " required /><br />
-                        <label for="endereco"> Endereço <br /> <input type="text" id="endereco" /> </label><br />
-                        <label for="bairro"> Bairro<br /><input type="text" id="bairro" /> </label><br />
-                        <label for="cidade"> Cidade<br /><input type="text" id="cidade" /> </label><br />
-                        <label for="estado"> Estado<br /><input type="text" id="estado" /> </label><br />
+                        <label htmlFor="endereco"> Endereço <br /> <input type="text" id="endereco" /> </label><br />
+                        <label htmlFor="bairro"> Bairro<br /><input type="text" id="bairro" /> </label><br />
+                        <label htmlFor="cidade"> Cidade<br /><input type="text" id="cidade" /> </label><br />
+                        <label htmlFor="estado"> Estado<br /><input type="text" id="estado" /> </label><br />
 
                     </div>
 
-                    <div class="dir">
-                        <label for="disponibilidade">Disponibilidade</label>
+                    <div className="dir">
+                        <label htmlFor="disponibilidade">Disponibilidade</label>
                         <br />
 
                         <img src= {calendario} alt="calendário" />
 
-                        <div class="dispo">
-                            <label for="disponibilidade"></label>
+                        <div className="dispo">
+                            <label htmlFor="disponibilidade"></label>
                             <br />
                             <input type="radio" name="dispo" value="dias-uteis" />
                             Dias Úteis
@@ -101,7 +101,7 @@ function Formulario() {
                         </div>
                     </div>
 
-                    <div class="botoes">
+                    <div className="botoes">
                         <a href="index.html"><button id="btn-cancelar" type="button">Cancelar</button></a>
                         <button id="btn-anunciar" type="submit">Anunciar</button>
                     </div>
