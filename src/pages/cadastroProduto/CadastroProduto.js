@@ -1,6 +1,6 @@
 import "./cadastroProduto.css"
 
-import HeaderSecundario from "../../components/header/HeaderSecundario"
+import HeaderSecundario from "../../components/headerSecundario/HeaderSecundario"
 import Footer from "../../components/footer/Footer"
 
 import calendario from '../../img/imagens/calendario.png'

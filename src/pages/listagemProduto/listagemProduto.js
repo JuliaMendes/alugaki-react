@@ -1,6 +1,6 @@
 import "./listagemProduto.css"
 
-import HeaderSecundario from "../../components/header/HeaderSecundario"
+import HeaderSecundario from "../../components/headerSecundario/HeaderSecundario"
 import Footer from "../../components/footer/Footer"
 
 import star from "../../img/icones/star1.png"
