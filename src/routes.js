@@ -7,12 +7,16 @@ import ProdutosPorCat from './pages/produtosPorCategoria/ProdutosPorCat';
 import PaginaCadastroProduto from './pages/cadastroProduto/CadastroProduto';
 import PerfilPublico from './pages/perfilPublico/PerfilPublico';
 import PerfilPrivado from './pages/perfilPrivado/PerfilPrivado';
+import PaginaListagemProduto from './pages/listagemProduto/listagemProduto';
 
 
 function Routes() {
     return(
 
         <Switch>
+            <Route path="listagem-produto">
+                <PaginaListagemProduto/>
+            </Route>
             <Route path="/perfil-privado">
                 <PerfilPrivado/>
             </Route>

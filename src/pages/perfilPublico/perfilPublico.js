@@ -6,10 +6,10 @@ import Footer from "../../components/footer/Footer"
 import perfilBlank from "../../img/icones/bolinha_perfil.png"
 import linhaAzul from "../../img/icones/Line-azul.png"
 import linhaCinza from "../../img/icones/linha_cinza.png"
-import Star from "../../img/icones/Star 1.png"
+import Star from "../../img/icones/star1.png"
 import seletorCheio from "../../img/icones/seletor_cheio_avaliacao.png"
 import seletorVazio from "../../img/icones/seletor_vazio_avaliacao.png"
-import botaoCar from "../../img/icones/drop_down 1.png"
+import botaoCar from "../../img/icones/drop_down1.png"
 import seta from "../../img/icones/seta-direita.png"
 
 function PaginaPerfilPublico() {
