@@ -9,7 +9,7 @@ import camera from '../../img/icones/photo_camera.png'
 function PaginaCadastroProduto() {
     return (
         <div>
-            <HeaderSecundario />
+            <HeaderSecundario /> 
             <Formulario/>
             <Footer />
         </div>
