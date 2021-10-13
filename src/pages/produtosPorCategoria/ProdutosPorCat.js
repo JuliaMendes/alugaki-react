@@ -4,19 +4,19 @@ import './produtosPorCat.css';
 import linha from "../../img/icones/Line-azul.png"
 import dropdown from "../../img/icones/drop_down1.png"
 
-function ProdutosPorCat(){
+function PaginaProdutosPorCat() {
     return (
-        <>
+        <div>
             <HeaderSecundario />
             <Produtos />
-            <Footer/>
-        </>
+            <Footer />
+        </div>
     )
 }
 
-function Produtos(){
+function Produtos() {
     <section class="produtos">
-    {/* categoria de produtos */}
+        {/* categoria de produtos */}
         <div class="titulo">
             <h1>Categoria</h1>
         </div>
@@ -70,7 +70,7 @@ function Produtos(){
                                 <label for="quatro-cincos">entre 4 e 5 estrelas</label>
                             </li>
                         </ul>
-                        
+
                     </li>
                     <li>
                         <h3>Localização</h3>
@@ -179,23 +179,23 @@ function Produtos(){
                         </div>
                         <h3 class="preco">R$preço /dia</h3>
                     </div>
-                </div> */} 
+                </div> */}
             </div>
-        </div> 
+        </div>
 
         <div class="container container-fim">
-        <div class="pagination">
-            <ul>
-                <li><a href="#"><img src={dropdown} alt="próxima página" /></a></li>
-                <li><a href="#" class="ativo">1</a></li>
-                <li><a href="#">2</a></li>
-                <li>...</li>
-                <li><a href="#">n</a></li>
-                <li><a href="#"><img src={dropdown} alt="próxima página" /></a></li>
-            </ul>
-        </div>
+            <div class="pagination">
+                <ul>
+                    <li><a href="#"><img src={dropdown} alt="próxima página" /></a></li>
+                    <li><a href="#" class="ativo">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li>...</li>
+                    <li><a href="#">n</a></li>
+                    <li><a href="#"><img src={dropdown} alt="próxima página" /></a></li>
+                </ul>
+            </div>
         </div>
     </section>
 }
 
-export default ProdutosPorCat
+export default PaginaProdutosPorCat

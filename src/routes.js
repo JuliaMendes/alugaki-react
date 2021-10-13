@@ -5,23 +5,26 @@ import PaginaLogin from './pages/login/Login';
 import PaginaCadastroUsuario from './pages/cadastroUsuario/CadastroUsuario';
 import ProdutosPorCat from './pages/produtosPorCategoria/ProdutosPorCat';
 import PaginaCadastroProduto from './pages/cadastroProduto/CadastroProduto';
-import PerfilPublico from './pages/perfilPublico/PerfilPublico';
-import PerfilPrivado from './pages/perfilPrivado/PerfilPrivado';
-import PaginaListagemProduto from './pages/listagemProduto/listagemProduto';
-
+import PaginaPerfilPublico from './pages/perfilPublico/PerfilPublico';
+import PaginaPerfilPrivado from './pages/perfilPrivado/PerfilPrivado';
+import PaginaListagemProduto from './pages/listagemProduto/ListagemProduto';
+import PaginaProdutosPorCat from './pages/produtosPorCategoria/ProdutosPorCat';
 
 function Routes() {
     return(
 
         <Switch>
-            <Route path="listagem-produto">
+            <Route path ="/produtos-por-categoria">
+                <PaginaProdutosPorCat/>
+            </Route>
+            <Route path="/listagem-produto">
                 <PaginaListagemProduto/>
             </Route>
             <Route path="/perfil-privado">
-                <PerfilPrivado/>
+                <PaginaPerfilPrivado/>
             </Route>
             <Route path="/perfil-publico">
-                <PerfilPublico/>
+                <PaginaPerfilPublico/>
             </Route>
             <Route path="/cadastro-produtos">
                 <PaginaCadastroProduto/>
