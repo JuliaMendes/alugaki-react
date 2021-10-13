@@ -1,6 +1,6 @@
 import './perfilPrivado.css';
 
-import HeaderSecundario from "../../components/header/HeaderSecundario"
+import HeaderSecundario from "../../components/headerSecundario/HeaderSecundario"
 import Footer from "../../components/footer/Footer"
 
 import perfilBlank from "../../img/icones/bolinha_perfil.png"
@@ -24,9 +24,9 @@ function Corpo(){
             <h1>Minha Conta</h1>
         </section>
 
-        <div className="container-flex">
+        <div className="containerFlex">
 
-            <section className="barra-lateral">
+            <section className="barraLateral">
                     <div className="foto">
                         <img src={perfilBlank} alt="Foto de Perfil" />
                         <form>
@@ -35,7 +35,7 @@ function Corpo(){
                         </form>
                     </div>
                     <div className="menu">
-                        <div className="titulo-menu">
+                        <div className="tituloMenu">
                             <h3>Minha Conta</h3>
                             <img src={linhaAzul} />
                         </div>

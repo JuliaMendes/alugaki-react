@@ -19,7 +19,7 @@ body {
     margin: 0 auto;
 }
 
-.container-flex {
+.containerFlex {
     display: flex;
     align-items: flex-start;
     width: 1200px;
@@ -28,15 +28,15 @@ body {
     gap: 150px;
 }
 
-/* section barra-lateral */
-section.barra-lateral{
+/* section barraLateral */
+section.barraLateral{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     width: 275px;
 }
 
-section.barra-lateral .infos{
+section.barraLateral .infos{
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -47,35 +47,35 @@ section.barra-lateral .infos{
     height: 400px;
 }
 
-section.barra-lateral .infos h3{
+section.barraLateral .infos h3{
     font-family: 'Roboto';
     font-size: 34px;
     font-weight: 400;
     margin: 0;
 }
 
-section.barra-lateral .infos #foto_perfil{
+section.barraLateral .infos #foto_perfil{
     width: 90%;
 }
 
-section.barra-lateral .infos .estrelas{
+section.barraLateral .infos .estrelas{
     width: 95%;
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-evenly;
 }
 
-section.barra-lateral .infos .estrelas img{
+section.barraLateral .infos .estrelas img{
     width: 30px;
     height: 25px;
 }
 
-section.barra-lateral .infos #linha_cinza{
+section.barraLateral .infos #linha_cinza{
     width: 80%;
     height: 1.5px;
 }
 
-section.barra-lateral .infos a{
+section.barraLateral .infos a{
     font-family: 'Montserrat';
     font-size: 24px;
     font-weight: 400;
@@ -84,11 +84,11 @@ section.barra-lateral .infos a{
 }
 
 /*titulo do filtro e divisor*/
-section.barra-lateral .filtros {
+section.barraLateral .filtros {
     width: 80%;
 }
 
-section.barra-lateral .filtros .titulo-filtro{
+section.barraLateral .filtros .tituloFiltro{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -96,29 +96,29 @@ section.barra-lateral .filtros .titulo-filtro{
 }
 
 /*nome do filtro*/
-section.barra-lateral .filtros h3{
+section.barraLateral .filtros h3{
     font-family: Roboto;
     color: #419488;
 }
 
 /*divisor*/
-section.barra-lateral .filtros img{
+section.barraLateral .filtros img{
     width: 100%;
 }
 
 /*lista com os filtros*/
-section.barra-lateral .filtros ul{
+section.barraLateral .filtros ul{
     list-style: none;
     padding: 0;
     font-family: Roboto;
     color: #419488;
     line-height: 27px;
 }
-section.barra-lateral .filtros ul li a{
+section.barraLateral .filtros ul li a{
     text-decoration: none;
     color: #419488;
 }
-section.barra-lateral .filtros ul li a:hover{
+section.barraLateral .filtros ul li a:hover{
     color: #a9dbd4;
     transition: 0.5s;
 }
@@ -144,56 +144,56 @@ section.anuncios{
     justify-content: space-between;
 }
 
-section.anuncios .card-produto {
+section.anuncios .cardProduto {
     cursor: pointer;
 }
 
-section.anuncios .card-produto .thumb img {
+section.anuncios .cardProduto .thumb img {
     width: 240px;
     height: 150px;
     background-size: cover;
 }
 
-section.anuncios .card-produto .info>div {
+section.anuncios .cardProduto .info>div {
     display: flex;
     align-items: center;
 }
 
-section.anuncios .card-produto .info h3 {
+section.anuncios .cardProduto .info h3 {
     color: #484848;
     margin-bottom: 5px;
 }
 
-section.anuncios .card-produto .info {
+section.anuncios .cardProduto .info {
     color: #757575;
 }
 
-section.anuncios .card-produto .info img {
+section.anuncios .cardProduto .info img {
     width: 25px;
     height: 21px;
     margin-right: 2px;
 }
 
-section.anuncios .card-produto .info small {
+section.anuncios .cardProduto .info small {
     font-size: 15px;
     margin-right: 5px;
 }
 
-section.anuncios .card-produto .info .pontuacao {
+section.anuncios .cardProduto .info .pontuacao {
     color: #484848;
 }
 
-section.anuncios .card-produto .localiz {
+section.anuncios .cardProduto .localiz {
     margin-top: 5px;
 }
 
-section.anuncios .card-produto .localiz img {
+section.anuncios .cardProduto .localiz img {
     width: 17px;
     height: 17px;
     margin-right: 2px;
 }
 
-section.anuncios .card-produto .info .preco {
+section.anuncios .cardProduto .info .preco {
     font-size: 20px;
     color: #FF5722;
 }
@@ -217,14 +217,14 @@ section.anuncios button img{
     width: 25px;
 }
 
-div.botao-ver-mais{
+div.botaoVerMais{
     display: flex;
     align-items: center;
     justify-content: flex-end;
     margin-top: 30px;
 }
 
-div.botao-ver-mais span {
+div.botaoVerMais span {
     cursor: pointer;
     font-family: 'Roboto', sans-serif;
     color: #FF5722;
@@ -232,12 +232,12 @@ div.botao-ver-mais span {
     font-weight: 900;
 }
 
-div.botao-ver-mais img {
+div.botaoVerMais img {
     margin-left: 5px;
     width: 10px;
 }
 
-div.botao-ver-mais a {
+div.botaoVerMais a {
     text-decoration: none;
 }
 
@@ -276,25 +276,25 @@ section.avaliacoes .seta_direita button img{
     width: 25px;
 }
 
-section.avaliacoes .card-avaliacao{
+section.avaliacoes .cardAvaliacao{
     display: flex;
     flex-flow: column;
     align-items: center;
     width: 550px;
 }
 
-section.avaliacoes .card-avaliacao .avaliador{
+section.avaliacoes .cardAvaliacao .avaliador{
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-section.avaliacoes .card-avaliacao .avaliador #perfil_avaliador{
+section.avaliacoes .cardAvaliacao .avaliador #perfil_avaliador{
     width: 125px;
     margin-right: 25px;
 }
 
-section.avaliacoes .card-avaliacao .avaliador .infos{
+section.avaliacoes .cardAvaliacao .avaliador .infos{
     height: 125px;
     display: flex;
     flex-direction: column;
@@ -302,26 +302,26 @@ section.avaliacoes .card-avaliacao .avaliador .infos{
     justify-content: space-evenly;
 }
 
-section.avaliacoes .card-avaliacao .avaliador .infos h3{
+section.avaliacoes .cardAvaliacao .avaliador .infos h3{
     font-size: 26px;
     font-family: 'Roboto';
     font-weight: 800px;
     margin: 0;
 }
 
-section.avaliacoes .card-avaliacao .avaliador .infos .estrelas img{
+section.avaliacoes .cardAvaliacao .avaliador .infos .estrelas img{
     width: 30px;
     height: 25px;
 }
 
-section.avaliacoes .card-avaliacao p{
+section.avaliacoes .cardAvaliacao p{
     font-family: 'Montserrat';
     font-weight: 400;
     font-size: 16px;
     text-align: center;
 }
 
-section.avaliacoes .card-avaliacao .seletores img{
+section.avaliacoes .cardAvaliacao .seletores img{
     margin-top: 40px;
     width: 13px;
 }
@@ -333,24 +333,24 @@ section.avaliacoes .card-avaliacao .seletores img{
         max-width: 100vw;
     }
 
-    /* barra-lateral e conteudo */
-    .container-flex{
+    /* barraLateral e conteudo */
+    .containerFlex{
         width: 100vw;
         max-width: 100%;
         gap: 100px;
     }
 
-    section.barra-lateral{
+    section.barraLateral{
         max-width: 20vw;
     }
 
     /* no javascript, substituir por uma estrela com o valor numerico ao lado */
-    section.barra-lateral .infos .estrelas img{
+    section.barraLateral .infos .estrelas img{
         aspect-ratio: 6 / 5;
     }
 
     /* no javascript, substituir por uma imagem de whatsapp com o link e tirar o numero */
-    section.barra-lateral .infos a{
+    section.barraLateral .infos a{
         text-align: center;
     }
 
@@ -364,33 +364,33 @@ section.avaliacoes .card-avaliacao .seletores img{
         max-width: 70vw;
     }
 
-    section.anuncios .card-produto{
+    section.anuncios .cardProduto{
         max-width: 20vw;
     }
 
-    section.anuncios .card-produto .thumb img {
+    section.anuncios .cardProduto .thumb img {
         width: 240px;
         max-width: 20vw;
         max-height: 16vw;
     }
 
-    div.botao-ver-mais span {
+    div.botaoVerMais span {
         font-size: 18px;
     }
     
-    div.botao-ver-mais img {
+    div.botaoVerMais img {
         margin-left: 5px;
         width: 10px;
     }
     
-    div.botao-ver-mais a {
+    div.botaoVerMais a {
         text-decoration: none;
         display: flex;
         align-items: center;
         justify-content: flex-end;
     }
 
-    section.avaliacoes .card-avaliacao p{
+    section.avaliacoes .cardAvaliacao p{
         word-wrap: break-word;
     }
 
@@ -413,21 +413,21 @@ section.avaliacoes .card-avaliacao .seletores img{
         padding: 10px;
     }
 
-    .container-flex{
+    .containerFlex{
         flex-direction: column;
         justify-content: center;
         align-items: center;
     }
 
-    section.barra-lateral{
+    section.barraLateral{
         align-items: center;
     }
 
-    section.barra-lateral .filtros{
+    section.barraLateral .filtros{
         display: none;
     }
 
-    section.barra-lateral .infos{
+    section.barraLateral .infos{
         width: 205px;
         max-width: 205px;
     }
@@ -445,20 +445,20 @@ section.avaliacoes .card-avaliacao .seletores img{
         justify-content: space-between;
     }
 
-    section.anuncios .card-produto{
+    section.anuncios .cardProduto{
         max-height: 80%;
         max-width: 80%;
         cursor: pointer;
     }
 
-    section.anuncios .card-produto .thumb img{
+    section.anuncios .cardProduto .thumb img{
         width: 200px;
         height: 125px;
         max-width: 30vw;
         max-height: 24vw;
     }
 
-    section.anuncios div.card-produto:nth-child(3){
+    section.anuncios div.cardProduto:nth-child(3){
         display: none;
     }
 
@@ -486,7 +486,7 @@ section.avaliacoes .card-avaliacao .seletores img{
         padding-right: 20px;
     }
 
-    div.card-produto + div.card-produto{
+    div.cardProduto + div.cardProduto{
         display: none;
     }
 
@@ -495,29 +495,29 @@ section.avaliacoes .card-avaliacao .seletores img{
         justify-content: space-evenly;
     }
 
-    section.anuncios .card-produto{
+    section.anuncios .cardProduto{
         max-height: 100%;
         max-width: 100%;
         cursor: pointer;
     }
 
-    section.anuncios .card-produto .thumb img{
+    section.anuncios .cardProduto .thumb img{
         width: 240px;
         height: 150px;
         max-width: 60vw;
         max-height: 48vw;
     }
 
-    section.avaliacoes .card-avaliacao .avaliador{
+    section.avaliacoes .cardAvaliacao .avaliador{
         flex-direction: column;
         align-items: center;
     }
 
-    section.avaliacoes .card-avaliacao .avaliador #perfil_avaliador{
+    section.avaliacoes .cardAvaliacao .avaliador #perfil_avaliador{
         margin-right: 0;
     }
 
-    section.avaliacoes .card-avaliacao .avaliador .infos{
+    section.avaliacoes .cardAvaliacao .avaliador .infos{
         align-items: center;
     }
 
