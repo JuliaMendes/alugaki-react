@@ -7,7 +7,7 @@ import ProdutosPorCat from './pages/produtosPorCategoria/ProdutosPorCat';
 import PaginaCadastroProduto from './pages/cadastroProduto/CadastroProduto';
 import PaginaPerfilPublico from './pages/perfilPublico/PerfilPublico';
 import PaginaPerfilPrivado from './pages/perfilPrivado/PerfilPrivado';
-import PaginaListagemProduto from './pages/listagemProduto/listagemProduto';
+import PaginaListagemProduto from './pages/listagemProduto/ListagemProduto';
 import PaginaProdutosPorCat from './pages/produtosPorCategoria/ProdutosPorCat';
 
 function Routes() {
