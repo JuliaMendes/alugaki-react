@@ -1,6 +1,6 @@
 import './perfilPublico.css';
 
-import Header from "../../components/header/Header"
+import Header from "../../components/header/HeaderSecundario"
 import Footer from "../../components/footer/Footer"
 
 import perfilBlank from "../../img/icones/bolinha_perfil.png"
@@ -15,7 +15,7 @@ import seta from "../../img/icones/seta-direita.png"
 function PaginaPerfilPublico() {
     return (
         <div>
-            <Header />
+            <HeaderSecundario />
             <Corpo/>
             <Footer />
         </div>

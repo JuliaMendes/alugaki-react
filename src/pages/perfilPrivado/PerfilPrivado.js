@@ -1,6 +1,6 @@
 import './perfilPrivado.css';
 
-import Header from "../../components/header/Header"
+import HeaderSecundario from "../../components/header/HeaderSecundario"
 import Footer from "../../components/footer/Footer"
 
 import perfilBlank from "../../img/icones/bolinha_perfil.png"
@@ -9,7 +9,7 @@ import linhaAzul from "../../img/icones/Line-azul.png"
 function PaginaPerfilPrivado() {
     return (
         <div>
-            <Header />
+            <HeaderSecundario />
             <Corpo/>
             <Footer />
         </div>
