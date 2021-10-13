@@ -42,7 +42,7 @@ function Primeira() {
                             <img src={star} alt="" />
                             <small>4,8</small>
                             <img src={local} alt="" />
-                            <small style="color: #757575;">São Paulo, SP</small>
+                            <small style={{ color: '#757575' }}>São Paulo, SP</small>
                         </div>
                     </div>
                     <div className="thumb" style="background-color: darkgray;"></div>

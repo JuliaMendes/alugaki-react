@@ -14,9 +14,9 @@ function PaginaInicial() {
 
             <PartePrincipal />
 
-            <ProdutosPorCategoria/>
+            <ProdutosPorCategoria />
 
-            <BannerExperimenteAnunciar/>
+            <BannerExperimenteAnunciar />
 
             <Footer />
 
@@ -76,38 +76,38 @@ function PartePrincipal() {
 function ProdutosPorCategoria() {
     return (
         <section className="produtos-por-categoria">
-        <div className="container">
-            <div className="botoes-categoria">
-                <button className="ativo">Esporte e Lazer</button><span>|</span>
-                <button>Moda</button><span>|</span>
-                <button>Eletrônicos</button><span>|</span>
-                <button>Ferramentas e Utilitários</button>
+            <div className="container">
+                <div className="botoes-categoria">
+                    <button className="ativo">Esporte e Lazer</button><span>|</span>
+                    <button>Moda</button><span>|</span>
+                    <button>Eletrônicos</button><span>|</span>
+                    <button>Ferramentas e Utilitários</button>
+                </div>
+                <div className="lista-produtos"></div>
+                <div className="botao-ver-mais">
+                    <a href="produtos-por-cat.html"><span>ver mais</span><img src={iconeSetaDireita}
+                        alt="botao ver mais" /></a>
+                </div>
             </div>
-            <div className="lista-produtos"></div>
-            <div className="botao-ver-mais">
-                <a href="produtos-por-cat.html"><span>ver mais</span><img src={iconeSetaDireita}
-                    alt="botao ver mais" /></a>
-            </div>
-        </div>
-    </section>
+        </section>
 
     )
 }
 
-function BannerExperimenteAnunciar(){
-    return(
-        <section style={{ backgroundImage: `url(${backgroundBannerVioloes})` }}  className="banner-anunciar">
-        <div className="gradient">
-            <div className="container">
-                <div className="frase-banner">
-                    <h2>Experimente anunciar</h2>
-                </div>
-                <div className="botao-saiba-mais">
-                    <a href="cadastro-produto.html"><button>Saiba mais</button></a>
+function BannerExperimenteAnunciar() {
+    return (
+        <section style={{ backgroundImage: `url(${backgroundBannerVioloes})` }} className="banner-anunciar">
+            <div className="gradient">
+                <div className="container">
+                    <div className="frase-banner">
+                        <h2>Experimente anunciar</h2>
+                    </div>
+                    <div className="botao-saiba-mais">
+                        <a href="cadastro-produto.html"><button>Saiba mais</button></a>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
     )
 }
 
