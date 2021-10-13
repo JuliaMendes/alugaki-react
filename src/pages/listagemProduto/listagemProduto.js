@@ -45,12 +45,12 @@ function Primeira() {
                             <small style={{ color: '#757575' }}>São Paulo, SP</small>
                         </div>
                     </div>
-                    <div className="thumb" style="background-color: darkgray;"></div>
+                    <div className="thumb" style={{ 'background-color': 'darkgray'}}></div>
                     <div className="info2">
                         <div className="esq">
                             <img src={star} alt="" />
                             <small>4,8</small>
-                            <small style="color: #757575;">• 750 avaliações</small> <br />
+                            <small style={{ color: '#757575' }}>• 750 avaliações</small> <br />
                             <small className="price">R$15,00 /dia</small>
                         </div>
                         <div className="dir">
@@ -89,18 +89,18 @@ function Segunda() {
                 </div>
                 <div className="vendedor">
                     <a href="https://juliamendes.github.io/alugaki/app/perfil-publico.html" target="blank">
-                        <div className="avatar" style="background-color: darkgray;"></div>
+                        <div className="avatar" style={{ 'background-color': 'darkgray'}}></div>
                     </a>
                     <div className="info">
                         <a href="https://juliamendes.github.io/alugaki/app/perfil-publico.html" target="blank"><h3>John Doe</h3></a>
                         <div>
                             <img src={local} alt="" />
-                            <small style="color: #757575;">São Paulo, SP</small>
+                            <small style={{ color: '#757575' }}>São Paulo, SP</small>
                         </div>
                         <div>
                             <img src={star} alt="" />
                             <small>4,8</small>
-                            <small style="color: #757575;">• 750 avaliações</small> <br />
+                            <small style={{ color: '#757575' }}>• 750 avaliações</small> <br />
                         </div>
                     </div>
                 </div>
@@ -130,13 +130,13 @@ function Terceira() {
                                 <img src={star} alt="" />
                                 <div>
                                     <small>4,8</small>
-                                    <small style="color: #757575;">• 750 avaliações</small>
+                                    <small style={{ color: '#757575' }}>• 750 avaliações</small>
                                 </div>
                             </div>
                             {/* <!--div com infos sobre localiz.--> */}
                             <div className="localiz">
                                 <img src={local} alt="" />
-                                <small style="color: #757575;">São Paulo, SP</small>
+                                <small style={{ color: '#757575' }}>São Paulo, SP</small>
                             </div>
                             {/* <!--preço--> */}
                             <h3 className="preco">R$preço /dia</h3>
@@ -158,13 +158,13 @@ function Terceira() {
                                 <img src={star} alt="" />
                                 <div>
                                     <small>4,8</small>
-                                    <small style="color: #757575;">• 750 avaliações</small>
+                                    <small style={{ color: '#757575' }}>• 750 avaliações</small>
                                 </div>
                             </div>
                             {/* <!--div com infos sobre localiz.--> */}
                             <div className="localiz">
                                 <img src={local} alt="" />
-                                <small style="color: #757575;">São Paulo, SP</small>
+                                <small style={{ color: '#757575' }}>São Paulo, SP</small>
                             </div>
                             {/* <!--preço--> */}
                             <h3 className="preco">R$preço /dia</h3>
@@ -186,13 +186,13 @@ function Terceira() {
                                 <img src={star} alt="" />
                                 <div>
                                     <small>4,8</small>
-                                    <small style="color: #757575;">• 750 avaliações</small>
+                                    <small style={{ color: '#757575' }}>• 750 avaliações</small>
                                 </div>
                             </div>
                             {/* <!--div com infos sobre localiz.--> */}
                             <div className="localiz">
                                 <img src={local} alt="" />
-                                <small style="color: #757575;">São Paulo, SP</small>
+                                <small style={{ color: '#757575' }}>São Paulo, SP</small>
                             </div>
                             {/* <!--preço--> */}
                             <h3 className="preco">R$preço /dia</h3>
@@ -214,13 +214,13 @@ function Terceira() {
                                 <img src={star} alt="" />
                                 <div>
                                     <small>4,8</small>
-                                    <small style="color: #757575;">• 750 avaliações</small>
+                                    <small style={{ color: '#757575' }}>• 750 avaliações</small>
                                 </div>
                             </div>
                             {/* <!--div com infos sobre localiz.--> */}
                             <div className="localiz">
                                 <img src={local} alt="" />
-                                <small style="color: #757575;">São Paulo, SP</small>
+                                <small style={{ color: '#757575' }}>São Paulo, SP</small>
                             </div>
                             {/* <!--preço--> */}
                             <h3 className="preco">R$preço /dia</h3>
