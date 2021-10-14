@@ -1,11 +1,10 @@
-
 /*primeiro container*/
-button:focus-visible{
+.paginaListagem button:focus-visible{
     outline-color: transparent;
     outline-width: 0px;
 }
 
-.primeira .container{
+.paginaListagem .primeira .container{
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -13,52 +12,52 @@ button:focus-visible{
     margin-top: 50px;
 }
 
-.primeira .produto .info h1{
+.paginaListagem .primeira .produto .info h1{
     font-family: Roboto;
 }
-.primeira .produto .info .subtitulo {
+.paginaListagem .primeira .produto .info .subtitulo {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
 }
-.primeira .produto .info .subtitulo img{
+.paginaListagem .primeira .produto .info .subtitulo img{
     width: 25px;
     height: 21px;
     margin-right: 2px;
 }
-.primeira .produto .info .subtitulo small{
+.paginaListagem .primeira .produto .info .subtitulo small{
     font-family: Roboto;
     font-size: 15px;
     margin-right: 5px;
 }
-.primeira .produto .thumb{
+.paginaListagem .primeira .produto .thumb{
     width: 550px;
     max-width: 100%;
     height: 300px;
     border-radius: 25px;
 }
-.primeira .produto .info2{
+.paginaListagem .primeira .produto .info2{
     margin-top: 10px;
     display: flex;
     justify-content: space-between;
 }
-.primeira .produto .info2 .esq small{
+.paginaListagem .primeira .produto .info2 .esq small{
     font-family: Roboto;
     font-size: 15px;
     margin-right: 5px;
 }
-.primeira .produto .info2 .esq img{   
+.paginaListagem .primeira .produto .info2 .esq img{   
     width: 25px;
     height: 21px;
     margin-right: 2px;
 }
-.primeira .produto .info2 .esq .price{
+.paginaListagem .primeira .produto .info2 .esq .price{
     font-family: Roboto;
     font-size: 20px;
     color: #FF5722;
     font-weight: bold;
 }
-.primeira .produto .info2 button{
+.paginaListagem .primeira .produto .info2 button{
     background-color: #F2F1F1;
     border-radius: 50%;
     border: none;
@@ -66,41 +65,41 @@ button:focus-visible{
     height: 40px;
     cursor: pointer;
 }
-.primeira .produto .info2 button:hover{
+.paginaListagem .primeira .produto .info2 button:hover{
     background-color: #C4C4C4;
     transition: 0.5s;
 }
-.primeira .produto .info2 .dir img{
+.paginaListagem .primeira .produto .info2 .dir img{
     width: 20px;
     margin-top: 4px;
 }
-.primeira .calendario{
+.paginaListagem .primeira .calendario{
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
-.primeira .calendario img{
+.paginaListagem .primeira .calendario img{
     width: 400px;
     max-width: 100%;
     height: 260px;
 }
-.primeira .calendario h2{
+.paginaListagem .primeira .calendario h2{
     margin-top: 30px;
     font-family: Roboto;
 }
-.primeira .calendario small{
+.paginaListagem .primeira .calendario small{
     font-family: Roboto;
     color:#009688;
     font-size: 20px;
 }
-.primeira .calendario a{
+.paginaListagem .primeira .calendario a{
     text-decoration: none;
 }
-.primeira .calendario .botao{
+.paginaListagem .primeira .calendario .botao{
     display: flex;
     justify-content: flex-end;
 }
-.primeira .calendario button{
+.paginaListagem .primeira .calendario button{
     background-color: transparent;
     border: solid 2px #FF5722;
     border-radius: 40px;
@@ -111,61 +110,61 @@ button:focus-visible{
     height: 40px;
     cursor: pointer;
 }
-.primeira .calendario button:hover{
+.paginaListagem .primeira .calendario button:hover{
     opacity: 80%;
 }
-.primeira .calendario button img{
+.paginaListagem .primeira .calendario button img{
     width: 20px;
     height: 20px;
 }
-.primeira .produto .thumb img{
+.paginaListagem .primeira .produto .thumb img{
     width: 550px;
     max-width: 100%;
     height: 300px;
     border-radius: 25px;
 }
 
-.segunda{
+.paginaListagem .segunda{
     margin-top: 50px;
 }
-.segunda .descricao h2{
+.paginaListagem .segunda .descricao h2{
     font-family: Roboto;
 }
-.segunda .descricao p{
+.paginaListagem .segunda .descricao p{
     font-family: Montserrat;
     line-height: 23px;
 }
-.segunda a{
+.paginaListagem .segunda a{
     text-decoration: none;
 }
-.segunda .vendedor{
+.paginaListagem .segunda .vendedor{
     margin-top: 70px;
     display: flex;
     align-items: center;
     justify-content: flex-start;
 }
-.segunda .vendedor .avatar{
+.paginaListagem .segunda .vendedor .avatar{
     border-radius: 50%;
     width: 80px;
     height: 80px;
     margin-right: 10px;
 }
-.segunda .vendedor .info{
+.paginaListagem .segunda .vendedor .info{
     display: flex;
     flex-direction: column;
 }
-.segunda .vendedor .info h3{
+.paginaListagem .segunda .vendedor .info h3{
     color:#009688;
     font-family: Roboto;
     font-weight: bold;
     margin: 0;
     font-size: 23px;
 }
-.segunda .vendedor .info img{
+.paginaListagem .segunda .vendedor .info img{
     width: 25px;
     height: 21px;
 }
-.segunda .vendedor .info small{
+.paginaListagem .segunda .vendedor .info small{
     font-family: Roboto;
     font-size: 15px;
     margin-right: 5px;
@@ -173,135 +172,135 @@ button:focus-visible{
 
 
 
-.terceira {
+.paginaListagem .terceira {
     margin-top: 100px;
 }
-.terceira .container{
+.paginaListagem .terceira .container{
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
-.terceira h2{
+.paginaListagem .terceira h2{
     font-family: Roboto;
     margin-left: 60px;
 }
-.terceira button {
+.paginaListagem .terceira button {
     padding: 0;
     margin: 0;
     background-color: transparent;
     border: none;
     cursor: pointer;
 }
-.terceira .lista-produtos .card-produto{
+.paginaListagem .terceira .lista-produtos .card-produto{
     width: 240px;
     margin-bottom: 30px;
 }
-.terceira .lista-produtos .card-produto .thumb img{
+.paginaListagem .terceira .lista-produtos .card-produto .thumb img{
     width: 240px;
     max-width: 100%;
     height: 150px;
 }
-.terceira .lista-produtos .card-produto h3{
+.paginaListagem .terceira .lista-produtos .card-produto h3{
     font-family: Roboto;
     color: #484848;
     margin-bottom: 5px;
 }
-.terceira .lista-produtos .card-produto .info > div {
+.paginaListagem .terceira .lista-produtos .card-produto .info > div {
     display: flex;
     align-items: center;
 }
-.terceira .lista-produtos .card-produto img{
+.paginaListagem .terceira .lista-produtos .card-produto img{
     width: 25px;
     height: 21px;
     margin-right: 2px;
 }
-.terceira .lista-produtos .card-produto .info small{
+.paginaListagem .terceira .lista-produtos .card-produto .info small{
     font-family: Roboto;
     font-size: 15px;
     margin-right: 5px;
 }
-.terceira .lista-produtos .card-produto .localiz{
+.paginaListagem .terceira .lista-produtos .card-produto .localiz{
     margin-top: 5px;
 }
-.terceira .lista-produtos .card-produto .localiz img{
+.paginaListagem .terceira .lista-produtos .card-produto .localiz img{
     width: 17px;
     height: 17px;
     margin-right: 2px;
 }
-.terceira .lista-produtos .card-produto .preco{
+.paginaListagem .terceira .lista-produtos .card-produto .preco{
     font-family: Roboto;
     font-size: 20px;
     color: #FF5722;
 }
 
 
-.quarta{
+.paginaListagem .quarta{
     margin-bottom: 120px;
 }
-.quarta h2{
+.paginaListagem .quarta h2{
     font-family: Roboto;
 }
 /* colocado o display none para apresentacao sprint javascript */
 /* ativar depois de implementar api de avaliacoes */
-.quarta .classificacao{
+.paginaListagem .quarta .classificacao{
     display: flex;
     align-items: center;
     display: none;
 }
-.quarta .classificacao img{
+.paginaListagem .quarta .classificacao img{
     width: 25px;
     height: 21px;
     margin-right: 5px;
 }
-.quarta .classificacao small{
+.paginaListagem .quarta .classificacao small{
     font-family: Roboto;
     font-weight: bold;
     font-size: 20px;
     margin-right: 5px;
 }
-.quarta .classificacao a{
+.paginaListagem .quarta .classificacao a{
     text-decoration: none;
     font-family: Roboto;
     font-weight: bold;
     color:#757575;
     font-size: 15px;
 }
-.quarta .classificacao a img{
+.paginaListagem .quarta .classificacao a img{
     width: 10px;
     height: 10px;
 }
-.quarta .classificacao a:hover{
+.paginaListagem .quarta .classificacao a:hover{
     text-decoration: underline;
 }
 
-.quarta .lista-aval .card-avaliacao{
+.paginaListagem .quarta .lista-aval .card-avaliacao{
     display: flex;
     flex-direction: column;
 }
-.quarta .lista-aval .card-avaliacao .perfil_avaliador{
+.paginaListagem .quarta .lista-aval .card-avaliacao .perfil_avaliador{
     width: 80px;
     height: 80px;
 }
-.quarta .lista-aval .card-avaliacao .avaliador{
+.paginaListagem .quarta .lista-aval .card-avaliacao .avaliador{
     display: flex;
     justify-content: flex-start;
     align-items: center;
 }
-.quarta .lista-aval .card-avaliacao .avaliador h3{
+.paginaListagem .quarta .lista-aval .card-avaliacao .avaliador h3{
     font-family: Roboto;
 }
-.quarta .card-avaliacao .avaliador .infos{
+.paginaListagem .quarta .card-avaliacao .avaliador .infos{
     margin-left: 20px;
     margin-top: 30px;
 }
-.quarta .card-avaliacao .avaliador .infos .estrelas img{
+.paginaListagem .quarta .card-avaliacao .avaliador .infos .estrelas img{
     width: 25px;
     height: 20px;
 }
-.quarta .card-avaliacao .avaliador .infos p{
+.paginaListagem .quarta .card-avaliacao .avaliador .infos p{
     font-family: Montserrat;
 }
-.quarta button{
+.paginaListagem .quarta button{
     font-size: 16px;
     text-decoration: none;
     font-family: Roboto;
@@ -311,10 +310,10 @@ button:focus-visible{
     border: none;
     cursor: pointer;
 }
-.quarta button:hover{
+.paginaListagem .quarta button:hover{
     text-decoration: underline;
 }
-.quarta button img{
+.paginaListagem .quarta button img{
     margin-left: 5px;
     width: 10px;
     height: 10px;
