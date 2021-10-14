@@ -41,12 +41,12 @@ function CardCadastrese() {
                     <hr />
 
                     <div className={css["checkboxes"]}>
-                        <input type="checkbox" id="novidades" name="novidades" value="novidades" defaultChecked />
+                        <input className={css["input-checkboxes"]} type="checkbox" id="novidades" name="novidades" value="novidades" defaultChecked />
                         <label htmlFor="novidades"> aceito receber novidades da alugaKi</label>
                     </div>
 
                     <div className={css["checkboxes"]}>
-                        <input type="checkbox" id="termos" name="termos" value="termo" defaultChecked required />
+                        <input className={css["input-checkboxes"]} type="checkbox" id="termos" name="termos" value="termo" defaultChecked required />
                         <label htmlFor="termos"> estou de acordo com os <span>termos de serviços</span> e as <span>politicas de
                             privacidade</span> da
                             alugaKi</label>
