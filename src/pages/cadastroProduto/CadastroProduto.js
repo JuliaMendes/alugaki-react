@@ -1,4 +1,4 @@
-import css from "./cadastroProduto.module.css"
+import "./cadastroProduto.css"
 
 import HeaderSecundario from "../../components/headerSecundario/HeaderSecundario"
 import Footer from "../../components/footer/Footer"
@@ -18,11 +18,11 @@ function PaginaCadastroProduto() {
 
 function Formulario() {
     return (
-        <section className={css["formulario"]}>
-            <div className={css["container"]}>
+        <section className="formulario">
+            <div className="container">
                 <h1>Anuncie aki</h1>
                 <form>
-                    <div className={css["esq"]}>
+                    <div className="esq">
                         <label htmlFor="titulo">Título</label> <br />
                         <input type="" id="titulo" name="titulo" required /><br />
                         <ul id="erros-titulo"></ul>
@@ -30,8 +30,8 @@ function Formulario() {
                         <textarea id="descricao" name="descricao" required></textarea> <br />
                         <ul id="erros-descricao"></ul>
 
-                        <div className={css["preco-cat"]}>
-                            <div className={css["preco"]}>
+                        <div className="preco-cat">
+                            <div className="preco">
                                 <label htmlFor="preco">Preço</label>
                                 <div>
                                     <input type="text" id="preco" placeholder="R$ " required />
@@ -44,7 +44,7 @@ function Formulario() {
                                 </div>
                             </div>
 
-                            <div className={css["cat"]}>
+                            <div className="cat">
                                 <label htmlFor="categoria"></label>
                                 <select defaultValue = "Categoria" name="categoria" id="categoria" required>
                                     {/* <option selected disabled value="">Categoria</option> */}
@@ -59,7 +59,7 @@ function Formulario() {
                         <ul id="erros-preco"></ul>
                         <ul id="erros-cat"></ul>
 
-                        <div className={css["upload-fotos"]}>
+                        <div className="upload-fotos">
                             <p>Fotos (até 5)</p>
                             <label htmlFor="fotos">
                                 <img src= {camera} alt="imagem de camera"/>
@@ -80,13 +80,13 @@ function Formulario() {
 
                     </div>
 
-                    <div className={css["dir"]}>
+                    <div className="dir">
                         <label htmlFor="disponibilidade">Disponibilidade</label>
                         <br />
 
                         <img src= {calendario} alt="calendário" />
 
-                        <div className={css["dispo"]}>
+                        <div className="dispo">
                             <label htmlFor="disponibilidade"></label>
                             <br />
                             <input type="radio" name="dispo" value="dias-uteis" />
@@ -101,7 +101,7 @@ function Formulario() {
                         </div>
                     </div>
 
-                    <div className={css["botoes"]}>
+                    <div className="botoes">
                         <a href="index.html"><button id="btn-cancelar" type="button">Cancelar</button></a>
                         <button id="btn-anunciar" type="submit">Anunciar</button>
                     </div>
