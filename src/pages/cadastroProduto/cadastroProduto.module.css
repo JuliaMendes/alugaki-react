@@ -160,7 +160,6 @@ form input:not([type="radio"]){
    border: solid 1px #757575;
    padding-left: 20px;
 }
-
 form textarea{
    width: 100%;
    height: 250px;
