@@ -18,7 +18,7 @@ function PaginaPerfilPrivado() {
 
 function Corpo(){
     return(
-        <body>
+        <body className="perfilPrivado">
 
         <section className="titulo">
             <h1>Minha Conta</h1>

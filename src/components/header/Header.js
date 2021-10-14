@@ -6,7 +6,7 @@ import iconeUsuario from '../../img/icones/btn_login.png'
 
 function Header() {
     return (
-        <header>
+        <header className="headerInicial">
             <div className="container">
                 <div className="logo">
                     <a href="index.html"><img src={logoAlugaki} alt="Logo alugaki" /></a>

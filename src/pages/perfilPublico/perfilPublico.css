@@ -4,22 +4,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
 /*config. gerais da página*/
-* {
+.perfilPublico * {
     box-sizing: border-box;
 }
 
-body {
+.perfilPublico body {
     margin: 0;
     padding: 0;
 }
 
-.container {
+.perfilPublico .container {
     width: 1200px;
     max-width: 100%;
     margin: 0 auto;
 }
 
-.containerFlex {
+.perfilPublico .containerFlex {
     display: flex;
     align-items: flex-start;
     width: 1200px;
@@ -29,14 +29,14 @@ body {
 }
 
 /* section barraLateral */
-section.barraLateral{
+.perfilPublico section.barraLateral{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     width: 275px;
 }
 
-section.barraLateral .infos{
+.perfilPublico section.barraLateral .infos{
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -47,35 +47,35 @@ section.barraLateral .infos{
     height: 400px;
 }
 
-section.barraLateral .infos h3{
+.perfilPublico section.barraLateral .infos h3{
     font-family: 'Roboto';
     font-size: 34px;
     font-weight: 400;
     margin: 0;
 }
 
-section.barraLateral .infos #foto_perfil{
+.perfilPublico section.barraLateral .infos #foto_perfil{
     width: 90%;
 }
 
-section.barraLateral .infos .estrelas{
+.perfilPublico section.barraLateral .infos .estrelas{
     width: 95%;
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-evenly;
 }
 
-section.barraLateral .infos .estrelas img{
+.perfilPublico section.barraLateral .infos .estrelas img{
     width: 30px;
     height: 25px;
 }
 
-section.barraLateral .infos #linha_cinza{
+.perfilPublico section.barraLateral .infos #linha_cinza{
     width: 80%;
     height: 1.5px;
 }
 
-section.barraLateral .infos a{
+.perfilPublico section.barraLateral .infos a{
     font-family: 'Montserrat';
     font-size: 24px;
     font-weight: 400;
@@ -84,11 +84,11 @@ section.barraLateral .infos a{
 }
 
 /*titulo do filtro e divisor*/
-section.barraLateral .filtros {
+.perfilPublico section.barraLateral .filtros {
     width: 80%;
 }
 
-section.barraLateral .filtros .tituloFiltro{
+.perfilPublico section.barraLateral .filtros .tituloFiltro{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -96,41 +96,41 @@ section.barraLateral .filtros .tituloFiltro{
 }
 
 /*nome do filtro*/
-section.barraLateral .filtros h3{
+.perfilPublico section.barraLateral .filtros h3{
     font-family: Roboto;
     color: #419488;
 }
 
 /*divisor*/
-section.barraLateral .filtros img{
+.perfilPublico section.barraLateral .filtros img{
     width: 100%;
 }
 
 /*lista com os filtros*/
-section.barraLateral .filtros ul{
+.perfilPublico section.barraLateral .filtros ul{
     list-style: none;
     padding: 0;
     font-family: Roboto;
     color: #419488;
     line-height: 27px;
 }
-section.barraLateral .filtros ul li a{
+.perfilPublico section.barraLateral .filtros ul li a{
     text-decoration: none;
     color: #419488;
 }
-section.barraLateral .filtros ul li a:hover{
+.perfilPublico section.barraLateral .filtros ul li a:hover{
     color: #a9dbd4;
     transition: 0.5s;
 }
 
 /* section conteudo */
-section.conteudo{
+.perfilPublico section.conteudo{
     display: flex;
     flex-direction: column;
     width: 1200px;
 }
 
-section.conteudo h2{
+.perfilPublico section.conteudo h2{
     font-size: 38px;
     font-weight: 36;
     font-family: 'ABeeZee';
@@ -139,66 +139,66 @@ section.conteudo h2{
 }
 
 /* section anuncios */
-section.anuncios{
+.perfilPublico section.anuncios{
     display: flex;
     justify-content: space-between;
 }
 
-section.anuncios .cardProduto {
+.perfilPublico section.anuncios .cardProduto {
     cursor: pointer;
 }
 
-section.anuncios .cardProduto .thumb img {
+.perfilPublico section.anuncios .cardProduto .thumb img {
     width: 240px;
     height: 150px;
     background-size: cover;
 }
 
-section.anuncios .cardProduto .info>div {
+.perfilPublico section.anuncios .cardProduto .info>div {
     display: flex;
     align-items: center;
 }
 
-section.anuncios .cardProduto .info h3 {
+.perfilPublico section.anuncios .cardProduto .info h3 {
     color: #484848;
     margin-bottom: 5px;
 }
 
-section.anuncios .cardProduto .info {
+.perfilPublico section.anuncios .cardProduto .info {
     color: #757575;
 }
 
-section.anuncios .cardProduto .info img {
+.perfilPublico section.anuncios .cardProduto .info img {
     width: 25px;
     height: 21px;
     margin-right: 2px;
 }
 
-section.anuncios .cardProduto .info small {
+.perfilPublico section.anuncios .cardProduto .info small {
     font-size: 15px;
     margin-right: 5px;
 }
 
-section.anuncios .cardProduto .info .pontuacao {
+.perfilPublico section.anuncios .cardProduto .info .pontuacao {
     color: #484848;
 }
 
-section.anuncios .cardProduto .localiz {
+.perfilPublico section.anuncios .cardProduto .localiz {
     margin-top: 5px;
 }
 
-section.anuncios .cardProduto .localiz img {
+.perfilPublico section.anuncios .cardProduto .localiz img {
     width: 17px;
     height: 17px;
     margin-right: 2px;
 }
 
-section.anuncios .cardProduto .info .preco {
+.perfilPublico section.anuncios .cardProduto .info .preco {
     font-size: 20px;
     color: #FF5722;
 }
 
-section.anuncios button{
+.perfilPublico section.anuncios button{
     padding: 0;
     background-color: transparent;
     border: none;
@@ -208,23 +208,23 @@ section.anuncios button{
     cursor: pointer;
 }
 
-section.anuncios button:focus-visible{
+.perfilPublico section.anuncios button:focus-visible{
     outline-color: transparent;
     outline-width: 0px;
 }
 
-section.anuncios button img{
+.perfilPublico section.anuncios button img{
     width: 25px;
 }
 
-div.botaoVerMais{
+.perfilPublico div.botaoVerMais{
     display: flex;
     align-items: center;
     justify-content: flex-end;
     margin-top: 30px;
 }
 
-div.botaoVerMais span {
+.perfilPublico div.botaoVerMais span {
     cursor: pointer;
     font-family: 'Roboto', sans-serif;
     color: #FF5722;
@@ -232,69 +232,69 @@ div.botaoVerMais span {
     font-weight: 900;
 }
 
-div.botaoVerMais img {
+.perfilPublico div.botaoVerMais img {
     margin-left: 5px;
     width: 10px;
 }
 
-div.botaoVerMais a {
+.perfilPublico div.botaoVerMais a {
     text-decoration: none;
 }
 
 /* section avaliacoes */
-section.avaliacoes{
+.perfilPublico section.avaliacoes{
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-#titulo_avaliacao{
+.perfilPublico #titulo_avaliacao{
     margin-top: 35px;
 }
 
-section.avaliacoes button{
+.perfilPublico section.avaliacoes button{
     border: none;
     background: transparent;
     padding: 0;
 }
 
-section.avaliacoes button:focus-visible{
+.perfilPublico section.avaliacoes button:focus-visible{
     outline-color: transparent;
     outline-width: 0px;
 }
 
-section.avaliacoes button img{
+.perfilPublico section.avaliacoes button img{
     cursor: pointer;
 }
 
-section.avaliacoes .seta_esquerda button img{
+.perfilPublico section.avaliacoes .seta_esquerda button img{
     transform: scaleX(-1);
 }
 
-section.avaliacoes .seta_esquerda button img,
-section.avaliacoes .seta_direita button img{
+.perfilPublico section.avaliacoes .seta_esquerda button img,
+.perfilPublico section.avaliacoes .seta_direita button img{
     width: 25px;
 }
 
-section.avaliacoes .cardAvaliacao{
+.perfilPublico section.avaliacoes .cardAvaliacao{
     display: flex;
     flex-flow: column;
     align-items: center;
     width: 550px;
 }
 
-section.avaliacoes .cardAvaliacao .avaliador{
+.perfilPublico section.avaliacoes .cardAvaliacao .avaliador{
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-section.avaliacoes .cardAvaliacao .avaliador #perfil_avaliador{
+.perfilPublico section.avaliacoes .cardAvaliacao .avaliador #perfil_avaliador{
     width: 125px;
     margin-right: 25px;
 }
 
-section.avaliacoes .cardAvaliacao .avaliador .infos{
+.perfilPublico section.avaliacoes .cardAvaliacao .avaliador .infos{
     height: 125px;
     display: flex;
     flex-direction: column;
@@ -302,26 +302,26 @@ section.avaliacoes .cardAvaliacao .avaliador .infos{
     justify-content: space-evenly;
 }
 
-section.avaliacoes .cardAvaliacao .avaliador .infos h3{
+.perfilPublico section.avaliacoes .cardAvaliacao .avaliador .infos h3{
     font-size: 26px;
     font-family: 'Roboto';
     font-weight: 800px;
     margin: 0;
 }
 
-section.avaliacoes .cardAvaliacao .avaliador .infos .estrelas img{
+.perfilPublico section.avaliacoes .cardAvaliacao .avaliador .infos .estrelas img{
     width: 30px;
     height: 25px;
 }
 
-section.avaliacoes .cardAvaliacao p{
+.perfilPublico section.avaliacoes .cardAvaliacao p{
     font-family: 'Montserrat';
     font-weight: 400;
     font-size: 16px;
     text-align: center;
 }
 
-section.avaliacoes .cardAvaliacao .seletores img{
+.perfilPublico section.avaliacoes .cardAvaliacao .seletores img{
     margin-top: 40px;
     width: 13px;
 }
@@ -334,63 +334,63 @@ section.avaliacoes .cardAvaliacao .seletores img{
     }
 
     /* barraLateral e conteudo */
-    .containerFlex{
+    .perfilPublico .containerFlex{
         width: 100vw;
         max-width: 100%;
         gap: 100px;
     }
 
-    section.barraLateral{
+    .perfilPublico section.barraLateral{
         max-width: 20vw;
     }
 
     /* no javascript, substituir por uma estrela com o valor numerico ao lado */
-    section.barraLateral .infos .estrelas img{
+    .perfilPublico section.barraLateral .infos .estrelas img{
         aspect-ratio: 6 / 5;
     }
 
     /* no javascript, substituir por uma imagem de whatsapp com o link e tirar o numero */
-    section.barraLateral .infos a{
+    .perfilPublico section.barraLateral .infos a{
         text-align: center;
     }
 
-    section.conteudo{
+    .perfilPublico section.conteudo{
         max-width: 70vw;
         flex-wrap: wrap;
     }
 
-    section.anuncios,
-    section.avaliacoes{
+    .perfilPublico section.anuncios,
+    .perfilPublico section.avaliacoes{
         max-width: 70vw;
     }
 
-    section.anuncios .cardProduto{
+    .perfilPublico section.anuncios .cardProduto{
         max-width: 20vw;
     }
 
-    section.anuncios .cardProduto .thumb img {
+    .perfilPublico section.anuncios .cardProduto .thumb img {
         width: 240px;
         max-width: 20vw;
         max-height: 16vw;
     }
 
-    div.botaoVerMais span {
+    .perfilPublico div.botaoVerMais span {
         font-size: 18px;
     }
     
-    div.botaoVerMais img {
+    .perfilPublico div.botaoVerMais img {
         margin-left: 5px;
         width: 10px;
     }
     
-    div.botaoVerMais a {
+    .perfilPublico div.botaoVerMais a {
         text-decoration: none;
         display: flex;
         align-items: center;
         justify-content: flex-end;
     }
 
-    section.avaliacoes .cardAvaliacao p{
+    .perfilPublico section.avaliacoes .cardAvaliacao p{
         word-wrap: break-word;
     }
 
@@ -413,21 +413,21 @@ section.avaliacoes .cardAvaliacao .seletores img{
         padding: 10px;
     }
 
-    .containerFlex{
+    .perfilPublico .containerFlex{
         flex-direction: column;
         justify-content: center;
         align-items: center;
     }
 
-    section.barraLateral{
+    .perfilPublico section.barraLateral{
         align-items: center;
     }
 
-    section.barraLateral .filtros{
+    .perfilPublico section.barraLateral .filtros{
         display: none;
     }
 
-    section.barraLateral .infos{
+    .perfilPublico section.barraLateral .infos{
         width: 205px;
         max-width: 205px;
     }
@@ -436,29 +436,29 @@ section.avaliacoes .cardAvaliacao .seletores img{
 
 @media (max-width: 685px){
 
-    section.anuncios{
+    .perfilPublico section.anuncios{
         justify-content: space-around;
     }
 
-    section.anuncios{
+    .perfilPublico section.anuncios{
         display: flex;
         justify-content: space-between;
     }
 
-    section.anuncios .cardProduto{
+    .perfilPublico section.anuncios .cardProduto{
         max-height: 80%;
         max-width: 80%;
         cursor: pointer;
     }
 
-    section.anuncios .cardProduto .thumb img{
+    .perfilPublico section.anuncios .cardProduto .thumb img{
         width: 200px;
         height: 125px;
         max-width: 30vw;
         max-height: 24vw;
     }
 
-    section.anuncios div.cardProduto:nth-child(3){
+    .perfilPublico section.anuncios div.cardProduto:nth-child(3){
         display: none;
     }
 
@@ -486,38 +486,38 @@ section.avaliacoes .cardAvaliacao .seletores img{
         padding-right: 20px;
     }
 
-    div.cardProduto + div.cardProduto{
+    .perfilPublico div.cardProduto + div.cardProduto{
         display: none;
     }
 
-    section.anuncios{
+    .perfilPublico section.anuncios{
         display: flex;
         justify-content: space-evenly;
     }
 
-    section.anuncios .cardProduto{
+    .perfilPublico section.anuncios .cardProduto{
         max-height: 100%;
         max-width: 100%;
         cursor: pointer;
     }
 
-    section.anuncios .cardProduto .thumb img{
+    .perfilPublico section.anuncios .cardProduto .thumb img{
         width: 240px;
         height: 150px;
         max-width: 60vw;
         max-height: 48vw;
     }
 
-    section.avaliacoes .cardAvaliacao .avaliador{
+    .perfilPublico section.avaliacoes .cardAvaliacao .avaliador{
         flex-direction: column;
         align-items: center;
     }
 
-    section.avaliacoes .cardAvaliacao .avaliador #perfil_avaliador{
+    .perfilPublico section.avaliacoes .cardAvaliacao .avaliador #perfil_avaliador{
         margin-right: 0;
     }
 
-    section.avaliacoes .cardAvaliacao .avaliador .infos{
+    .perfilPublico section.avaliacoes .cardAvaliacao .avaliador .infos{
         align-items: center;
     }
 

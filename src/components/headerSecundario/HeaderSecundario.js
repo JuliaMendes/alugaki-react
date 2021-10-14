@@ -6,7 +6,7 @@ import lupa from '../../img/icones/lupa.png'
 
 function HeaderSecundario() {
     return (
-        <header>
+        <header className="headerSecundario">
             <div className="container">
                 <div className="logo-e-barra">
                     <div className="logo">

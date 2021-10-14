@@ -33,10 +33,29 @@ function Corpo(){
     const [seletor3, setSeletor3] = useState(seletorVazio)
     const [seletor4, setSeletor4] = useState(seletorVazio)
 
-    
+    const [perfil, setPerfil] = useState(1)
+
+    function changePerfil(operador){
+        if (operador=='+') {
+            setPerfil(perfil + 1)
+        }
+        else if (operador=='-') {
+            setPerfil(perfil - 1)
+        }
+        else{
+            if(operador%4 != 0){
+                setPerfil(operador%4)
+            }
+            else{
+                setPerfil(4)
+            }
+        }
+    }
+
     function botaoAvaliacao1() {
         if(seletor1 == seletorVazio){
             setSeletor1(seletorCheio)
+            changePerfil(1)
         }
         setSeletor2(seletorVazio)
         setSeletor3(seletorVazio)
@@ -45,6 +64,7 @@ function Corpo(){
     function botaoAvaliacao2() {
         if(seletor2 == seletorVazio){
             setSeletor2(seletorCheio)
+            changePerfil(2)
         }
         setSeletor1(seletorVazio)
         setSeletor3(seletorVazio)
@@ -53,6 +73,7 @@ function Corpo(){
     function botaoAvaliacao3() {
         if(seletor3 == seletorVazio){
             setSeletor3(seletorCheio)
+            changePerfil(3)
         }
         setSeletor1(seletorVazio)
         setSeletor2(seletorVazio)
@@ -61,6 +82,7 @@ function Corpo(){
     function botaoAvaliacao4() {
         if(seletor4 == seletorVazio){
             setSeletor4(seletorCheio)
+            changePerfil(4)
         }
         setSeletor1(seletorVazio)
         setSeletor2(seletorVazio)
@@ -68,37 +90,43 @@ function Corpo(){
     }
 
     function setaAvaliacaoEsquerda() {
-        if(seletor1 == seletorCheio){
-            botaoAvaliacao4()
-        }
-        else if(seletor2 == seletorCheio){
-            botaoAvaliacao1()
-        }
-        else if(seletor3 == seletorCheio){
-            botaoAvaliacao2()
-        }
-        else if(seletor4 == seletorCheio){
-            botaoAvaliacao3()
+        if(perfil>1){
+            if(seletor1 == seletorCheio){
+                botaoAvaliacao4()
+            }
+            else if(seletor2 == seletorCheio){
+                botaoAvaliacao1()
+            }
+            else if(seletor3 == seletorCheio){
+                botaoAvaliacao2()
+            }
+            else if(seletor4 == seletorCheio){
+                botaoAvaliacao3()
+            }
+            changePerfil('-')
         }
     }
 
     function setaAvaliacaoDireita() {
-        if(seletor1 == seletorCheio){
-            botaoAvaliacao2()
-        }
-        else if(seletor2 == seletorCheio){
-            botaoAvaliacao3()
-        }
-        else if(seletor3 == seletorCheio){
-            botaoAvaliacao4()
-        }
-        else if(seletor4 == seletorCheio){
-            botaoAvaliacao1()
+        if(perfil<4){
+            if(seletor1 == seletorCheio){
+                botaoAvaliacao2()
+            }
+            else if(seletor2 == seletorCheio){
+                botaoAvaliacao3()
+            }
+            else if(seletor3 == seletorCheio){
+                botaoAvaliacao4()
+            }
+            else if(seletor4 == seletorCheio){
+                botaoAvaliacao1()
+            }
+            changePerfil('+')
         }
     }
 
     return(
-        <body>
+        <body className="perfilPublico">
 
             <div className="containerFlex">
                 <section className="barraLateral">
@@ -165,7 +193,7 @@ function Corpo(){
                             <div className="avaliador">
                                 <img src={perfilBlank} alt="Foto de perfil do avaliador" id="perfil_avaliador" />
                                 <div className="infos">
-                                    <h3>Perfil 1</h3>
+                                    <h3>Perfil {perfil}</h3>
                                     <div className="estrelas">
                                         <img src={Star} alt="Estrela de Avaliação" />
                                         <img src={Star} alt="Estrela de Avaliação" />

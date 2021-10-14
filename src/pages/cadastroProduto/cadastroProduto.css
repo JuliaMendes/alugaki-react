@@ -5,7 +5,7 @@
 
 /*section com o formulário*/
 /* título da página */
-.formulario h1{
+.cadastroProduto .formulario h1{
     margin-left: 40px;
    /*margin-bottom: 40px;
    margin-top: 50px; */
@@ -15,19 +15,19 @@
    color: #FF5722;
 }
 /* formulário */
-.formulario .container form{
+.cadastroProduto .formulario .container form{
    display: flex;
    justify-content: space-around;
    flex-wrap: wrap;
 }
 /* div com o preço e categoria */
-.formulario .container .esq .preco-cat{
+.cadastroProduto .formulario .container .esq .preco-cat{
    display: flex;
    justify-content: space-between;
    align-items: flex-start;
 }
 /* div com o preço */
-.formulario .container .esq .preco-cat .preco div{
+.cadastroProduto .formulario .container .esq .preco-cat .preco div{
    display: flex;
    align-items:center;
    justify-content: flex-start;
@@ -36,20 +36,20 @@
 
 /* calendario */
 
-section.formulario .dir img{
+.cadastroProduto section.formulario .dir img{
    width: 400px;
    margin: 0;
 }
 
 /* menuzinho com o período do preço */
-.formulario .container .esq .preco-cat .preco #periodo{
+.cadastroProduto .formulario .container .esq .preco-cat .preco #periodo{
    border-style: none;
    color: #757575;
    font-weight: 400;
    font-size: 20px;
 }
 /* menuzinho com as opções de categoria */
-.formulario .container .esq .preco-cat .cat #categoria{
+.cadastroProduto .formulario .container .esq .preco-cat .cat #categoria{
    border-style: none;
    color: #757575;
    font-weight: 400;
@@ -57,10 +57,10 @@ section.formulario .dir img{
    margin-bottom: 20px;
 }
 /* input para receber as fotos */
-.formulario .container .esq .upload-fotos input {
+.cadastroProduto .formulario .container .esq .upload-fotos input {
    display: none;
 }
-.formulario .container .esq .upload-fotos label{
+.cadastroProduto .formulario .container .esq .upload-fotos label{
    border-style: dotted;
    display: inline-block;
    text-align: center;
@@ -68,30 +68,30 @@ section.formulario .dir img{
    margin: 15px 0;
    cursor:pointer;
 }
-.formulario .container .esq .upload-fotos p{
+.cadastroProduto .formulario .container .esq .upload-fotos p{
    font-size: 20px;
    color: #757575;
    margin-bottom: 2px;
    font-family: Roboto;
 }
-.formulario .container .dir img{
+.cadastroProduto .formulario .container .dir img{
    margin-top: 50px;
 }
-.formulario .container .dir .disponibilidade{
+.cadastroProduto .formulario .container .dir .disponibilidade{
    display: flex;
    align-items: flex-start;
    flex-direction: column;
 }
-.formulario .container .dir .dispo{
+.cadastroProduto .formulario .container .dir .dispo{
    align-items: flex-start;
 }
 
-.formulario .container .botoes{
+.cadastroProduto .formulario .container .botoes{
    width: 100%;
    text-align: center;
    margin-top: 60px;
 } 
-.formulario .container .botoes button{
+.cadastroProduto .formulario .container .botoes button{
    background-color: transparent;
    border: solid 2px #FF5722;
    cursor: pointer;
@@ -101,13 +101,13 @@ section.formulario .dir img{
    margin-top: 50px;
    margin-bottom: 100px;
 }
-.formulario .container .botoes #btn-anunciar {
+.cadastroProduto .formulario .container .botoes #btn-anunciar {
    background-color: #FF5722;
    color: #FFFFFF;
    font-size: 20px;
    font-weight: 700;
 }
-.formulario .container .botoes #btn-cancelar{
+.cadastroProduto .formulario .container .botoes #btn-cancelar{
    width: 130px;
    height: 40px;
    color: #FF5722;
@@ -115,15 +115,15 @@ section.formulario .dir img{
    font-weight: 700;
    margin-right: 15px;
 }
-.formulario .container .botoes button:hover {
+.cadastroProduto .formulario .container .botoes button:hover {
    opacity: 80%;
 }
-.formulario .container .botoes button:active {
+.cadastroProduto .formulario .container .botoes button:active {
    transform: scale(0.99);
    transition: all 0.1s ease-in-out;
 }
 
-section.formulario form ul{
+.cadastroProduto section.formulario form ul{
    list-style: none;
    font-family: 'Montserrat', sans-serif;
    font-size: 14px;
@@ -134,7 +134,7 @@ section.formulario form ul{
 
 
 /* titulos h2 */
-h2{
+.cadastroProduto h2{
    font-family: 'ABeeZee';
    font-weight: 400;
    font-size: 32px;
@@ -142,17 +142,17 @@ h2{
 }
 
 /* formularios */
-form{
+.cadastroProduto form{
    margin-bottom: 25px;
 }
-form label{
+.cadastroProduto form label{
    font-family: 'Roboto';
    font-weight: 400;
    font-size: 20px;
    color: #757575;
    margin-bottom: 60px
 }
-form input:not([type="radio"]){
+.cadastroProduto form input:not([type="radio"]){
    width: 500px;
    height: 40px;
    background-color: #FFFAFA;
@@ -160,7 +160,7 @@ form input:not([type="radio"]){
    border: solid 1px #757575;
    padding-left: 20px;
 }
-form textarea{
+.cadastroProduto form textarea{
    width: 100%;
    height: 250px;
    background-color: #FFFAFA;

@@ -5,7 +5,7 @@ import iconeSetaEsquerda from '../../img/icones/seta.svg'
 
 function HeaderSimples(){
     return(
-        <header>
+        <header className="headerSimples">
         <div className="btn-header">
             <button onClick={window.history.back}>
                 <img src={iconeSetaEsquerda} alt="Seta voltar página"/><span>voltar</span>
@@ -16,7 +16,6 @@ function HeaderSimples(){
             <img src={logoAlugaki} alt="Logo alugaki"/>
         </a>
     </header>
-
     )
 }
 
