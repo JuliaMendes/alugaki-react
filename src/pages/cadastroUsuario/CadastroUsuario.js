@@ -60,7 +60,7 @@ function CardCadastrese() {
 
                 <div className="line">
                     <hr />
-                    <span>ou</span>
+                    <span>OU</span>
                     <hr />
                 </div>
 
