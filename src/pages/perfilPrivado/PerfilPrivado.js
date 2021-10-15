@@ -21,18 +21,41 @@ function PaginaPerfilPrivado() {
 
 function Corpo(){
 
-    const [botaoMain, setBotaoMain] = useState("Editar")
-    const [botaoFoto, setBotaoFoto] = useState("Alterar")
+    const [botaoMain, setBotaoMain] = useState("Editar");
+    const [botaoFoto, setBotaoFoto] = useState("Alterar");
+
+    const [stateRead, setStateRead] = useState("readOnly");
+    const [stateHidden, setStateHidden] = useState("hidden");
+    const [stateDisabled, setStateDisabled] = useState("disabled");
+
+    let checked = localStorage.getItem("checked");
+    const [checkedState, setCheckedState] = useState(checked);
 
     function handleSubmitMain(event) {
         event.preventDefault();
 
         if(botaoMain == "Editar"){
             setBotaoMain("Salvar")
+            setStateRead(null)
+            setStateDisabled(null)
         }
         if(botaoMain == "Salvar"){
             setBotaoMain("Editar")
+            setStateRead("readOnly")
+            setStateDisabled("disabled")
         }
+    }
+
+    function validaPrivacidade() {
+        if(checkedState=="true"){
+            setCheckedState("false");
+            localStorage.setItem("checked", "false");
+        }
+        else{
+            setCheckedState("true");
+            localStorage.setItem("checked", "true");
+        }
+        
     }
 
     function handleSubmitFoto(event) {
@@ -40,9 +63,12 @@ function Corpo(){
 
         if(botaoFoto == "Alterar"){
             setBotaoFoto("Salvar")
+            setStateHidden(null)
+
         }
         if(botaoFoto == "Salvar"){
             setBotaoFoto("Alterar")
+            setStateHidden("Hidden")
         }
     }
 
@@ -67,7 +93,7 @@ function Corpo(){
                     <div className="foto">
                         <img src={perfilBlank} alt="Foto de Perfil" />
                         <form>
-                            <input type="file" name="fotos" id="fotos" accept="image/*, .png .jpg" hidden />
+                            <input type="file" name="fotos" id="fotos" accept="image/*, .png .jpg" hidden={stateHidden} />
                             <div className="botao"><button onClick={handleSubmitFoto}>{botaoFoto}</button></div>
                         </form>
                     </div>
@@ -95,11 +121,11 @@ function Corpo(){
                         </div>
 
                         <label htmlFor="nome">Nome Completo</label>
-                        <input type="text" id="nome" name="nome" placeholder="Nome Sobrenome" readonly="False" />
+                        <input type="text" id="nome" name="nome" placeholder="Nome Sobrenome" readOnly={stateRead}/>
                         <ul id="erros-nome"></ul>
             
                         <label htmlFor="telefone">Telefone</label>
-                        <input type="tel" id="telefone" name="telefone" placeholder="(xx) 9xxxx-xxxx" readonly />
+                        <input type="tel" id="telefone" name="telefone" placeholder="(xx) 9xxxx-xxxx" readOnly={stateRead} />
                         <ul id="erros-telefone"></ul>
                     </div>
 
@@ -107,18 +133,18 @@ function Corpo(){
                         <h2>Login e Segurança</h2>
 
                         <label htmlFor="email">E-mail</label><br />
-                        <input type="email" id="email" name="email" placeholder="meuemail@email.com" readonly />
+                        <input type="email" id="email" name="email" placeholder="meuemail@email.com" readOnly={stateRead} />
                         <ul id="erros-email"></ul>
 
                         <label htmlFor="pass">Senha</label><br />
-                        <input type="password" id="pass" name="password" placeholder="********" readonly />
+                        <input type="password" id="pass" name="password" placeholder="********" readOnly={stateRead} />
                         <ul id="erros-senha"></ul>
                     </div>
 
                     <div className="privacidade">
                         <h2>Privacidade</h2>
                         <div>
-                            <input type="checkbox" id="priv" name="priv" disabled onclick="validaPrivacidade(this)" />
+                            <input type="checkbox" id="priv" name="priv" disabled={stateDisabled} checked={checkedState} onClick={validaPrivacidade}/>
                             <p>Aceito receber novidades da alugaKi</p>
                         </div>
                     </div>

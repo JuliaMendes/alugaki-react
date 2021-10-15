@@ -248,7 +248,7 @@ section.conteudo .excluir p{
 
 @media (max-width: 850px){
 
-    .container{
+    .perfilPrivado .container{
         width: 90vw;
         max-width: 100%;
     }

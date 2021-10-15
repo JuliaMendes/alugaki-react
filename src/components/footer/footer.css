@@ -59,3 +59,45 @@ footer .copyright {
     padding-top: 40px;
     padding-bottom: 20px;
 }
+
+@media (max-width: 850px){
+
+    .container{
+        width: 90vw;
+        max-width: 100%;
+    }
+   
+    header.headerSecundario{
+        width: 100vw;
+        max-width: 100%;
+    }
+
+    header.headerSecundario .container{
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    header.headerSecundario .container .botoes {
+        padding: 10px;
+    }
+
+}
+
+@media (max-width: 585px){
+
+    footer .container {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    footer .container .logo-e-menu {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    footer .container .redes-sociais{
+        padding-left: 30px;
+    }
+
+} 
