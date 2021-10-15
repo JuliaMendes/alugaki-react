@@ -190,17 +190,6 @@
     .container{
         flex-wrap: wrap;
     }
-    header .container{
-        justify-content: center;
-    }
-    header .container .logo-e-barra{
-        flex-wrap: wrap;
-        justify-content: center;
-        margin-bottom: 10px;
-    }
-    header .container .botoes{
-        margin-bottom: 10px;
-    }
     .paginaCategorias .produtos .container{
         justify-content: center;
     }
@@ -282,27 +271,4 @@
         color: #419488;
         transition: 0.5s;
     }
-}
-@media (max-width: 525px){
-
-    header .container .barra form input{
-        max-width: 80vw;
-    }
-
-    header .container .barra form button {
-        position: absolute;
-        left: 85%;
-        padding-right: 20px;
-    }
-
-    footer .container {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    footer .container .logo-e-menu {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
 }

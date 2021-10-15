@@ -1,3 +1,6 @@
+//imports
+import { useState } from 'react';
+
 import './perfilPrivado.css';
 
 import HeaderSecundario from "../../components/headerSecundario/HeaderSecundario"
@@ -17,6 +20,40 @@ function PaginaPerfilPrivado() {
 }
 
 function Corpo(){
+
+    const [botaoMain, setBotaoMain] = useState("Editar")
+    const [botaoFoto, setBotaoFoto] = useState("Alterar")
+
+    function handleSubmitMain(event) {
+        event.preventDefault();
+
+        if(botaoMain == "Editar"){
+            setBotaoMain("Salvar")
+        }
+        if(botaoMain == "Salvar"){
+            setBotaoMain("Editar")
+        }
+    }
+
+    function handleSubmitFoto(event) {
+        event.preventDefault();
+
+        if(botaoFoto == "Alterar"){
+            setBotaoFoto("Salvar")
+        }
+        if(botaoFoto == "Salvar"){
+            setBotaoFoto("Alterar")
+        }
+    }
+
+    function handleExcluir(event) {
+        event.preventDefault();
+        if(window.confirm('Tem certeza que deseja excluir sua conta? Todos os dados serão excluídos definitivamente e não será possível recuperar a conta posteriormente.')){
+            window.alert("Conta excluída.");
+            window.location.reload();
+        }
+    }
+
     return(
         <body className="perfilPrivado">
 
@@ -31,7 +68,7 @@ function Corpo(){
                         <img src={perfilBlank} alt="Foto de Perfil" />
                         <form>
                             <input type="file" name="fotos" id="fotos" accept="image/*, .png .jpg" hidden />
-                            <div className="botao"><button>Alterar</button></div>
+                            <div className="botao"><button onClick={handleSubmitFoto}>{botaoFoto}</button></div>
                         </form>
                     </div>
                     <div className="menu">
@@ -54,11 +91,11 @@ function Corpo(){
                     <div className="dados">
                         <div className="botao">
                             <h2>Dados Pessoais</h2>
-                            <button>Editar</button>
+                            <button onClick={handleSubmitMain}>{botaoMain}</button>
                         </div>
 
                         <label htmlFor="nome">Nome Completo</label>
-                        <input type="text" id="nome" name="nome" placeholder="Nome Sobrenome" readonly />
+                        <input type="text" id="nome" name="nome" placeholder="Nome Sobrenome" readonly="False" />
                         <ul id="erros-nome"></ul>
             
                         <label htmlFor="telefone">Telefone</label>
@@ -93,7 +130,7 @@ function Corpo(){
                     <div>
                         <p>Todos os dados serão excluídos definitivamente.<br />
                         Não será possível recuperar sua conta.</p>
-                        <button>Excluir</button>
+                        <button onClick={handleExcluir}>Excluir</button>
                     </div>
                 </div>
             </section> 
