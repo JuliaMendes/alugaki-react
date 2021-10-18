@@ -75,7 +75,7 @@
     justify-content: center;
     gap: 5px;
     width: 100%;
-    background-color:#FFFAFA;
+    background-color: #FFFAFA;
     border: solid 1px #757575;
     border-radius: 4px;
     padding: 0 20px;
@@ -209,4 +209,17 @@
 .cadastroUsuario .container .card-cadastre-se .tem-cadastro a {
     color: #757575;
     font-size: 18px;
+}
+
+/* responsividade */
+
+@media (max-width: 768px) {
+    .cadastroUsuario .container .card-cadastre-se {
+        width: 320px;
+    }
+
+    input::placeholder {
+        font-size: 11px;
+    }
+
 }

@@ -1,3 +1,5 @@
+import { useState, useEffect } from 'react';
+
 import './cadastroUsuario.css';
 
 import HeaderSimples from '../../components/headerSimples/HeaderSimples';
@@ -9,35 +11,126 @@ function PaginaCadastroUsuario() {
         <div style={{ backgroundImage: `url(${backgroundGreen})` }}>
             <HeaderSimples />
 
-            <CardCadastrese/>
-
+            <CardCadastrese />
         </div>
     )
 }
 
+const erros = {
+    nome_errado: {
+        id: 1,
+        texto: 'O campo Nome completo deve conter no mínimo 6 caracteres.'
+    },
+    email_errado: {
+        id: 2,
+        texto: 'Insira um Email válido. Deve conter os caracteres "@" e "."'
+    },
+    password_errado: {
+        id: 3,
+        texto: 'O campo Senha deve conter de 8 a 64 caracteres.'
+    }
+}
+
+
+
 function CardCadastrese() {
+    const [fullName, setFullName] = useState('')
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+
+    const [listaErros, setListaErros] = useState([])
+
+    useEffect(() => {
+        if (fullName && fullName.length < 6) {
+            const estaNaLista = oErroJaEstaNaLista(erros.nome_errado);
+            if (!estaNaLista) {
+                setListaErros([...listaErros, erros.nome_errado])
+            }
+        } else {
+            setListaErros(removeEsseErroDaLista(erros.nome_errado))
+
+        }
+    }, [fullName])
+
+    useEffect(() => {
+        if (email && (!email.includes('@') || !email.includes('.'))) {
+
+            const estaNaLista = oErroJaEstaNaLista(erros.email_errado)
+
+            if (!estaNaLista) {
+                setListaErros([...listaErros, erros.email_errado])
+            }
+
+
+        } else {
+            setListaErros(removeEsseErroDaLista(erros.email_errado))
+
+
+        }
+
+    }, [email])
+
+
+    useEffect(() => {
+        if (password && (password.length < 8 || password.length > 64)) {
+            const estaNaLista = oErroJaEstaNaLista(erros.password_errado);
+
+            if (!estaNaLista) {
+                setListaErros([...listaErros, erros.password_errado])
+            }
+
+
+
+        } else {
+            setListaErros(removeEsseErroDaLista(erros.password_errado))
+
+        }
+
+    }, [password])
+
+
+    function oErroJaEstaNaLista(erro) {
+        const achou = listaErros.find((elemento) => {
+            return elemento.id === erro.id;
+        });
+
+        return achou;
+    }
+
+    function removeEsseErroDaLista(erro) {
+        const listaExcluida = listaErros.filter((elemento) => {
+            return elemento.id !== erro.id;
+        });
+
+        return listaExcluida;
+    }
+
     return (
-        <body class="cadastroUsuario">
+        <body className="cadastroUsuario">
             <main className="container">
 
                 <section className="card-cadastre-se">
                     <h1>Crie sua conta na&nbsp;<span>aluga</span><span id="ki">Ki</span></h1>
                     <form action="">
                         <label htmlFor="fullname">Nome completo</label><br />
-                        <input type="text" id="fullname" name="fullname" placeholder="Nome Sobrenome" minLength="6"
-                            required onKeyUp={() => {}} /><br />
+                        <input className={`${oErroJaEstaNaLista(erros.nome_errado) ? 'campo-com-erro' : ''}`} type="text" id="fullname" name="fullname" placeholder="Nome Sobrenome" minLength="6" value={fullName}
+                            required onChange={(e) => { setFullName(e.target.value) }} /><br />
 
                         <label htmlFor="email">E-mail</label><br />
-                        <input type="email" id="email" name="email" placeholder="meuemail@email.com" required onKeyUp={() => {}} /><br />
+                        <input className={`${oErroJaEstaNaLista(erros.email_errado) ? 'campo-com-erro' : ''}`} type="email" id="email" name="email" placeholder="meuemail@email.com" value={email} required onChange={(e) => { setEmail(e.target.value) }} /><br />
 
                         <label htmlFor="pass">Senha</label><br />
-                        <div className="input-icone">
+                        <div className={`input-icone ${oErroJaEstaNaLista(erros.password_errado) ? 'campo-com-erro' : ''}`}>
                             <input type="password" id="pass" name="password" placeholder="Use no mínimo 8 caracteres"
-                                minLength="8" maxLength="64" required onKeyUp={() => {}}/>
+                                minLength="8" maxLength="64" value={password} required onChange={(e) => { setPassword(e.target.value) }} />
                             <img className="olho" src={iconeOlho} alt="Ícone olho" />
                         </div><br />
 
-                        <ul className="erros"></ul>
+                        <ul className="erros">
+                            {listaErros.map((erro) => {
+                                return (<li>{erro.texto}</li>)
+                            })}
+                        </ul>
 
                         <hr />
 

@@ -53,7 +53,7 @@
     margin: 0;
 }
 
-.paginaLogin .container .card-login form input{
+.paginaLogin .container .card-login form input {
     width: 100%;
     height: 40px;
     background-color: #FFFAFA;
@@ -196,4 +196,21 @@
     font-family: 'Roboto', sans-serif;
     font-size: 18px;
     margin-left: 5px;
+}
+
+
+/* responsividade */
+
+@media (max-width: 768px) {
+    .paginaLogin .container .card-login {
+        width: 320px;
+    }
+
+    .paginaLogin .container .card-login .tem-cadastro {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
 }

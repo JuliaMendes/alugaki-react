@@ -13,6 +13,10 @@ body {
   margin: 0 auto;
 }
 
+.campo-com-erro {
+  border-color: #E64A19 !important;
+}
+
 
 /* .App {
   text-align: center;

@@ -1,40 +1,40 @@
-header .container {
+.headerPaginaInicial header .container {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-header {
+.headerPaginaInicial header {
     background-color: #F2F1F1;
 }
 
-header .container .logo img {
+.headerPaginaInicial header .container .logo img {
     width: 120px;
 
 }
 
-header .container .botoes {
+.headerPaginaInicial header .container .botoes {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-header .container .botoes button {
+.headerPaginaInicial header .container .botoes button {
     background-color: transparent;
     border: solid 2px #FF5722;
     cursor: pointer;
 }
 
-header .container .botoes button:hover {
+.headerPaginaInicial header .container .botoes button:hover {
     opacity: 80%;
 }
 
-header .container .botoes button:active {
+.headerPaginaInicial header .container .botoes button:active {
     transform: scale(0.99);
     transition: all 0.1s ease-in-out;
 }
 
-header .container .botoes a button {
+.headerPaginaInicial header .container .botoes a button {
     /* tirei o first child*/
     width: 130px;
     height: 40px;
@@ -46,18 +46,18 @@ header .container .botoes a button {
     font-weight: 700;
 }
 
-header .container .botoes .dropdown>button {
+.headerPaginaInicial header .container .botoes .dropdown>button {
     border-radius: 50%;
     padding: 8px 12px;
 }
 
-header .container .botoes .dropdown>button img {
+.headerPaginaInicial header .container .botoes .dropdown>button img {
     width: 20px;
 }
 
 /* menu */
 
-
+/* 
 header .container .dropdown {
     position: relative;
 }
@@ -105,4 +105,14 @@ header .container .dropdown .dropdown-menu ul li {
 
 .dropdown-menu ul a:hover {
     color: #FF5722;
+} */
+
+@media (max-width: 768px) {
+    .headerPaginaInicial header {
+        padding: 0 12px 0 12px;
+    }
+
+    .headerPaginaInicial header .container .botoes a>button:first-child  {
+        margin: 4px;
+    }
 }
