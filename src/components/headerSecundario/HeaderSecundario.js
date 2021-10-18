@@ -1,10 +1,13 @@
+import { useState } from 'react';
 import "./headerSecundario.css";
 
 import logoAlugaki from '../../img/imagens/alugaKi-removebg-preview.png'
 import iconeUsuario from '../../img/icones/btn_login.png'
 import lupa from '../../img/icones/lupa.png'
 
-function HeaderSecundario() {
+function HeaderSecundario() { 
+    const [menuAberto, setMenuAberto] = useState(false)
+
     return (
         <header className="headerSecundario">
             <div className="container">
@@ -21,10 +24,9 @@ function HeaderSecundario() {
                 </div>
                 <div className="botoes">
                     <a href="cadastro-produto.html"><button>Anunciar</button></a>
-                    <div className="dropdown" data-dropdown>
-                        <button className="login" data-dropdown-button> <img src={iconeUsuario} alt="Botao de Menu" />
-                        </button>
-                        <div className="dropdown-menu">
+                    <div className="dropdown">
+                        <button onClick={(e) => { setMenuAberto(!menuAberto) }} data-dropdown-button><img src={iconeUsuario} alt="Botao de Menu" /></button>
+                        <div className={`dropdown-menu ${menuAberto ? '' : 'dropdown-menu-escondido'}`}>
                             <ul>
                                 <li>
                                     <a href="cadastro-usuario.html">
