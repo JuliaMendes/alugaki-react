@@ -248,24 +248,9 @@ section.conteudo .excluir p{
 
 @media (max-width: 850px){
 
-    .container{
+    .perfilPrivado .container{
         width: 90vw;
         max-width: 100%;
-    }
-   
-    header{
-        width: 100vw;
-        max-width: 100%;
-    }
-
-    header .container{
-        flex-wrap: wrap;
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    header .container .botoes {
-        padding: 10px;
     }
 
     .perfilPrivado .containerFlex{
@@ -293,48 +278,10 @@ section.conteudo .excluir p{
 
 }
 
-@media (max-width: 685px){
-
-    header .container .logo-e-barra {
-        max-width: 100vw;
-        flex-direction: column;
-        justify-content: center;
-    }
-
-    header .container .logo img {
-        width: 120px;
-        margin-right: 0;
-    }
-} 
-
 @media (max-width: 525px){
-
-    header .container .barra form input{
-        max-width: 80vw;
-    }
-
-    header .container .barra form button {
-        position: absolute;
-        left: 85%;
-        padding-right: 20px;
-    }
 
     .perfilPrivado section.conteudo form input{
         max-width: 100vw;
-    }
-
-    footer .container {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    footer .container .logo-e-menu {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    footer .container .redes-sociais{
-        padding-left: 30px;
     }
 
 }

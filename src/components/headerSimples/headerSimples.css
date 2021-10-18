@@ -1,4 +1,4 @@
-header {
+header.headerSimples {
     position: relative;
     display: flex;
     align-items: center;
@@ -8,7 +8,7 @@ header {
     background-color: #F2F1F1;
 }
 
-header .btn-header {
+header.headerSimples .btn-header {
     position: absolute;
     top: 50%;
     left: 0;
@@ -16,7 +16,7 @@ header .btn-header {
     padding-left: 50px;
 }
 
-header .btn-header button {
+header.headerSimples .btn-header button {
     display: flex;
     align-items: center;
     border: none;
@@ -25,21 +25,21 @@ header .btn-header button {
     background: transparent;
 }
 
-header .btn-header button span {
+header.headerSimples .btn-header button span {
     font-size: 15px;
     font-weight: bold;
     color: #757575;
     font-family: 'Roboto', sans-serif;  
 }
 
-header .btn-header button img {
+header.headerSimples .btn-header button img {
     width: 15px;
 }
 
-header .logo {
+header.headerSimples .logo {
     height: 100%;
 }
 
-header .logo img {
+header.headerSimples .logo img {
     height: 100%;
 }
