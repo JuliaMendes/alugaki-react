@@ -321,6 +321,12 @@
     text-align: center;
 }
 
+.perfilPublico section.avaliacoes .cardAvaliacao .seletores{
+    width: 65px;
+    display: flex;
+    justify-content: space-between;
+}
+
 .perfilPublico section.avaliacoes .cardAvaliacao .seletores img{
     margin-top: 40px;
     width: 13px;
