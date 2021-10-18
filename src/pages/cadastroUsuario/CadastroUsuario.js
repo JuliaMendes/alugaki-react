@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect} from 'react';
+import { Link } from 'react-router-dom';
 
 import './cadastroUsuario.css';
 
@@ -37,7 +38,6 @@ function CardCadastrese() {
     const [fullName, setFullName] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
-
     const [listaErros, setListaErros] = useState([])
 
     useEffect(() => {
@@ -163,7 +163,7 @@ function CardCadastrese() {
                     </div>
 
                     <div className="tem-cadastro">
-                        <h2>Já tem cadastro? <a href="login.html">Entrar</a></h2>
+                        <h2>Já tem cadastro?<Link to="/login">Entrar</Link></h2>
                     </div>
                 </section>
 

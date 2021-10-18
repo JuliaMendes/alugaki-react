@@ -209,6 +209,8 @@
 .cadastroUsuario .container .card-cadastre-se .tem-cadastro a {
     color: #757575;
     font-size: 18px;
+    margin-left: 5px;
+    
 }
 
 /* responsividade */

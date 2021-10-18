@@ -18,7 +18,7 @@ function Header() {
                     <div className="botoes">
                         <a href="cadastro-produto.html"><button>Anunciar</button></a>
                         <div className="dropdown">
-                            <button onClick={(e) => { setMenuAberto(!menuAberto) }} data-dropdown-button><img src={iconeUsuario}
+                            <button onClick={(e) => { setMenuAberto(!menuAberto) }}><img src={iconeUsuario}
                                 alt="Botao de Menu" /></button>
                             <div className={`dropdown-menu ${menuAberto ? '' : 'dropdown-menu-escondido'}`}>
                                 <ul>

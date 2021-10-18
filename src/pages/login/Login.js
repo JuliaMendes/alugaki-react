@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 import './login.css';
 
@@ -28,49 +29,71 @@ const erros = {
 }
 
 function CardLogin() {
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
-
-    const [listaErros, setListaErros] = useState([])
+    console.log('Render')
+    const [inputs, setInputs] = useState({ 
+        email: {
+            texto: '',
+            virgem: true
+        },
+        password: {
+            texto: '',
+            virgem: true
+        }
+    });
+    const [listaErros, setListaErros] = useState({ lista: [], formValido: false });
 
     useEffect(() => {
-        if (email && (!email.includes('@') || !email.includes('.'))) {
-
-            const estaNaLista = oErroJaEstaNaLista(erros.email_errado)
-
-            if (!estaNaLista) {
-                setListaErros([...listaErros, erros.email_errado])
-            }
-
-            // inputEmail.style = 'border-color: #E64A19;'
-        } else {
-            setListaErros(removeEsseErroDaLista(erros.email_errado))
-
-            // inputEmail.style = ''
+        if (listaErros.formValido) {
+            console.log('Foi submitado')
         }
-
-    }, [email])
+    }, [listaErros.formValido]);
 
     useEffect(() => {
-        if (password && (password.length < 8 || password.length > 64)) {
-            const estaNaLista = oErroJaEstaNaLista(erros.password_errado);
+        if (!inputs.email.virgem) {
+            let novaLista = listaErros.lista;
 
-            if (!estaNaLista) {
-                setListaErros([...listaErros, erros.password_errado])
+            novaLista = validaEmail(novaLista);
+
+            setListaErros({ ...listaErros, lista: novaLista });
+        }
+    }, [inputs.email]);
+
+    useEffect(() => {
+        if (!inputs.password.virgem) {
+            let novaLista = listaErros.lista;
+
+            novaLista = validaPassword(novaLista);
+
+            setListaErros({ ...listaErros, lista: novaLista });
+        }
+    }, [inputs.password]);
+
+    function validaPassword(listaErros) {
+        if (inputs.password.texto.length < 8 || inputs.password.texto.length > 64) {
+            if (!oErroJaEstaNaLista(erros.password_errado)) {
+                return [...listaErros, erros.password_errado];
             }
 
-            // inputPassword.style = 'border-color: #E64A19;'
+            return listaErros;
+        } 
 
-        } else {
-            setListaErros(removeEsseErroDaLista(erros.password_errado))
+        return removeEsseErroDaLista(erros.password_errado);
+    }
 
-            // inputPassword.style = ''
+    function validaEmail(listaErros) {
+        if (!inputs.email.texto.includes('@') || !inputs.email.texto.includes('.')) {
+            if (!oErroJaEstaNaLista(erros.email_errado)) {
+                return [...listaErros, erros.email_errado];
+            }
+
+            return listaErros;
         }
 
-    }, [password])
+        return removeEsseErroDaLista(erros.email_errado);
+    }
 
     function oErroJaEstaNaLista(erro) {
-        const achou = listaErros.find((elemento) => {
+        const achou = listaErros.lista.find((elemento) => {
             return elemento.id === erro.id;
         });
 
@@ -78,61 +101,109 @@ function CardLogin() {
     }
 
     function removeEsseErroDaLista(erro) {
-        const listaExcluida = listaErros.filter((elemento) => {
+        const listaExcluida = listaErros.lista.filter((elemento) => {
             return elemento.id !== erro.id;
         });
 
         return listaExcluida;
     }
 
+    function validaFormulario(evento) {
+        evento.preventDefault();
+
+        const resultadoForm = {...listaErros}
+        let erros = resultadoForm.lista;
+
+        erros = validaPassword(erros);
+        erros = validaEmail(erros);
+
+        if (erros.length === 0) {
+            resultadoForm.formValido = true;
+        }
+
+        resultadoForm.lista = erros;
+
+        setListaErros(resultadoForm);
+    }
 
     return (
         <body className="paginaLogin">
             <main className="container">
-
                 <section className="card-login">
-                    <h1>Faça login na&nbsp;<span>aluga</span><span id="ki">Ki</span></h1>
-
+                    <h1>
+                        Faça login na&nbsp;<span>aluga</span><span id="ki">Ki</span>
+                    </h1>
                     <form>
                         <label htmlFor="email">E-mail</label><br />
-                        <input className={`${oErroJaEstaNaLista(erros.email_errado) ? 'campo-com-erro' : ''}`} type="email" id="email" name="email" placeholder="meuemail@email.com" value={email} required onChange={(e) => { setEmail(e.target.value) }} /><br />
-
-                        <label htmlFor="pass">Senha</label><br />
+                        <input 
+                            type="email"
+                            id="email" 
+                            name="email" 
+                            placeholder="meuemail@email.com"
+                            className={`${oErroJaEstaNaLista(erros.email_errado) ? 'campo-com-erro' : ''}`}
+                            value={inputs.email.texto}
+                            onChange={(e) => setInputs({
+                                ...inputs,
+                                email: {
+                                    texto: e.target.value,
+                                    virgem: false
+                                }
+                            })}
+                            required  
+                        />
+                        <br />
+                        <label htmlFor="pass">Senha</label>
+                        <br />
                         <div className="input-icone">
-                            <input className={`${oErroJaEstaNaLista(erros.password_errado) ? 'campo-com-erro' : ''}`} type="password" id="pass" name="password" minLength="8" maxLength="64" value={password} required onChange={(e) => { setPassword(e.target.value) }} />
+                            <input
+                                type="password"
+                                id="pass"
+                                name="password"
+                                minLength="8"
+                                maxLength="64"
+                                className={`${oErroJaEstaNaLista(erros.password_errado) ? 'campo-com-erro' : ''}`}
+                                value={inputs.password.texto}
+                                onChange={(e) => setInputs({
+                                    ...inputs,
+                                    tocado: true,
+                                    password: {
+                                        texto: e.target.value,
+                                        virgem: false
+                                    }
+                                })}
+                                required
+                            />
                             <img className="olho" src={iconeOlho} alt="Ícone olho" />
-
                             <div className="esqueci-senha">
                                 <a href="#">Esqueci a senha</a>
                             </div>
-
                             <ul className="erros">
-                                {listaErros.map((erro) => {
+                                {listaErros.lista.map((erro) => {
                                     return (<li>{erro.texto}</li>)
                                 })}
                             </ul>
                         </div>
                         <div className="btn-continuar">
-                            <button type="submit">Continuar</button>
+                            <button type="submit" onClick={validaFormulario}>Continuar</button>
                         </div>
                     </form>
-
                     <div className="line">
                         <hr />
                         <span>ou</span>
                         <hr />
                     </div>
-
                     <div className="btn-facebook">
-                        <a href="https://www.facebook.com/"><button>Continuar com o facebook</button></a>
+                        <a href="https://www.facebook.com/">
+                            <button>Continuar com o facebook</button>
+                        </a>
                     </div>
-
                     <div className="tem-cadastro">
-                        <h2>Não tem cadastro?</h2><a href="cadastro-usuario.html"> Cadastre-se</a>
+                        <h2>Não tem cadastro?</h2>
+                        <Link to="/cadastro-usuario">
+                            Cadastre-se
+                        </Link>
                     </div>
-
                 </section>
-
             </main>
         </body>
     )
