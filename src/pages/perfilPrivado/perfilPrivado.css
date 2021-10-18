@@ -232,6 +232,10 @@ section.conteudo .excluir p{
     margin-bottom: 10px;
 }
 
+.perfilPrivado .dados label:nth-child(5){
+    margin-top: 20px;
+}
+
 .perfilPrivado form input:not([type="checkbox"], [type="file"]):focus-visible{
     outline-color: transparent ;
     outline-width: 0px;

@@ -1,5 +1,5 @@
 //imports
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import './perfilPrivado.css';
 
@@ -28,23 +28,18 @@ function Corpo(){
     const [stateHidden, setStateHidden] = useState("hidden");
     const [stateDisabled, setStateDisabled] = useState("disabled");
 
+    const [nome, setNome]  = useState("");
+    const [telefone, setTelefone] = useState("");
+    const [emailP, setEmailP] = useState("");
+    const [senha, setSenha] = useState("");
+
+    const [errosNome, setErrosNome] = useState("");
+    const [errosTelefone, setErrosTelefone] = useState("");
+    const [errosEmail, setErrosEmail] = useState([]);
+    const [errosSenha, setErrosSenha] = useState("");
+
     let checked = localStorage.getItem("checked");
     const [checkedState, setCheckedState] = useState(checked);
-
-    function handleSubmitMain(event) {
-        event.preventDefault();
-
-        if(botaoMain == "Editar"){
-            setBotaoMain("Salvar")
-            setStateRead(null)
-            setStateDisabled(null)
-        }
-        if(botaoMain == "Salvar"){
-            setBotaoMain("Editar")
-            setStateRead("readOnly")
-            setStateDisabled("disabled")
-        }
-    }
 
     function validaPrivacidade() {
         if(checkedState=="true"){
@@ -58,13 +53,33 @@ function Corpo(){
         
     }
 
+    function handleSubmitMain(event) {
+        if(botaoMain == "Editar"){
+            event.preventDefault();
+            setBotaoMain("Salvar")
+            setStateRead(null)
+            setStateDisabled(null)
+        }
+        if(botaoMain == "Salvar"){
+            let erros = !((errosNome == "") && (errosTelefone == "") && !(errosEmail.length != 0 ) && (errosSenha == ""));
+            if(!erros){
+                setBotaoMain("Editar")
+                setStateRead("readOnly")
+                setStateDisabled("disabled")
+            }
+            else{
+                window.alert("Favor verificar campo(s) com erro.");
+                event.preventDefault();
+            }
+        }
+    }
+
     function handleSubmitFoto(event) {
         event.preventDefault();
 
         if(botaoFoto == "Alterar"){
             setBotaoFoto("Salvar")
             setStateHidden(null)
-
         }
         if(botaoFoto == "Salvar"){
             setBotaoFoto("Alterar")
@@ -79,6 +94,75 @@ function Corpo(){
             window.location.reload();
         }
     }
+
+    useEffect(() => {
+        if(nome != ""){
+            if(nome.length<6){
+                setErrosNome("O campo Nome deve ter no mínimo 6 caracteres.");
+            }
+            else if(nome.length > 100){
+                setErrosNome("O campo Nome deve ter no máximo 100 caraceteres.");
+            }
+            else{
+                setErrosNome("");
+            }
+        }
+        else{
+            setErrosNome("");
+        }
+    }, [nome])
+
+    useEffect(() => {
+        if(telefone != ""){
+            if(telefone.length < 10){
+                setErrosTelefone("O campo Telefone deve ter no mínimo 10 caracteres.");
+            }
+            else{
+                setErrosTelefone("");
+            }
+        }
+        else{
+            setErrosTelefone("");
+        }
+    }, [telefone])
+
+    useEffect(() => {
+        if(emailP != ""){
+            let includeEsp = (!emailP.includes("@") || !emailP.includes("."));
+            if (emailP.length < 10 && includeEsp){
+                setErrosEmail(["O campo Email deve ter no mínimo 10 caracteres.", "O campo Email deve incluir os caracteres '@' e '.'"]);
+            }
+            else if(emailP.length > 180 && includeEsp) {
+                setErrosEmail(["O campo Email deve ter no máximo 180 caracteres.", "O campo Email deve incluir os caracteres '@' e '.'"]);
+            }
+            else if(includeEsp) {
+                setErrosEmail(["O campo Email deve incluir os caracteres '@' e '.'"]);
+            }
+            else {
+                setErrosEmail([]);
+            }
+        }
+        else{
+            setErrosEmail([]);
+        }
+    }, [emailP])
+
+    useEffect(() => {
+        if(senha != ""){
+            if(senha.length < 8){
+                setErrosSenha("O campo Senha deve ter no mínimo 8 caracteres.");
+            }
+            else if(senha.length > 64){
+                setErrosSenha("O campo Senha deve ter no máximo 64 caracteres.");
+            }
+            else{
+                setErrosSenha("");
+            }
+        }
+        else{
+            setErrosSenha("");
+        }
+    }, [senha])
 
     return(
         <body className="perfilPrivado">
@@ -121,24 +205,35 @@ function Corpo(){
                         </div>
 
                         <label htmlFor="nome">Nome Completo</label>
-                        <input type="text" id="nome" name="nome" placeholder="Nome Sobrenome" readOnly={stateRead}/>
-                        <ul id="erros-nome"></ul>
+                        <input className={`${(errosNome != "") ? 'campo-com-erro' : ''}`} type="text" id="nome" name="nome" placeholder="Nome Sobrenome" readOnly={stateRead} value={nome} onChange={(e)=>setNome(e.target.value)}/>
+                        <ul>
+                            <li>{errosNome}</li>
+                        </ul>
             
                         <label htmlFor="telefone">Telefone</label>
-                        <input type="tel" id="telefone" name="telefone" placeholder="(xx) 9xxxx-xxxx" readOnly={stateRead} />
-                        <ul id="erros-telefone"></ul>
+                        <input className={`${(errosTelefone != "") ? 'campo-com-erro' : ''}`}type="tel" id="telefone" name="telefone" placeholder="(xx) 9xxxx-xxxx" readOnly={stateRead} value={telefone} onChange={(e)=>setTelefone(e.target.value)}/>
+                        <ul>
+                            <li>{errosTelefone}</li>
+                        </ul>
                     </div>
 
                     <div className="login">
                         <h2>Login e Segurança</h2>
 
                         <label htmlFor="email">E-mail</label><br />
-                        <input type="email" id="email" name="email" placeholder="meuemail@email.com" readOnly={stateRead} />
-                        <ul id="erros-email"></ul>
+                        <input className={`${(errosEmail.length != 0) ? 'campo-com-erro' : ''}`} type="email" id="email" name="email" placeholder="meuemail@email.com" readOnly={stateRead} value={emailP} onChange={(e)=>setEmailP(e.target.value)}/>
+                        <ul>
+                            {errosEmail.map((erro) => {
+                                    return (<li>{erro}</li>)
+                            })}
+                        </ul>
 
                         <label htmlFor="pass">Senha</label><br />
-                        <input type="password" id="pass" name="password" placeholder="********" readOnly={stateRead} />
-                        <ul id="erros-senha"></ul>
+                        <input className={`${(errosSenha != "") ? 'campo-com-erro' : ''}`} type="password" id="pass" name="password" placeholder="********" readOnly={stateRead} value={senha} onChange={(e)=>setSenha(e.target.value)}/>
+                        <ul>
+                            <li></li>
+                            <li>{errosSenha}</li>
+                        </ul>
                     </div>
 
                     <div className="privacidade">
