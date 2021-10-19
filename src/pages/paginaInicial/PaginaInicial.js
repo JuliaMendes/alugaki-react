@@ -123,7 +123,7 @@ function ProdutosPorCategoria() {
       <section className="produtos-por-categoria">
         <div className="container">
           <div className="botoes-categoria">
-            <button className={}
+            <button
               onClick={(e) => {
                 setcategoriaAtual(e.target.innerText);
               }}
