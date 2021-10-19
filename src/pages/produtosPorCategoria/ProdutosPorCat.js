@@ -1,8 +1,11 @@
+import { useState } from 'react';
 import HeaderSecundario from "../../components/headerSecundario/HeaderSecundario"
 import Footer from "../../components/footer/Footer"
 import './produtosPorCat.css';
 import linha from "../../img/icones/Line-azul.png"
 import dropdown from "../../img/icones/drop_down1.png"
+
+
 
 function PaginaProdutosPorCat() {
     return (
@@ -15,6 +18,9 @@ function PaginaProdutosPorCat() {
 }
 
 function Produtos() {
+    const [paginaAcessada, setPaginaAcessada] = useState(0)
+    const links = [1, 2, 3]
+
     return (
         <body className="paginaCategorias">
             <section class="produtos">
@@ -189,10 +195,10 @@ function Produtos() {
                     <div class="pagination">
                         <ul>
                             <li><a href="#"><img src={dropdown} alt="próxima página" /></a></li>
-                            <li><a href="#" class="ativo">1</a></li>
-                            <li><a href="#">2</a></li>
-                            <li>...</li>
-                            <li><a href="#">n</a></li>
+                            {
+                                links.map((numero) => (
+                                    <li><a onClick={() => { setPaginaAcessada(numero)}} className={numero === paginaAcessada ? "ativo" : ""}>{numero}</a></li>
+                            ))}
                             <li><a href="#"><img src={dropdown} alt="próxima página" /></a></li>
                         </ul>
                     </div>
