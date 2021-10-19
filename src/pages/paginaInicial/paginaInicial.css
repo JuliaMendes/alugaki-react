@@ -144,7 +144,10 @@ select {
     color: #757575;
 }
 
-.paginaInicial .produtos-por-categoria .container .botoes-categoria button.ativo,
+.botoes-categoria-selecionado {
+    color: #FF5722;
+
+}
 .paginaInicial .produtos-por-categoria .container .botoes-categoria button:hover {
     color: #FF5722;
 }

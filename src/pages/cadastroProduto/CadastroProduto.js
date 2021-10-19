@@ -17,6 +17,7 @@ function PaginaCadastroProduto() {
 }
 
 function Formulario() {
+    
     return (
         <body className="cadastroProduto">
             <section className="formulario">
