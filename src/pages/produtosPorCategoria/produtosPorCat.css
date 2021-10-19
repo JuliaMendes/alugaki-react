@@ -32,6 +32,9 @@
 }
 .paginaCategorias .produtos .dropdown {
     display: none;
+} 
+.dropdown-menu-escondido{
+    opacity: 0 !important;
 }
 /*titulo do filtro e divisor*/
 
@@ -163,6 +166,7 @@
     color: #484848;
 }
 .produtos .container-fim li a:hover{
+    cursor: pointer;
     color:#FF5722;
     transition: 0.5s;
 }

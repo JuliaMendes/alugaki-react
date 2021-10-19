@@ -1,8 +1,11 @@
+import { useState } from 'react';
 import HeaderSecundario from "../../components/headerSecundario/HeaderSecundario"
 import Footer from "../../components/footer/Footer"
 import './produtosPorCat.css';
 import linha from "../../img/icones/Line-azul.png"
 import dropdown from "../../img/icones/drop_down1.png"
+
+
 
 function PaginaProdutosPorCat() {
     return (
@@ -15,24 +18,29 @@ function PaginaProdutosPorCat() {
 }
 
 function Produtos() {
+    const [paginaAcessada, setPaginaAcessada] = useState(0)
+    const links = [1, 2, 3]
+
+    const [menuAberto, setMenuAberto] = useState(false)
+
     return (
         <body className="paginaCategorias">
-            <section class="produtos">
+            <section className="produtos">
                 {/* categoria de produtos */}
                 <div class="titulo">
                     <h1>Categoria</h1>
                 </div>
-                <div class="dropdown" data-dropdown>
-                    <button class="menu-filtros" data-dropdown-button >filtros</button>
-                    <div class="dropdown-menu">
+                <div className="dropdown" data-dropdown>
+                    <button className="menu-filtros" onClick={(e) => { setMenuAberto(!menuAberto) }}>filtros</button>
+                    <div className="dropdown-menu" className={`${menuAberto ? '' : 'dropdown-menu-escondido'}`}>
                         <ul>
                             <li>
                                 <h3>Categoria</h3>
                                 <ul>
-                                    <li class="botao-cat"><a href="#">Esporte e Lazer</a></li>
-                                    <li class="botao-cat"><a href="#">Moda</a></li>
-                                    <li class="botao-cat"><a href="#">Eletrônicos</a></li>
-                                    <li class="botao-cat"><a href="#">Ferramentas e Utilitários</a></li>
+                                    <li className="botao-cat"><a href="#">Esporte e Lazer</a></li>
+                                    <li className="botao-cat"><a href="#">Moda</a></li>
+                                    <li className="botao-cat"><a href="#">Eletrônicos</a></li>
+                                    <li className="botao-cat"><a href="#">Ferramentas e Utilitários</a></li>
                                 </ul>
                             </li>
                             <li>
@@ -189,10 +197,10 @@ function Produtos() {
                     <div class="pagination">
                         <ul>
                             <li><a href="#"><img src={dropdown} alt="próxima página" /></a></li>
-                            <li><a href="#" class="ativo">1</a></li>
-                            <li><a href="#">2</a></li>
-                            <li>...</li>
-                            <li><a href="#">n</a></li>
+                            {
+                                links.map((numero) => (
+                                    <li><a onClick={() => { setPaginaAcessada(numero)}} className={numero === paginaAcessada ? "ativo" : ""}>{numero}</a></li>
+                            ))}
                             <li><a href="#"><img src={dropdown} alt="próxima página" /></a></li>
                         </ul>
                     </div>
