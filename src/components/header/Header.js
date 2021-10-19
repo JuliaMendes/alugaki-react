@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './header.css';
 
 import logoAlugaki from '../../img/imagens/alugaKi-removebg-preview.png'
@@ -16,31 +17,31 @@ function Header() {
                         <a href="index.html"><img src={logoAlugaki} alt="Logo alugaki" /></a>
                     </div>
                     <div className="botoes">
-                        <a href="cadastro-produto.html"><button>Anunciar</button></a>
+                        <Link to="/cadastro-produtos"><button>Anunciar</button></Link>
                         <div className="dropdown">
                             <button onClick={(e) => { setMenuAberto(!menuAberto) }}><img src={iconeUsuario}
                                 alt="Botao de Menu" /></button>
                             <div className={`dropdown-menu ${menuAberto ? '' : 'dropdown-menu-escondido'}`}>
                                 <ul>
                                     <li>
-                                        <a href="cadastro-usuario.html">
+                                        <Link to="/cadastro-usuario">
                                             Cadastre-se
-                                        </a>
+                                        </Link>
                                     </li>
                                     <li>
-                                        <a href="login.html">
+                                        <Link to="/login">
                                             Login
-                                        </a>
+                                        </Link>
                                     </li>
                                     <li>
-                                        <a href="perfil-privado.html">
+                                        <Link to="/perfil-privado">
                                             Meu perfil
-                                        </a>
+                                        </Link>
                                     </li>
                                     <li>
-                                        <a href="cadastro-produto.html">
+                                        <Link to="/cadastro-produtos">
                                             Anunciar
-                                        </a>
+                                        </Link>
                                     </li>
 
                                 </ul>
