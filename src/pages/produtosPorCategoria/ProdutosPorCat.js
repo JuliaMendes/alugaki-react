@@ -21,24 +21,26 @@ function Produtos() {
     const [paginaAcessada, setPaginaAcessada] = useState(0)
     const links = [1, 2, 3]
 
+    const [menuAberto, setMenuAberto] = useState(false)
+
     return (
         <body className="paginaCategorias">
-            <section class="produtos">
+            <section className="produtos">
                 {/* categoria de produtos */}
                 <div class="titulo">
                     <h1>Categoria</h1>
                 </div>
-                <div class="dropdown" data-dropdown>
-                    <button class="menu-filtros" data-dropdown-button >filtros</button>
-                    <div class="dropdown-menu">
+                <div className="dropdown" data-dropdown>
+                    <button className="menu-filtros" onClick={(e) => { setMenuAberto(!menuAberto) }}>filtros</button>
+                    <div className="dropdown-menu" className={`${menuAberto ? '' : 'dropdown-menu-escondido'}`}>
                         <ul>
                             <li>
                                 <h3>Categoria</h3>
                                 <ul>
-                                    <li class="botao-cat"><a href="#">Esporte e Lazer</a></li>
-                                    <li class="botao-cat"><a href="#">Moda</a></li>
-                                    <li class="botao-cat"><a href="#">Eletrônicos</a></li>
-                                    <li class="botao-cat"><a href="#">Ferramentas e Utilitários</a></li>
+                                    <li className="botao-cat"><a href="#">Esporte e Lazer</a></li>
+                                    <li className="botao-cat"><a href="#">Moda</a></li>
+                                    <li className="botao-cat"><a href="#">Eletrônicos</a></li>
+                                    <li className="botao-cat"><a href="#">Ferramentas e Utilitários</a></li>
                                 </ul>
                             </li>
                             <li>

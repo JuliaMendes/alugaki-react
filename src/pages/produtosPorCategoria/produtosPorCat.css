@@ -32,6 +32,9 @@
 }
 .paginaCategorias .produtos .dropdown {
     display: none;
+} 
+.dropdown-menu-escondido{
+    opacity: 0 !important;
 }
 /*titulo do filtro e divisor*/
 
