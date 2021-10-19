@@ -145,7 +145,7 @@ select {
 }
 
 .botoes-categoria-selecionado {
-    color: #FF5722;
+    color: #FF5722 !important;
 
 }
 .paginaInicial .produtos-por-categoria .container .botoes-categoria button:hover {

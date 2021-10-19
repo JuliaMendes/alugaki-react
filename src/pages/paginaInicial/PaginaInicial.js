@@ -2,6 +2,7 @@ import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
 import "./paginaInicial.css";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 import iconeLupa from "../../img/icones/search.png";
 import iconeSetaDireita from "../../img/icones/seta-direita.png";
@@ -123,7 +124,7 @@ function ProdutosPorCategoria() {
       <section className="produtos-por-categoria">
         <div className="container">
           <div className="botoes-categoria">
-            <button
+            <button className={`${categoriaAtual === 'Esporte e Lazer' ? "botoes-categoria-selecionado" : "" }`}
               onClick={(e) => {
                 setcategoriaAtual(e.target.innerText);
               }}
@@ -132,6 +133,7 @@ function ProdutosPorCategoria() {
             </button>
             <span>|</span>
             <button
+                className={`${categoriaAtual === 'Moda' ? "botoes-categoria-selecionado" : "" }`}
               onClick={(e) => {
                 setcategoriaAtual(e.target.innerText);
               }}
@@ -140,6 +142,7 @@ function ProdutosPorCategoria() {
             </button>
             <span>|</span>
             <button
+            className={`${categoriaAtual === 'Eletrônicos' ? "botoes-categoria-selecionado" : "" }`}
               onClick={(e) => {
                 setcategoriaAtual(e.target.innerText);
               }}
@@ -148,6 +151,7 @@ function ProdutosPorCategoria() {
             </button>
             <span>|</span>
             <button
+            className={`${categoriaAtual === 'Ferramentas e Utilitários' ? "botoes-categoria-selecionado" : "" }`}
               onClick={(e) => {
                 setcategoriaAtual(e.target.innerText);
               }}
@@ -184,10 +188,10 @@ function ProdutosPorCategoria() {
             })}
           </div>
           <div className="botao-ver-mais">
-            <a href="produtos-por-cat.html">
+            <Link to="/produtos-por-categoria">
               <span>ver mais</span>
               <img src={iconeSetaDireita} alt="botao ver mais" />
-            </a>
+            </Link>
           </div>
         </div>
       </section>
