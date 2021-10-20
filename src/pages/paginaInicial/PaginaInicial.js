@@ -30,7 +30,7 @@ function PaginaInicial() {
 
 function PartePrincipal() {
   return (
-    <body className="paginaInicial">
+    <div className="paginaInicial">
       <section
         style={{ backgroundImage: `url(${backgroundGreen})` }}
         className="parte-principal"
@@ -89,7 +89,7 @@ function PartePrincipal() {
           </div>
         </div>
       </section>
-    </body>
+    </div>
   );
 }
 
@@ -120,7 +120,7 @@ function ProdutosPorCategoria() {
   }
 
   return (
-    <body className="paginaInicial">
+    <div className="paginaInicial">
       <section className="produtos-por-categoria">
         <div className="container">
           <div className="botoes-categoria">
@@ -195,13 +195,13 @@ function ProdutosPorCategoria() {
           </div>
         </div>
       </section>
-    </body>
+    </div>
   );
 }
 
 function BannerExperimenteAnunciar() {
   return (
-    <body className="paginaInicial">
+    <div className="paginaInicial">
       <section
         style={{ backgroundImage: `url(${backgroundBannerVioloes})` }}
         className="banner-anunciar"
@@ -219,7 +219,7 @@ function BannerExperimenteAnunciar() {
           </div>
         </div>
       </section>
-    </body>
+    </div>
   );
 }
 

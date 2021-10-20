@@ -128,7 +128,7 @@ function Corpo(){
     }
 
     return(
-        <body className="perfilPublico">
+        <div className="perfilPublico">
 
             <div className="containerFlex">
                 <section className="barraLateral">
@@ -194,7 +194,7 @@ function Corpo(){
 
             </div>
 
-        </body>
+        </div>
     )
 }
 

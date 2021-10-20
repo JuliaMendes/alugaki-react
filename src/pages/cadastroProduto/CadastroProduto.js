@@ -19,7 +19,7 @@ function PaginaCadastroProduto() {
 function Formulario() {
     
     return (
-        <body className="cadastroProduto">
+        <div className="cadastroProduto">
             <section className="formulario">
                 <div className="container">
                     <h1>Anuncie aki</h1>
@@ -110,7 +110,7 @@ function Formulario() {
                     </form>
                 </div>
             </section>
-        </body>
+        </div>
     )
 }
 

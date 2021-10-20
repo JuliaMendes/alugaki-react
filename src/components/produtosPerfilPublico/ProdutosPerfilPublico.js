@@ -9,7 +9,7 @@ import botaoCar from "../../img/icones/drop_down1.png"
 
 function ProdutosPerfilPublico() {
 
-    const {user = 1} = useParams()
+    const {user = 2} = useParams()
     const [produtos, setProdutos]  = useState([])
     const [showProdutos, setShowProdutos] = useState(false)
 

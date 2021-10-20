@@ -24,7 +24,7 @@ function Produtos() {
     const [menuAberto, setMenuAberto] = useState(false)
 
     return (
-        <body className="paginaCategorias">
+        <div className="paginaCategorias">
             <section className="produtos">
                 {/* categoria de produtos */}
                 <div class="titulo">
@@ -206,7 +206,7 @@ function Produtos() {
                     </div>
                 </div>
             </section>
-        </body>
+        </div>
     )
 
 }
