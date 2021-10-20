@@ -4,7 +4,7 @@ import Footer from "../../components/footer/Footer"
 import './produtosPorCat.css';
 import linha from "../../img/icones/Line-azul.png"
 import dropdown from "../../img/icones/drop_down1.png"
-
+import Cards from "../../components/produtosProdPorCat/Cards"
 
 
 function PaginaProdutosPorCat() {
@@ -18,21 +18,23 @@ function PaginaProdutosPorCat() {
 }
 
 function Produtos() {
-    const [paginaAcessada, setPaginaAcessada] = useState(0)
+    const [paginaAcessada, setPaginaAcessada] = useState(1)
     const links = [1, 2, 3]
 
     const [menuAberto, setMenuAberto] = useState(false)
+
+    const [cat, setCat] = useState("Moda")
 
     return (
         <body className="paginaCategorias">
             <section className="produtos">
                 {/* categoria de produtos */}
-                <div class="titulo">
-                    <h1>Categoria</h1>
+                <div className="titulo">
+                    <h1>{cat}</h1>
                 </div>
                 <div className="dropdown" data-dropdown>
                     <button className="menu-filtros" onClick={(e) => { setMenuAberto(!menuAberto) }}>filtros</button>
-                    <div className="dropdown-menu" className={`${menuAberto ? '' : 'dropdown-menu-escondido'}`}>
+                    <div className={`dropdown-menu ${menuAberto ? '' : 'dropdown-menu-escondido'}`}>
                         <ul>
                             <li>
                                 <h3>Categoria</h3>
@@ -96,26 +98,26 @@ function Produtos() {
                         </ul>
                     </div>
                 </div>
-                <div class="container">
-                    <div class="filtros">
+                <div className="container">
+                    <div className="filtros">
                         {/* barra de filtros */}
-                        <div class="titulo-filtro">
+                        <div className="titulo-filtro">
                             <h3>Categoria</h3>
                             <img src={linha} alt="" />
                         </div>
 
                         <ul>
-                            <li class="botao-cat"><a href="#">Esporte e Lazer</a></li>
-                            <li class="botao-cat"><a href="#">Moda</a></li>
-                            <li class="botao-cat"><a href="#">Eletrônicos</a></li>
-                            <li class="botao-cat"><a href="#">Ferramentas e Utilitários</a></li>
+                            <li className="botao-cat"><a href="#" onClick={() => { setCat("Esporte e Lazer")}}>Esporte e Lazer</a></li>
+                            <li className="botao-cat"><a href="#" onClick={() => { setCat("Moda")}}>Moda</a></li>
+                            <li className="botao-cat"><a href="#" onClick={() => { setCat("Eletrônicos")}}>Eletrônicos</a></li>
+                            <li className="botao-cat"><a href="#" onClick={() => { setCat("Ferramentas e Utilitários")}}>Ferramentas e Utilitários</a></li>
                         </ul>
 
-                        <div class="titulo-filtro">
+                        <div className="titulo-filtro">
                             <h3>Preço</h3>
                             <img src={linha} alt="" />
                         </div>
-                        <ul class="preco">
+                        <ul className="preco">
                             <li>
                                 <input type="radio" name="preco" id="menor" />
                                 <label for="menor">até R$99</label>
@@ -130,7 +132,7 @@ function Produtos() {
                             </li>
                         </ul>
 
-                        <div class="titulo-filtro">
+                        <div className="titulo-filtro">
                             <h3>Avaliações</h3>
                             <img src={linha} alt="" />
                         </div>
@@ -153,7 +155,7 @@ function Produtos() {
                             </li>
                         </ul>
 
-                        <div class="titulo-filtro">
+                        <div className="titulo-filtro">
                             <h3>Localização</h3>
                             <img src={linha} alt="" />
                         </div>
@@ -169,12 +171,13 @@ function Produtos() {
                         </ul>
                     </div>
                     {/* lista dos produtos */}
-                    <div class="lista-produtos">
-                        {/* <div class="card-produto">
-                        <div class="thumb">
+                    <div className="lista-produtos">
+                        <Cards category={cat} />
+                        {/* <div className="card-produto">
+                        <div className="thumb">
                             <a href="listagem-prod.html"><img src="img/barraca.jpg" alt="Barraca de camping"></a>
                         </div>
-                        <div class="info">
+                        <div className="info">
                             <h3>Nome do produto</h3>
                             <div>
                                 <img src="img/Star 1.png" alt="">
@@ -183,18 +186,18 @@ function Produtos() {
                                     <small style="color: #757575;">• 750 avaliações</small>
                                 </div>
                             </div>
-                            <div class="localiz">
+                            <div className="localiz">
                                 <img src="img/location.png" alt="">
                                 <small style="color: #757575;">São Paulo, SP</small>
                             </div>
-                            <h3 class="preco">R$preço /dia</h3>
+                            <h3 className="preco">R$preço /dia</h3>
                         </div>
                     </div> */}
                     </div>
                 </div>
 
-                <div class="container container-fim">
-                    <div class="pagination">
+                <div className="container container-fim">
+                    <div className="pagination">
                         <ul>
                             <li><a href="#"><img src={dropdown} alt="próxima página" /></a></li>
                             {
