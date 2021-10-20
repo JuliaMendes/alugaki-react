@@ -5,6 +5,8 @@ import './perfilPublico.css';
 
 import HeaderSecundario from "../../components/headerSecundario/HeaderSecundario"
 import Footer from "../../components/footer/Footer"
+import BarraPerfilPublico from "../../components/barraPerfilPublico/BarraPerfilPublico"
+import ProdutosPerfilPublico from "../../components/produtosPerfilPublico/ProdutosPerfilPublico"
 
 import perfilBlank from "../../img/icones/bolinha_perfil.png"
 import linhaAzul from "../../img/icones/Line-azul.png"
@@ -130,22 +132,7 @@ function Corpo(){
 
             <div className="containerFlex">
                 <section className="barraLateral">
-                    <div className="infos">
-                        <h3>Nome</h3>
-                        <img src={perfilBlank} alt="Foto de Perfil do Usuário" id="foto_perfil" />
-
-                        <div className="estrelas">
-                            <img src={Star} alt="Estrela de Avaliação" />
-                            <img src={Star} alt="Estrela de Avaliação" />
-                            <img src={Star} alt="Estrela de Avaliação" />
-                            <img src={Star} alt="Estrela de Avaliação" />
-                            <img src={Star} alt="Estrela de Avaliação" />
-                        </div>
-
-                        <img src={linhaCinza} alt="Linha horizontal" id="linha_cinza" />
-
-                        <a href="https://api.whatsapp.com/send?phone=550">(xx) 9xxxx-xxxx</a>
-                    </div>
+                    <BarraPerfilPublico />
 
                     <div className="filtros">
                         <div className="tituloFiltro">
@@ -154,10 +141,10 @@ function Corpo(){
                         </div>
             
                         <ul>
-                            <li><a href="produtos-por-cat.html">Esporte e Lazer</a></li>
-                            <li><a href="produtos-por-cat.html">Moda</a></li>
-                            <li><a href="produtos-por-cat.html">Eletrônicos</a></li>
-                            <li><a href="produtos-por-cat.html">Ferramentas e Utilitários</a></li>
+                            <li><a href="produtos-por-categoria">Esporte e Lazer</a></li>
+                            <li><a href="produtos-por-categoria">Moda</a></li>
+                            <li><a href="produtos-por-categoria">Eletrônicos</a></li>
+                            <li><a href="produtos-por-categoriagit">Ferramentas e Utilitários</a></li>
                         </ul>       
                     </div> 
                 </section>
@@ -165,20 +152,8 @@ function Corpo(){
                 <section className="conteudo">
 
                     <h2>Anúncios</h2>
-                    <section className="anuncios">
 
-                        <div className="cardProduto">
-                       </div>
-
-                        <div className="cardProduto">
-                        </div>
-
-                        <div className="cardProduto">
-                        </div>
-
-                        <button onclick="setaAnuncio(this)"><img src={botaoCar} alt="Seta - Ir para próximo anuncio" /></button>
-                    
-                    </section>
+                    <ProdutosPerfilPublico />
                     
                     <div className="botaoVerMais">
                         <a href="produtos-por-cat.html"><span>ver mais</span><img src={seta} alt="botao ver mais" /></a>
