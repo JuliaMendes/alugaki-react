@@ -16,8 +16,7 @@ function Routes() {
             <Route path ="/produtos-por-categoria">
                 <PaginaProdutosPorCat/>
             </Route>
-            <Route path="/listagem-produto">
-                <PaginaListagemProduto/>
+            <Route path="/listagem-produto/:product" component={PaginaListagemProduto}>
             </Route>
             <Route path="/perfil-privado">
                 <PaginaPerfilPrivado/>

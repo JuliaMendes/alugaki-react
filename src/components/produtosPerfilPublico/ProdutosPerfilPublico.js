@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react';
+import {Link} from 'react-router-dom';
+
 import apiProdutos from "../../services/apiProdutos";
 
 import produtoBlank from "../../img/icones/productBlank.png"
@@ -53,7 +55,9 @@ function ProdutosPerfilPublico(props) {
                     return(
                         <div className="cardProduto">
                             <div className="thumb">
-                                <a href="listagem-prod.html"><img src={"/" + item.img} alt="Produto" /></a>
+                                <Link to={`/listagem-produto/${item.id}`}>
+                                    <img src={"/" + item.img} alt="Produto" />
+                                </Link>
                             </div>
                             <div className="info">
                                 <h3>{item.titulo}</h3>

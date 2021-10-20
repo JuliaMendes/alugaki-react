@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import apiProdutos from "../../services/apiProdutos";
-import { useParams } from 'react-router-dom';
 
 import VendedorListagemProduto from '../vendedorListagemProduto/VendedorListagemProduto';
 
@@ -13,9 +12,9 @@ import share from "../../img/icones/share.png"
 import calendario from "../../img/imagens/calendario.png"
 import whatsapp from "../../img/icones/whatsapp-verde.png"
 
-function PrimeiraSegundaListagem() {
+function PrimeiraSegundaListagem(props) {
 
-    const {productID = 3} = useParams()
+    const productID = props.productID
     const [produto, setProduto] = useState({})
     const [showProduto, setShowProduto] = useState(false)
 
@@ -39,21 +38,21 @@ function PrimeiraSegundaListagem() {
                             <div className="container">
                                 <div className="produto">
                                     <div className="info">
-                                        <h1>Título produto</h1>
+                                        <h1>Título</h1>
                                         <div className="subtitulo">
                                             <img src={star} alt="" />
-                                            <small>4,8</small>
+                                            <small>Avaliação</small>
                                             <img src={local} alt="" />
-                                            <small style={{ color: '#757575' }}>São Paulo, SP</small>
+                                            <small style={{ color: '#757575' }}>Localização</small>
                                         </div>
                                     </div>
                                     <div className="thumb" style={{ 'backgroundColor': 'darkgray'}}></div>
                                     <div className="info2">
                                         <div className="esq">
                                             <img src={star} alt="" />
-                                            <small>4,8</small>
-                                            <small style={{ color: '#757575' }}>• 750 avaliações</small> <br />
-                                            <small className="price">R$15,00 /dia</small>
+                                            <small>Avaliação</small>
+                                            <small style={{ color: '#757575' }}>• avaliações</small> <br />
+                                            <small className="price">R$ Preço/dia</small>
                                         </div>
                                         <div className="dir">
                                             <button>
@@ -79,12 +78,23 @@ function PrimeiraSegundaListagem() {
                             <div className="container">
                                 <div className="descricao">
                                     <h2>Descrição</h2>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam <br />
-                                        hendrerit nulla nec mollis venenatis. Donec dapibus molestie ornare. <br />
-                                        Nam sit amet arcu posuere, pulvinar dolor et, porta diam. Duis fermentum <br />
-                                        tortor eu nibh mattis, id sodales nisl vestibulum. </p>
+                                    <p>Descrição do Produto. </p>
                                 </div>
-                                <VendedorListagemProduto userID={produto.id_anunciante}/>
+                                <div className="vendedor">
+                                    <div className="avatar" style={{ 'backgroundColor': 'darkgray'}}></div>
+                                    <div className="info">
+                                        <a href="https://juliamendes.github.io/alugaki/app/perfil-publico.html" target="blank"><h3>Nome</h3></a>
+                                        <div>
+                                            <img src={local} alt="" />
+                                            <small style={{ color: '#757575' }}>Localização</small>
+                                        </div>
+                                        <div>
+                                            <img src={star} alt="" />
+                                            <small>Avaliação</small>
+                                            <small style={{ color: '#757575' }}>•  avaliações</small> <br />
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </section>
                     </>
@@ -105,7 +115,7 @@ function PrimeiraSegundaListagem() {
                                             <small style={{ color: '#757575' }}>{produto.localizacao}</small>
                                         </div>
                                     </div>
-                                    <div className="thumb"> <img src={produto.img} /> </div>
+                                    <div className="thumb"> <img src={"/" + produto.img} /> </div>
                                     <div className="info2">
                                         <div className="esq">
                                             <img src={star} alt="" />

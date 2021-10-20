@@ -10,10 +10,10 @@ function VendedorListagemProduto(props) {
 
     const user = props.userID
     const [profile, setProfile]  = useState({})
-    const [show, setShow] = useState(false)
+    const [showProfile, setShowProfile] = useState(false)
 
     useEffect(() => {
-        setShow(true)
+        setShowProfile(true)
     }, [profile])
 
     useEffect(() => {
@@ -25,7 +25,7 @@ function VendedorListagemProduto(props) {
     
     return(
         <>
-            {!show &&
+            {!showProfile &&
                 (
                     <>
                         <div className="vendedor">
@@ -46,15 +46,15 @@ function VendedorListagemProduto(props) {
                     </>
                 )
             }
-            {show &&
+            {showProfile &&
                 (
                     <>
                         <div className="vendedor">
-                            <Link to={`/perfil-publico/${profile.id}`} key={profile.id}>
-                                <div className="avatar"> <img src={profile.img}/> </div>
+                            <Link to={`/perfil-publico/${profile.id}`}>
+                                <div className="avatar"> <img src={"/" + profile.img}/> </div>
                             </Link>
                             <div className="info">
-                                <Link to={`/perfil-publico/${profile.id}`} key={profile.id}>
+                                <Link to={`/perfil-publico/${profile.id}`}>
                                     <h3>{profile.nome}</h3>
                                 </Link>
                                 <div>

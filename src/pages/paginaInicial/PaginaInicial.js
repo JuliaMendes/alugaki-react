@@ -239,7 +239,7 @@ function ProdutosPorCategoria() {
               return (
                 <div class="card-produto">
                   <div class="thumb">
-                    <Link to="/listagem-produto">
+                    <Link to={`/listagem-produto/${elemento.id}`}>
                       <img src={elemento.img} alt={elemento.titulo} />
                     </Link>
                   </div>

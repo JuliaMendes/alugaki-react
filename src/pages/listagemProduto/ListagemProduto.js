@@ -1,9 +1,10 @@
 import "./listagemProduto.css"
+import { useParams } from 'react-router-dom';
 
 import HeaderSecundario from "../../components/headerSecundario/HeaderSecundario"
 import Footer from "../../components/footer/Footer"
 import Helmet from 'react-helmet'
-import PrimeiraSegundaListagem from "../../components/PrimeiraSegundaListagem/PrimeiraSegundaListagem"
+import PrimeiraSegundaListagem from "../../components/primeiraSegundaListagem/PrimeiraSegundaListagem"
 
 import star from "../../img/icones/star1.png"
 import local from "../../img/icones/location.png"
@@ -17,11 +18,13 @@ import perfilImage from "../../img/icones/bolinha_perfil.png"
 import dropDown2 from "../../img/icones/drop_down2.png"
 
 function PaginaListagemProduto() {
+    const { product } = useParams();
+
     return (
         <div>
             <Helmet title="Listagem de Produto | alugaKi" />
             <HeaderSecundario />
-            <PrimeiraSegunda />
+            <PrimeiraSegunda productID={product}/>
             <Terceira />
             <Quarta />
             <Footer />
@@ -29,10 +32,13 @@ function PaginaListagemProduto() {
     )
 }
 
-function PrimeiraSegunda() {
+function PrimeiraSegunda(props) {
+
+    const product = props.productID
+
     return (
         <div className="paginaListagem">
-            <PrimeiraSegundaListagem />
+            <PrimeiraSegundaListagem productID={product}/>
         </div>
     )
 }

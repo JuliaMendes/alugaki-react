@@ -33,7 +33,7 @@ function PaginaPerfilPublico() {
 
 function Corpo(props){
 
-    const usuario = props.userID
+    const profile = props.userID
 
     const [seletor1, setSeletor1] = useState(seletorCheio)
     const [seletor2, setSeletor2] = useState(seletorVazio)
@@ -137,7 +137,7 @@ function Corpo(props){
 
             <div className="containerFlex">
                 <section className="barraLateral">
-                    <BarraPerfilPublico userID={usuario} />
+                    <BarraPerfilPublico userID={profile} />
 
                     <div className="filtros">
                         <div className="tituloFiltro">
@@ -158,7 +158,7 @@ function Corpo(props){
 
                     <h2>Anúncios</h2>
 
-                    <ProdutosPerfilPublico userID={usuario}/>
+                    <ProdutosPerfilPublico userID={profile}/>
                     
                     <div className="botaoVerMais">
                         <a href="produtos-por-cat.html"><span>ver mais</span><img src={seta} alt="botao ver mais" /></a>
