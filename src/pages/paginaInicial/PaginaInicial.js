@@ -33,7 +33,6 @@ function PartePrincipal() {
   const [localizacaoAtual, setLocalizacaoAtual] = useState("");
   const [buscaAtual, setBuscaAtual] = useState("");
 
-
   useEffect(() => {
     if (window.screen.width < 768) {
       if ("geolocation" in navigator) {
@@ -50,7 +49,8 @@ function PartePrincipal() {
               .then((response) => response.json())
               .then((data) => {
                 let estado = data.address.state;
-                console.log(estado);
+                setLocalizacaoAtual(estado)
+               
               });
           },
           function (error) {
@@ -62,6 +62,8 @@ function PartePrincipal() {
       }
     }
   }, []);
+
+ 
 
   return (
     <body className="paginaInicial">
@@ -77,9 +79,13 @@ function PartePrincipal() {
           <div className="barra-de-pesquisa">
             <div className="barra">
               <div className="opt-localizacao">
-                <select onChange={(e) =>
+                <select
+                  onChange={(e) =>
                     setLocalizacaoAtual(e.target.selectedOptions[0].value)
-                  } name="localizacao" id="localizacao">
+                  }
+                  name="localizacao"
+                  id="localizacao"
+                >
                   <option selected disabled value="">
                     Localização
                   </option>
@@ -109,32 +115,36 @@ function PartePrincipal() {
               </div>
 
               <div className="pesquisar-produto">
-                <input onChange={(e) =>
-                    setBuscaAtual(e.target.value)
-                  }
+                <input
+                  onChange={(e) => setBuscaAtual(e.target.value)}
                   type="text"
                   name="produto"
                   id="produto"
                   placeholder="O que você está procurando?"
-                  value = {buscaAtual}
+                  value={buscaAtual}
                 />
                 <div className="lupa">
                   <button>
+                  <Link to={`/produtos-por-categoria?categoria=${categoriaAtual}&localizacao=${localizacaoAtual}&busca=${buscaAtual}`}>
                     <img src={iconeLupa} alt="Botao de lupa" />
+                  </Link>
                   </button>
                 </div>
               </div>
             </div>
             <div className="pesquisar-produto-mobile">
-              <input
+              <input onChange={(e) => setBuscaAtual(e.target.value)}
                 type="text"
                 name="produto"
                 id="produto-mobile"
                 placeholder="O que você está procurando?"
+                value={buscaAtual}
               />
               <div className="lupa">
-                <button onclick="buscaMobile()">
-                  <img src={"img/search.png"} alt="Botao de lupa" />
+                <button>
+                  <Link to={`/produtos-por-categoria?localizacao=${localizacaoAtual}&busca=${buscaAtual}`}>
+                    <img src={iconeLupa} alt="Botao de lupa" />
+                  </Link>
                 </button>
               </div>
             </div>
@@ -158,7 +168,8 @@ function ProdutosPorCategoria() {
   }, [categoriaAtual]);
 
   function buscaFiltrados() {
-    apiProdutos.get(`/products?q=${categoriaAtual}&_start=0&_end=4`)
+    apiProdutos
+      .get(`/products?q=${categoriaAtual}&_start=0&_end=4`)
       .then((response) => {
         setProdutosExibidos(response.data);
       });
