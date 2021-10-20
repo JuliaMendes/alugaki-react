@@ -6,48 +6,51 @@ import apiProdutos from "../../services/apiProdutos";
 import produtoBlank from "../../img/icones/productBlank.png"
 import star from "../../img/icones/star1.png"
 import local from "../../img/icones/location.png"
-import botaoCar from "../../img/icones/drop_down1.png"
 
-function ProdutosPerfilPublico(props) {
+function CategoriasListagemProduto(props) {
 
-    const user = props.userID
-    const [produtos, setProdutos]  = useState([])
+    const category = props.category
+    const [produtos, setProdutos] = useState([])
     const [showProdutos, setShowProdutos] = useState(false)
+
 
     useEffect(() => {
         setShowProdutos(true)
     }, [produtos])
 
     useEffect(() => {
-        apiProdutos.get(`/products?id_anunciante=${user}`)
+        apiProdutos.get(`/products/?category_like=${category}`)
             .then(response => response.data)
             .then(response => setProdutos(response))
-    }, [user])
-
+            .catch(error => setShowProdutos(false))
+    }, [category])
+    
     return(
-        <section className="anuncios">
+        <>
             {!showProdutos &&
                 (
-                    <div className="cardProduto">
-                        <div className="thumb">
-                            <a href="listagem-prod.html"><img src={produtoBlank} alt="Produto" /></a>
-                        </div>
-                        <div className="info">
-                            <h3>Titulo</h3>
-                            <div>
-                                <img src={star} alt="Ícone estrela" />
+                    <>
+                        <div className="cardProduto">
+                            <div className="thumb">
+                                <img src={produtoBlank} alt="Produto" />
+                            </div>
+                            <div className="info">
+                                <h3>Titulo</h3>
                                 <div>
-                                    <small className="pontuacao"> </small>
-                                    <small>• avaliações</small>
+                                    <img src={star} alt="Ícone estrela" />
+                                    <div>
+                                        <small className="pontuacao"> </small>
+                                        <small>• avaliações</small>
+                                    </div>
                                 </div>
+                                <div className="localiz">
+                                    <img src={local} alt="ícone localização" />
+                                    <small>Localização</small>
+                                </div>
+                                <h3 className="preco">R$ preço</h3>
                             </div>
-                            <div className="localiz">
-                                <img src={local} alt="ícone localização" />
-                                <small>Localização</small>
-                            </div>
-                            <h3 className="preco">R$ preço</h3>
                         </div>
-                    </div>
+                    </>
                 )
             }
             {showProdutos &&
@@ -64,8 +67,8 @@ function ProdutosPerfilPublico(props) {
                                 <div>
                                     <img src={star} alt="Ícone estrela" />
                                     <div>
-                                        <small className="pontuacao">{item.avaliacao}</small>
-                                        <small>•{item.navaliacao} avaliações</small>
+                                        <small className="pontuacao"> {item.avaliacao} </small>
+                                        <small>• {item.navaliacao} avaliações</small>
                                     </div>
                                 </div>
                                 <div className="localiz">
@@ -78,11 +81,8 @@ function ProdutosPerfilPublico(props) {
                     )
                 })
             }
-
-            <button onclick="setaAnuncio(this)"><img src={botaoCar} alt="Seta - Ir para próximo anuncio" /></button>
-
-        </section>
+        </>
     )
 }
 
-export default ProdutosPerfilPublico
+export default CategoriasListagemProduto
