@@ -146,6 +146,7 @@
 
 .perfilPublico section.anuncios .cardProduto {
     cursor: pointer;
+    width: 240px;
 }
 
 .perfilPublico section.anuncios .cardProduto .thumb img {

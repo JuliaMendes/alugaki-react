@@ -5,10 +5,11 @@ import { useParams } from 'react-router-dom';
 import produtoBlank from "../../img/icones/productBlank.png"
 import Star from "../../img/icones/star1.png"
 import Location from "../../img/icones/location.png"
+import botaoCar from "../../img/icones/drop_down1.png"
 
 function ProdutosPerfilPublico() {
 
-    const {user = 9} = useParams()
+    const {user = 1} = useParams()
     const [produtos, setProdutos]  = useState([])
     const [showProdutos, setShowProdutos] = useState(false)
 
@@ -22,10 +23,8 @@ function ProdutosPerfilPublico() {
             .then(response => setProdutos(response))
     }, [user])
 
-    console.log(produtos)
-
     return(
-        <div className="infos">
+        <section className="anuncios">
             {!showProdutos &&
                 (
                     <div className="cardProduto">
@@ -76,7 +75,10 @@ function ProdutosPerfilPublico() {
                     )
                 })
             }
-        </div>
+
+            <button onclick="setaAnuncio(this)"><img src={botaoCar} alt="Seta - Ir para próximo anuncio" /></button>
+
+        </section>
     )
 }
 

@@ -141,10 +141,10 @@ function Corpo(){
                         </div>
             
                         <ul>
-                            <li><a href="produtos-por-cat.html">Esporte e Lazer</a></li>
-                            <li><a href="produtos-por-cat.html">Moda</a></li>
-                            <li><a href="produtos-por-cat.html">Eletrônicos</a></li>
-                            <li><a href="produtos-por-cat.html">Ferramentas e Utilitários</a></li>
+                            <li><a href="produtos-por-categoria">Esporte e Lazer</a></li>
+                            <li><a href="produtos-por-categoria">Moda</a></li>
+                            <li><a href="produtos-por-categoria">Eletrônicos</a></li>
+                            <li><a href="produtos-por-categoriagit">Ferramentas e Utilitários</a></li>
                         </ul>       
                     </div> 
                 </section>
@@ -152,13 +152,8 @@ function Corpo(){
                 <section className="conteudo">
 
                     <h2>Anúncios</h2>
-                    <section className="anuncios">
 
-                        <ProdutosPerfilPublico />
-
-                        <button onclick="setaAnuncio(this)"><img src={botaoCar} alt="Seta - Ir para próximo anuncio" /></button>
-                    
-                    </section>
+                    <ProdutosPerfilPublico />
                     
                     <div className="botaoVerMais">
                         <a href="produtos-por-cat.html"><span>ver mais</span><img src={seta} alt="botao ver mais" /></a>
