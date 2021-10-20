@@ -8,7 +8,7 @@ import Star from "../../img/icones/star1.png"
 
 function BarraPerfilPublico() {
 
-    const {user = 9} = useParams()
+    const {user = 2} = useParams()
     const [profile, setProfile]  = useState({})
     const [showProfile, setShowProfile] = useState(false)
 

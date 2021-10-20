@@ -165,100 +165,100 @@ function Corpo(){
     }, [senha])
 
     return(
-        <body className="perfilPrivado">
+        <div className="perfilPrivado">
 
-        <section className="titulo">
-            <h1>Minha Conta</h1>
-        </section>
-
-        <div className="containerFlex">
-
-            <section className="barraLateral">
-                    <div className="foto">
-                        <img src={perfilBlank} alt="Foto de Perfil" />
-                        <form>
-                            <input type="file" name="fotos" id="fotos" accept="image/*, .png .jpg" hidden={stateHidden} />
-                            <div className="botao"><button onClick={handleSubmitFoto}>{botaoFoto}</button></div>
-                        </form>
-                    </div>
-                    <div className="menu">
-                        <div className="tituloMenu">
-                            <h3>Minha Conta</h3>
-                            <img src={linhaAzul} />
-                        </div>
-
-                        <ul>
-                            <li>Dados Pessoais</li>
-                            <li>Login e Segurança</li>
-                            <li>Privacidade</li>
-                            <li>Excluir conta</li>
-                        </ul>
-                    </div>
+            <section className="titulo">
+                <h1>Minha Conta</h1>
             </section>
 
-            <section className="conteudo">
-                <form id="form_editar">
-                    <div className="dados">
-                        <div className="botao">
-                            <h2>Dados Pessoais</h2>
-                            <button onClick={handleSubmitMain}>{botaoMain}</button>
+            <div className="containerFlex">
+
+                <section className="barraLateral">
+                        <div className="foto">
+                            <img src={perfilBlank} alt="Foto de Perfil" />
+                            <form>
+                                <input type="file" name="fotos" id="fotos" accept="image/*, .png .jpg" hidden={stateHidden} />
+                                <div className="botao"><button onClick={handleSubmitFoto}>{botaoFoto}</button></div>
+                            </form>
+                        </div>
+                        <div className="menu">
+                            <div className="tituloMenu">
+                                <h3>Minha Conta</h3>
+                                <img src={linhaAzul} />
+                            </div>
+
+                            <ul>
+                                <li>Dados Pessoais</li>
+                                <li>Login e Segurança</li>
+                                <li>Privacidade</li>
+                                <li>Excluir conta</li>
+                            </ul>
+                        </div>
+                </section>
+
+                <section className="conteudo">
+                    <form id="form_editar">
+                        <div className="dados">
+                            <div className="botao">
+                                <h2>Dados Pessoais</h2>
+                                <button onClick={handleSubmitMain}>{botaoMain}</button>
+                            </div>
+
+                            <label htmlFor="nome">Nome Completo</label>
+                            <input className={`${(errosNome != "") ? 'campo-com-erro' : ''}`} type="text" id="nome" name="nome" placeholder="Nome Sobrenome" readOnly={stateRead} value={nome} onChange={(e)=>setNome(e.target.value)}/>
+                            <ul>
+                                <li>{errosNome}</li>
+                            </ul>
+                
+                            <label htmlFor="telefone">Telefone</label>
+                            <input className={`${(errosTelefone != "") ? 'campo-com-erro' : ''}`}type="tel" id="telefone" name="telefone" placeholder="(xx) 9xxxx-xxxx" readOnly={stateRead} value={telefone} onChange={(e)=>setTelefone(e.target.value)}/>
+                            <ul>
+                                <li>{errosTelefone}</li>
+                            </ul>
                         </div>
 
-                        <label htmlFor="nome">Nome Completo</label>
-                        <input className={`${(errosNome != "") ? 'campo-com-erro' : ''}`} type="text" id="nome" name="nome" placeholder="Nome Sobrenome" readOnly={stateRead} value={nome} onChange={(e)=>setNome(e.target.value)}/>
-                        <ul>
-                            <li>{errosNome}</li>
-                        </ul>
-            
-                        <label htmlFor="telefone">Telefone</label>
-                        <input className={`${(errosTelefone != "") ? 'campo-com-erro' : ''}`}type="tel" id="telefone" name="telefone" placeholder="(xx) 9xxxx-xxxx" readOnly={stateRead} value={telefone} onChange={(e)=>setTelefone(e.target.value)}/>
-                        <ul>
-                            <li>{errosTelefone}</li>
-                        </ul>
-                    </div>
+                        <div className="login">
+                            <h2>Login e Segurança</h2>
 
-                    <div className="login">
-                        <h2>Login e Segurança</h2>
+                            <label htmlFor="email">E-mail</label><br />
+                            <input className={`${(errosEmail.length != 0) ? 'campo-com-erro' : ''}`} type="email" id="email" name="email" placeholder="meuemail@email.com" readOnly={stateRead} value={emailP} onChange={(e)=>setEmailP(e.target.value)}/>
+                            <ul>
+                                {errosEmail.map((erro) => {
+                                        return (<li>{erro}</li>)
+                                })}
+                            </ul>
 
-                        <label htmlFor="email">E-mail</label><br />
-                        <input className={`${(errosEmail.length != 0) ? 'campo-com-erro' : ''}`} type="email" id="email" name="email" placeholder="meuemail@email.com" readOnly={stateRead} value={emailP} onChange={(e)=>setEmailP(e.target.value)}/>
-                        <ul>
-                            {errosEmail.map((erro) => {
-                                    return (<li>{erro}</li>)
-                            })}
-                        </ul>
+                            <label htmlFor="pass">Senha</label><br />
+                            <input className={`${(errosSenha != "") ? 'campo-com-erro' : ''}`} type="password" id="pass" name="password" placeholder="********" readOnly={stateRead} value={senha} onChange={(e)=>setSenha(e.target.value)}/>
+                            <ul>
+                                <li></li>
+                                <li>{errosSenha}</li>
+                            </ul>
+                        </div>
 
-                        <label htmlFor="pass">Senha</label><br />
-                        <input className={`${(errosSenha != "") ? 'campo-com-erro' : ''}`} type="password" id="pass" name="password" placeholder="********" readOnly={stateRead} value={senha} onChange={(e)=>setSenha(e.target.value)}/>
-                        <ul>
-                            <li></li>
-                            <li>{errosSenha}</li>
-                        </ul>
-                    </div>
+                        <div className="privacidade">
+                            <h2>Privacidade</h2>
+                            <div>
+                                <input type="checkbox" id="priv" name="priv" disabled={stateDisabled} checked={checkedState} onClick={validaPrivacidade}/>
+                                <p>Aceito receber novidades da alugaKi</p>
+                            </div>
+                        </div>
 
-                    <div className="privacidade">
-                        <h2>Privacidade</h2>
+                    </form>
+
+                    <div className="excluir">
+                        <h2>Excluir conta</h2>
                         <div>
-                            <input type="checkbox" id="priv" name="priv" disabled={stateDisabled} checked={checkedState} onClick={validaPrivacidade}/>
-                            <p>Aceito receber novidades da alugaKi</p>
+                            <p>Todos os dados serão excluídos definitivamente.<br />
+                            Não será possível recuperar sua conta.</p>
+                            <button onClick={handleExcluir}>Excluir</button>
                         </div>
                     </div>
+                </section> 
 
-                </form>
-
-                <div className="excluir">
-                    <h2>Excluir conta</h2>
-                    <div>
-                        <p>Todos os dados serão excluídos definitivamente.<br />
-                        Não será possível recuperar sua conta.</p>
-                        <button onClick={handleExcluir}>Excluir</button>
-                    </div>
-                </div>
-            </section> 
+            </div>
 
         </div>
-
-        </body>
     )
 }
 

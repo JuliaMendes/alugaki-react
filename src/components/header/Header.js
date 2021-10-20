@@ -10,7 +10,7 @@ function Header() {
         const [menuAberto, setMenuAberto] = useState(false)
 
     return (
-        <body className="headerPaginaInicial">
+        <div className="headerPaginaInicial">
             <header className="headerInicial">
                 <div className="container">
                     <div className="logo">
@@ -51,7 +51,7 @@ function Header() {
                 </div>
             </header>
 
-        </body>
+        </div>
 
     )
 

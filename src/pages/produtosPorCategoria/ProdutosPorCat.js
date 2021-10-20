@@ -26,7 +26,7 @@ function Produtos() {
     const [cat, setCat] = useState("Moda")
 
     return (
-        <body className="paginaCategorias">
+        <div className="paginaCategorias">
             <section className="produtos">
                 {/* categoria de produtos */}
                 <div className="titulo">
@@ -209,7 +209,7 @@ function Produtos() {
                     </div>
                 </div>
             </section>
-        </body>
+        </div>
     )
 
 }
