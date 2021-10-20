@@ -33,8 +33,9 @@
 .paginaCategorias .produtos .dropdown {
     display: none;
 } 
-.dropdown-menu-escondido{
-    opacity: 0 !important;
+.paginaCategorias .produtos .dropdown .dropdown-menu.dropdown-menu-escondido{
+    /* opacity: 0 !important; */
+    position: absolute;
 }
 /*titulo do filtro e divisor*/
 
@@ -238,11 +239,10 @@
         background-color: #FFFFFF;
         border-radius: 15px;
         opacity: 1;
-        pointer-events: none;
         transform: translateY(-10px);
         transition: all 150ms ease-in-out;
         box-shadow: 0px -2px 4px rgba(0, 0, 0, 0.25);
-        z-index: 1;
+        z-index: 10;
     }
     /* .paginaCategorias .produtos .dropdown.active>.menu-filtros+.dropdown-menu {
         opacity: 1;

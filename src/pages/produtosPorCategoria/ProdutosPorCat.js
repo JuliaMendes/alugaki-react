@@ -49,16 +49,16 @@ function Produtos() {
                                 <h3>Preço</h3>
                                 <ul>
                                     <li>
-                                        <input type="radio" name="preco" id="menor" />
-                                        <label for="menor">até R$99</label>
+                                        <input type="radio" name="precoCelular" id="menor" onClick={console.log} />
+                                        <label htmlFor="menor">até R$99</label>
                                     </li>
                                     <li>
-                                        <input type="radio" name="preco" id="medio" />
-                                        <label for="medio">entre R$99 e R$199</label>
+                                        <input type="radio" name="precoCelular" id="medio" onClick={console.log}/>
+                                        <label htmlFor="medio">entre R$99 e R$199</label>
                                     </li>
                                     <li>
-                                        <input type="radio" name="preco" id="maior" />
-                                        <label for="maior">de R$199 para cima</label>
+                                        <input type="radio" name="precoCelular" id="maior" onClick={console.log}/>
+                                        <label htmlFor="maior">de R$199 para cima</label>
                                     </li>
                                 </ul>
                             </li>
@@ -173,26 +173,6 @@ function Produtos() {
                     {/* lista dos produtos */}
                     <div className="lista-produtos">
                         <Cards category={cat} />
-                        {/* <div className="card-produto">
-                        <div className="thumb">
-                            <a href="listagem-prod.html"><img src="img/barraca.jpg" alt="Barraca de camping"></a>
-                        </div>
-                        <div className="info">
-                            <h3>Nome do produto</h3>
-                            <div>
-                                <img src="img/Star 1.png" alt="">
-                                <div>
-                                    <small>4,8</small>
-                                    <small style="color: #757575;">• 750 avaliações</small>
-                                </div>
-                            </div>
-                            <div className="localiz">
-                                <img src="img/location.png" alt="">
-                                <small style="color: #757575;">São Paulo, SP</small>
-                            </div>
-                            <h3 className="preco">R$preço /dia</h3>
-                        </div>
-                    </div> */}
                     </div>
                 </div>
 
