@@ -1,3 +1,4 @@
+import Helmet from "react-helmet";
 import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
 import "./paginaInicial.css";
@@ -15,6 +16,7 @@ import localizacao from "../../img/icones/location.png";
 function PaginaInicial() {
   return (
     <div>
+      <Helmet title="Pagina inicial | alugaKi" />
       <Header />
 
       <PartePrincipal />
@@ -49,8 +51,7 @@ function PartePrincipal() {
               .then((response) => response.json())
               .then((data) => {
                 let estado = data.address.state;
-                setLocalizacaoAtual(estado)
-               
+                setLocalizacaoAtual(estado);
               });
           },
           function (error) {
@@ -62,8 +63,6 @@ function PartePrincipal() {
       }
     }
   }, []);
-
- 
 
   return (
     <div className="paginaInicial">
@@ -125,15 +124,18 @@ function PartePrincipal() {
                 />
                 <div className="lupa">
                   <button>
-                  <Link to={`/produtos-por-categoria?categoria=${categoriaAtual}&localizacao=${localizacaoAtual}&busca=${buscaAtual}`}>
-                    <img src={iconeLupa} alt="Botao de lupa" />
-                  </Link>
+                    <Link
+                      to={`/produtos-por-categoria?categoria=${categoriaAtual}&localizacao=${localizacaoAtual}&busca=${buscaAtual}`}
+                    >
+                      <img src={iconeLupa} alt="Botao de lupa" />
+                    </Link>
                   </button>
                 </div>
               </div>
             </div>
             <div className="pesquisar-produto-mobile">
-              <input onChange={(e) => setBuscaAtual(e.target.value)}
+              <input
+                onChange={(e) => setBuscaAtual(e.target.value)}
                 type="text"
                 name="produto"
                 id="produto-mobile"
@@ -142,7 +144,9 @@ function PartePrincipal() {
               />
               <div className="lupa">
                 <button>
-                  <Link to={`/produtos-por-categoria?localizacao=${localizacaoAtual}&busca=${buscaAtual}`}>
+                  <Link
+                    to={`/produtos-por-categoria?localizacao=${localizacaoAtual}&busca=${buscaAtual}`}
+                  >
                     <img src={iconeLupa} alt="Botao de lupa" />
                   </Link>
                 </button>
@@ -235,9 +239,9 @@ function ProdutosPorCategoria() {
               return (
                 <div class="card-produto">
                   <div class="thumb">
-                    <a href="listagem-prod.html">
+                    <Link to="/listagem-produto">
                       <img src={elemento.img} alt={elemento.titulo} />
-                    </a>
+                    </Link>
                   </div>
                   <div class="info">
                     <h3>{elemento.titulo}</h3>
