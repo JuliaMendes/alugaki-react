@@ -3,14 +3,14 @@ import Footer from "../../components/footer/Footer";
 import "./paginaInicial.css";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import apiProdutos from "../../services/apiProdutos";
 
 import iconeLupa from "../../img/icones/search.png";
 import iconeSetaDireita from "../../img/icones/seta-direita.png";
 import backgroundGreen from "../../img/imagens/bg.jpeg";
 import backgroundBannerVioloes from "../../img/imagens/banner-violao.jpeg";
-import estrela from  "../../img/icones/star1.png";
-import localizacao from  "../../img/icones/location.png";
-
+import estrela from "../../img/icones/star1.png";
+import localizacao from "../../img/icones/location.png";
 
 function PaginaInicial() {
   return (
@@ -29,6 +29,40 @@ function PaginaInicial() {
 }
 
 function PartePrincipal() {
+  const [categoriaAtual, setCategoriaAtual] = useState("");
+  const [localizacaoAtual, setLocalizacaoAtual] = useState("");
+  const [buscaAtual, setBuscaAtual] = useState("");
+
+
+  useEffect(() => {
+    if (window.screen.width < 768) {
+      if ("geolocation" in navigator) {
+        navigator.geolocation.getCurrentPosition(
+          function (position) {
+            console.log(position);
+            let latitude = position.coords.latitude;
+            console.log(latitude);
+            let longitude = position.coords.longitude;
+
+            fetch(
+              `https://geolocation.contrateumdev.com.br/api/geocode?lat=${latitude}7&lon=${longitude}`
+            )
+              .then((response) => response.json())
+              .then((data) => {
+                let estado = data.address.state;
+                console.log(estado);
+              });
+          },
+          function (error) {
+            console.log(error);
+          }
+        );
+      } else {
+        alert("ops, não foi possível pegar a sua localização");
+      }
+    }
+  }, []);
+
   return (
     <div className="paginaInicial">
       <section
@@ -43,7 +77,9 @@ function PartePrincipal() {
           <div className="barra-de-pesquisa">
             <div className="barra">
               <div className="opt-localizacao">
-                <select name="localizacao" id="localizacao">
+                <select onChange={(e) =>
+                    setLocalizacaoAtual(e.target.selectedOptions[0].value)
+                  } name="localizacao" id="localizacao">
                   <option selected disabled value="">
                     Localização
                   </option>
@@ -53,7 +89,13 @@ function PartePrincipal() {
               </div>
 
               <div className="opt-categoria">
-                <select name="categoria" id="categoria">
+                <select
+                  onChange={(e) =>
+                    setCategoriaAtual(e.target.selectedOptions[0].value)
+                  }
+                  name="categoria"
+                  id="categoria"
+                >
                   <option selected disabled value="">
                     Categoria
                   </option>
@@ -67,25 +109,35 @@ function PartePrincipal() {
               </div>
 
               <div className="pesquisar-produto">
-                <input
+                <input onChange={(e) =>
+                    setBuscaAtual(e.target.value)
+                  }
                   type="text"
                   name="produto"
                   id="produto"
                   placeholder="O que você está procurando?"
+                  value = {buscaAtual}
                 />
                 <div className="lupa">
-                  <button onClick="busca()">
+                  <button>
                     <img src={iconeLupa} alt="Botao de lupa" />
                   </button>
                 </div>
               </div>
             </div>
-            {/* <div className="pesquisar-produto-mobile">
-                            <input type="text" name="produto" id="produto-mobile" placeholder="O que você está procurando?" />
-                            <div className="lupa">
-                                <button onclick="buscaMobile()" ><img src={"img/search.png"} alt="Botao de lupa" /></button>
-                            </div>
-                        </div> */}
+            <div className="pesquisar-produto-mobile">
+              <input
+                type="text"
+                name="produto"
+                id="produto-mobile"
+                placeholder="O que você está procurando?"
+              />
+              <div className="lupa">
+                <button onclick="buscaMobile()">
+                  <img src={"img/search.png"} alt="Botao de lupa" />
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -97,10 +149,6 @@ function ProdutosPorCategoria() {
   const [categoriaAtual, setcategoriaAtual] = useState("Esporte e Lazer");
   const [produtosExibidos, setProdutosExibidos] = useState([]);
 
-  function categoria(elemento) {
-    return elemento.category === categoriaAtual;
-  }
-
   useEffect(() => {
     buscaFiltrados();
   }, []);
@@ -110,12 +158,9 @@ function ProdutosPorCategoria() {
   }, [categoriaAtual]);
 
   function buscaFiltrados() {
-    fetch(
-      `https://raw.githubusercontent.com/JuliaMendes/alugaki-react/main/src/database/db.json`
-    )
-      .then((response) => response.json())
-      .then((data) => {
-        setProdutosExibidos(data.products.filter(categoria).slice(0, 4));
+    apiProdutos.get(`/products?q=${categoriaAtual}&_start=0&_end=4`)
+      .then((response) => {
+        setProdutosExibidos(response.data);
       });
   }
 
@@ -124,7 +169,12 @@ function ProdutosPorCategoria() {
       <section className="produtos-por-categoria">
         <div className="container">
           <div className="botoes-categoria">
-            <button className={`${categoriaAtual === 'Esporte e Lazer' ? "botoes-categoria-selecionado" : "" }`}
+            <button
+              className={`${
+                categoriaAtual === "Esporte e Lazer"
+                  ? "botoes-categoria-selecionado"
+                  : ""
+              }`}
               onClick={(e) => {
                 setcategoriaAtual(e.target.innerText);
               }}
@@ -133,7 +183,9 @@ function ProdutosPorCategoria() {
             </button>
             <span>|</span>
             <button
-                className={`${categoriaAtual === 'Moda' ? "botoes-categoria-selecionado" : "" }`}
+              className={`${
+                categoriaAtual === "Moda" ? "botoes-categoria-selecionado" : ""
+              }`}
               onClick={(e) => {
                 setcategoriaAtual(e.target.innerText);
               }}
@@ -142,7 +194,11 @@ function ProdutosPorCategoria() {
             </button>
             <span>|</span>
             <button
-            className={`${categoriaAtual === 'Eletrônicos' ? "botoes-categoria-selecionado" : "" }`}
+              className={`${
+                categoriaAtual === "Eletrônicos"
+                  ? "botoes-categoria-selecionado"
+                  : ""
+              }`}
               onClick={(e) => {
                 setcategoriaAtual(e.target.innerText);
               }}
@@ -151,7 +207,11 @@ function ProdutosPorCategoria() {
             </button>
             <span>|</span>
             <button
-            className={`${categoriaAtual === 'Ferramentas e Utilitários' ? "botoes-categoria-selecionado" : "" }`}
+              className={`${
+                categoriaAtual === "Ferramentas e Utilitários"
+                  ? "botoes-categoria-selecionado"
+                  : ""
+              }`}
               onClick={(e) => {
                 setcategoriaAtual(e.target.innerText);
               }}
