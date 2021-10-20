@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import Helmet from "react-helmet";
 
 import "./login.css";
 
@@ -10,6 +11,7 @@ import iconeOlho from "../../img/icones/icone_olho.png";
 function PaginaLogin() {
   return (
     <div style={{ backgroundImage: `url(${backgroundGreen})` }}>
+      <Helmet title="Faça login | alugaKi" />
       <HeaderSimples />
 
       <CardLogin />
