@@ -1,15 +1,14 @@
 import { useState, useEffect } from 'react';
 import apiProdutos from "../../services/apiProdutos";
-import { useParams } from 'react-router-dom';
 
 import produtoBlank from "../../img/icones/productBlank.png"
 import Star from "../../img/icones/star1.png"
 import Location from "../../img/icones/location.png"
 import botaoCar from "../../img/icones/drop_down1.png"
 
-function ProdutosPerfilPublico() {
+function ProdutosPerfilPublico(props) {
 
-    const {user = 2} = useParams()
+    const user = props.userID
     const [produtos, setProdutos]  = useState([])
     const [showProdutos, setShowProdutos] = useState(false)
 
@@ -54,7 +53,7 @@ function ProdutosPerfilPublico() {
                     return(
                         <div className="cardProduto">
                             <div className="thumb">
-                                <a href="listagem-prod.html"><img src={item.img} alt="Produto" /></a>
+                                <a href="listagem-prod.html"><img src={"/" + item.img} alt="Produto" /></a>
                             </div>
                             <div className="info">
                                 <h3>{item.titulo}</h3>

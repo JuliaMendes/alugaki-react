@@ -284,7 +284,9 @@
       "nome": "João",
       "telefone": "(11) 90000-0000",
       "email": "joao@email.com",
-      "privacidade": false
+      "privacidade": false,
+      "avaliacao": 4.6,
+      "navaliacao": 33
     },
     {
       "id": 2,
@@ -292,7 +294,9 @@
       "nome": "Ana",
       "telefone": "(21) 90000-0000",
       "email": "ana@email.com",
-      "privacidade": false
+      "privacidade": false,
+      "avaliacao": 4.9,
+      "navaliacao": 32
     },
     {
       "id": 3,
@@ -300,7 +304,9 @@
       "nome": "Carlos",
       "telefone": "(21) 90000-0000",
       "email": "carlos@email.com",
-      "privacidade": true
+      "privacidade": true,
+      "avaliacao": 4.6,
+      "navaliacao": 73
     },
     {
       "id": 4,
@@ -308,7 +314,9 @@
       "nome": "Juliana",
       "telefone": "(21) 90000-0000",
       "email": "juliana@email.com",
-      "privacidade": true
+      "privacidade": true,
+      "avaliacao": 4.7,
+      "navaliacao": 67
     },
     {
       "id": 5,
@@ -316,7 +324,9 @@
       "nome": "Beatriz",
       "telefone": "(11) 90000-0000",
       "email": "beatriz@email.com",
-      "privacidade": true
+      "privacidade": true,
+      "avaliacao": 4.9,
+      "navaliacao": 90
     },
     {
       "id": 6,
@@ -324,7 +334,9 @@
       "nome": "Eduardo",
       "telefone": "(11) 90000-0000",
       "email": "eduardo@email.com",
-      "privacidade": false
+      "privacidade": false,
+      "avaliacao": 4.1,
+      "navaliacao": 53
     },
     {
       "id": 7,
@@ -332,7 +344,9 @@
       "nome": "Laura",
       "telefone": "(21) 90000-0000",
       "email": "laura@email.com",
-      "privacidade": false
+      "privacidade": false,
+      "avaliacao": 3.5,
+      "navaliacao": 37
     },
     {
       "id": 8,
@@ -340,7 +354,9 @@
       "nome": "Teresa",
       "telefone": "(11) 90000-0000",
       "email": "teresa@email.com",
-      "privacidade": true
+      "privacidade": true,
+      "avaliacao": 4.7,
+      "navaliacao": 52
     },
     {
       "id": 9,
@@ -348,7 +364,9 @@
       "nome": "Lucas",
       "telefone": "(21) 90000-0000",
       "email": "lucas@email.com",
-      "privacidade": true
+      "privacidade": true,
+      "avaliacao": 4.4,
+      "navaliacao": 92
     }
   ]
 }

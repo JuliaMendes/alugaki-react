@@ -22,8 +22,7 @@ function Routes() {
             <Route path="/perfil-privado">
                 <PaginaPerfilPrivado/>
             </Route>
-            <Route path="/perfil-publico">
-                <PaginaPerfilPublico/>
+            <Route path="/perfil-publico/:profile" component={PaginaPerfilPublico}>
             </Route>
             <Route path="/cadastro-produtos">
                 <PaginaCadastroProduto/>

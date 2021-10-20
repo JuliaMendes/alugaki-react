@@ -1,5 +1,6 @@
 //imports
 import { useState, useEffect } from 'react';
+import Helmet from 'react-helmet'
 
 import './perfilPrivado.css';
 
@@ -12,6 +13,7 @@ import linhaAzul from "../../img/icones/Line-azul.png"
 function PaginaPerfilPrivado() {
     return (
         <div>
+            <Helmet title="Minha Conta | alugaKi" />
             <HeaderSecundario />
             <Corpo/>
             <Footer />

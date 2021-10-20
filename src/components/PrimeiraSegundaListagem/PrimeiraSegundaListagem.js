@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import apiProdutos from "../../services/apiProdutos";
 import { useParams } from 'react-router-dom';
 
+import VendedorListagemProduto from '../vendedorListagemProduto/VendedorListagemProduto';
+
 import perfilBlank from "../../img/icones/bolinha_perfil.png"
 import linhaCinza from "../../img/icones/linha_cinza.png"
 import star from "../../img/icones/star1.png"
@@ -13,36 +15,24 @@ import whatsapp from "../../img/icones/whatsapp-verde.png"
 
 function PrimeiraSegundaListagem() {
 
-    const {productID = 1} = useParams()
-    const [profile, setProfile]  = useState({})
+    const {productID = 3} = useParams()
     const [produto, setProduto] = useState({})
-    const [show, setShow] = useState(false)
+    const [showProduto, setShowProduto] = useState(false)
 
     useEffect(() => {
-        setShow(true)
+        setShowProduto(true)
     }, [produto])
 
     useEffect(() => {
         apiProdutos.get(`/products/${productID}`)
             .then(response => response.data)
-            .then(response => {
-                setProduto(response)})
+            .then(response => setProduto(response))
             .catch(error => window.alert("Produto não encontrado."))
     }, [productID])
-
-    // const user = produto.id_anunciante
-
-    useEffect(() => {
-        apiProdutos.get(`/users/4`)
-            .then(response => response.data)
-            .then(response => {
-                setProfile(response)})
-            .catch(error => console.log(error))
-    },)
     
     return(
         <>
-            {!show &&
+            {!showProduto &&
                 (
                     <>
                         <section className="primeira">
@@ -94,29 +84,13 @@ function PrimeiraSegundaListagem() {
                                         Nam sit amet arcu posuere, pulvinar dolor et, porta diam. Duis fermentum <br />
                                         tortor eu nibh mattis, id sodales nisl vestibulum. </p>
                                 </div>
-                                <div className="vendedor">
-                                    <a href="https://juliamendes.github.io/alugaki/app/perfil-publico.html" target="blank">
-                                        <div className="avatar" style={{ 'backgroundColor': 'darkgray'}}></div>
-                                    </a>
-                                    <div className="info">
-                                        <a href="https://juliamendes.github.io/alugaki/app/perfil-publico.html" target="blank"><h3>John Doe</h3></a>
-                                        <div>
-                                            <img src={local} alt="" />
-                                            <small style={{ color: '#757575' }}>São Paulo, SP</small>
-                                        </div>
-                                        <div>
-                                            <img src={star} alt="" />
-                                            <small>4,8</small>
-                                            <small style={{ color: '#757575' }}>• 750 avaliações</small> <br />
-                                        </div>
-                                    </div>
-                                </div>
+                                <VendedorListagemProduto userID={produto.id_anunciante}/>
                             </div>
                         </section>
                     </>
                 )
             }
-            {show &&
+            {showProduto &&
                 (
                     <>
                         <section className="primeira">
@@ -165,23 +139,7 @@ function PrimeiraSegundaListagem() {
                                     <h2>Descrição</h2>
                                     <p>{produto.descricao} </p>
                                 </div>
-                                <div className="vendedor">
-                                    <a href="https://juliamendes.github.io/alugaki/app/perfil-publico.html" target="blank">
-                                        <div className="avatar"> <img src={profile.img}/> </div>
-                                    </a>
-                                    <div className="info">
-                                        <a href="https://juliamendes.github.io/alugaki/app/perfil-publico.html" target="blank"><h3>{profile.nome}</h3></a>
-                                        <div>
-                                            <img src={local} alt="" />
-                                            <small style={{ color: '#757575' }}>{produto.localizacao}</small>
-                                        </div>
-                                        <div>
-                                            <img src={star} alt="" />
-                                            <small>4,8</small>
-                                            <small style={{ color: '#757575' }}>• 750 avaliações</small> <br />
-                                        </div>
-                                    </div>
-                                </div>
+                                <VendedorListagemProduto userID={produto.id_anunciante}/>
                             </div>
                         </section>
                     </>

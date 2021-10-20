@@ -14,7 +14,7 @@ function Header() {
             <header className="headerInicial">
                 <div className="container">
                     <div className="logo">
-                        <a href="index.html"><img src={logoAlugaki} alt="Logo alugaki" /></a>
+                        <Link to="/"><img src={logoAlugaki} alt="Logo alugaki" /></Link>
                     </div>
                     <div className="botoes">
                         <Link to="/cadastro-produtos"><button>Anunciar</button></Link>
