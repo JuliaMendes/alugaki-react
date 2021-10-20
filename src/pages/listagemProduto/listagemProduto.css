@@ -143,12 +143,14 @@
     align-items: center;
     justify-content: flex-start;
 }
-.paginaListagem .segunda .vendedor .avatar{
+.paginaListagem .segunda .vendedor .avatar,
+.paginaListagem .segunda .vendedor .avatar img{
     border-radius: 50%;
     width: 80px;
     height: 80px;
     margin-right: 10px;
 }
+
 .paginaListagem .segunda .vendedor .info{
     display: flex;
     flex-direction: column;

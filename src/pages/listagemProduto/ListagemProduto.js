@@ -2,14 +2,11 @@ import "./listagemProduto.css"
 
 import HeaderSecundario from "../../components/headerSecundario/HeaderSecundario"
 import Footer from "../../components/footer/Footer"
+import Helmet from 'react-helmet'
 import PrimeiraSegundaListagem from "../../components/PrimeiraSegundaListagem/PrimeiraSegundaListagem"
 
 import star from "../../img/icones/star1.png"
 import local from "../../img/icones/location.png"
-import favorite from "../../img/icones/favorite_border.png"
-import share from "../../img/icones/share.png"
-import calendario from "../../img/imagens/calendario.png"
-import whatsapp from "../../img/icones/whatsapp-verde.png"
 import arrowBack from "../../img/icones/arrow_back_ios.png"
 import arrowForward from "../../img/icones/arrow_forward_ios.png"
 import arduinoImage from "../../img/imagens/arduino.jpeg"
@@ -22,6 +19,7 @@ import dropDown2 from "../../img/icones/drop_down2.png"
 function PaginaListagemProduto() {
     return (
         <div>
+            <Helmet title="Listagem de Produto | alugaKi" />
             <HeaderSecundario />
             <PrimeiraSegunda />
             <Terceira />

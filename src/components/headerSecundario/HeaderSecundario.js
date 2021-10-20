@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import {Link} from 'react-router-dom';
 import "./headerSecundario.css";
 
 import logoAlugaki from '../../img/imagens/alugaKi-removebg-preview.png'
@@ -13,7 +14,7 @@ function HeaderSecundario() {
             <div className="container">
                 <div className="logo-e-barra">
                     <div className="logo">
-                        <a href="index.html"><img src={logoAlugaki} alt="Logo alugaki" /></a>
+                        <Link to="/"><img src={logoAlugaki} alt="Logo alugaki" /></Link>
                     </div>
                     <div className="barra">
                         <form>
@@ -23,36 +24,37 @@ function HeaderSecundario() {
                     </div>
                 </div>
                 <div className="botoes">
-                    <a href="cadastro-produto.html"><button>Anunciar</button></a>
-                    <div className="dropdown">
-                        <button onClick={(e) => { setMenuAberto(!menuAberto) }} data-dropdown-button><img src={iconeUsuario} alt="Botao de Menu" /></button>
-                        <div className={`dropdown-menu ${menuAberto ? '' : 'dropdown-menu-escondido'}`}>
-                            <ul>
-                                <li>
-                                    <a href="cadastro-usuario.html">
-                                        Cadastre-se
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="login.html">
-                                        Login
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="perfil-privado.html">
-                                        Meu perfil
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="cadastro-produto.html">
-                                        Anunciar
-                                    </a>
-                                </li>
+                        <Link to="/cadastro-produtos"><button>Anunciar</button></Link>
+                        <div className="dropdown">
+                            <button onClick={(e) => { setMenuAberto(!menuAberto) }}><img src={iconeUsuario}
+                                alt="Botao de Menu" /></button>
+                            <div className={`dropdown-menu ${menuAberto ? '' : 'dropdown-menu-escondido'}`}>
+                                <ul>
+                                    <li>
+                                        <Link to="/cadastro-usuario">
+                                            Cadastre-se
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link to="/login">
+                                            Login
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link to="/perfil-privado">
+                                            Meu perfil
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link to="/cadastro-produtos">
+                                            Anunciar
+                                        </Link>
+                                    </li>
 
-                            </ul>
+                                </ul>
+                            </div>
                         </div>
                     </div>
-                </div>
             </div>
         </header>
     )

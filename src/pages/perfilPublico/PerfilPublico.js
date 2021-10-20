@@ -1,5 +1,7 @@
 //imports
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
+import { useParams } from 'react-router-dom';
+import Helmet from 'react-helmet'
 
 import './perfilPublico.css';
 
@@ -10,7 +12,6 @@ import ProdutosPerfilPublico from "../../components/produtosPerfilPublico/Produt
 
 import perfilBlank from "../../img/icones/bolinha_perfil.png"
 import linhaAzul from "../../img/icones/Line-azul.png"
-import linhaCinza from "../../img/icones/linha_cinza.png"
 import Star from "../../img/icones/star1.png"
 import seletorCheio from "../../img/icones/seletor_cheio_avaliacao.png"
 import seletorVazio from "../../img/icones/seletor_vazio_avaliacao.png"
@@ -19,16 +20,20 @@ import seta from "../../img/icones/seta-direita.png"
 
 //formando a pagina
 function PaginaPerfilPublico() {
+    const { profile } = useParams();
     return (
         <div>
+            <Helmet title="Perfil | alugaKi" />
             <HeaderSecundario />
-            <Corpo/>
+            <Corpo userID={profile}/>
             <Footer />
         </div>
     )
 }
 
-function Corpo(){
+function Corpo(props){
+
+    const usuario = props.userID
 
     const [seletor1, setSeletor1] = useState(seletorCheio)
     const [seletor2, setSeletor2] = useState(seletorVazio)
@@ -132,7 +137,7 @@ function Corpo(){
 
             <div className="containerFlex">
                 <section className="barraLateral">
-                    <BarraPerfilPublico />
+                    <BarraPerfilPublico userID={usuario} />
 
                     <div className="filtros">
                         <div className="tituloFiltro">
@@ -153,7 +158,7 @@ function Corpo(){
 
                     <h2>Anúncios</h2>
 
-                    <ProdutosPerfilPublico />
+                    <ProdutosPerfilPublico userID={usuario}/>
                     
                     <div className="botaoVerMais">
                         <a href="produtos-por-cat.html"><span>ver mais</span><img src={seta} alt="botao ver mais" /></a>
