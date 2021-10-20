@@ -132,7 +132,7 @@ function CardLogin() {
   }
 
   return (
-    <body className="paginaLogin">
+    <div className="paginaLogin">
       <main className="container">
         <section className="card-login">
           <h1>
@@ -221,7 +221,7 @@ function CardLogin() {
           </div>
         </section>
       </main>
-    </body>
+    </div>
   );
 }
 

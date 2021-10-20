@@ -105,15 +105,15 @@ header.headerSecundario .container .botoes .dropdown>button img {
     width: 20px;
 }
 
-.dropdown-menu-escondido{
+.headerSecundario .dropdown-menu-escondido{
     opacity: 0 !important;
 }
 
- .dropdown {
+ .headerSecundario .dropdown {
     position: relative;
 }
 
-.dropdown-menu {
+.headerSecundario .dropdown-menu {
     position: absolute;
     right: 0;
     width: 150px;
@@ -127,29 +127,29 @@ header.headerSecundario .container .botoes .dropdown>button img {
     box-shadow: 0px -2px 4px rgba(0, 0, 0, 0.25);
 }
 
-.dropdown-menu ul {
+.headerSecundario .dropdown-menu ul {
     padding: 0px 10px;
 }
 
-.dropdown-menu ul li {
+.headerSecundario .dropdown-menu ul li {
     list-style: none;
     margin: 10px;
 }
 
-.dropdown-menu ul a {
+.headerSecundario .dropdown-menu ul a {
     text-decoration: none;
     color: #757575;
     font-weight: bold;
     font-size: 18px;
 }
 
-.dropdown-menu ul a:hover {
+.headerSecundario .dropdown-menu ul a:hover {
     color: #FF5722;
 }
 
 @media (max-width: 850px){
 
-    .container{
+    .headerSecundario .container{
         width: 90vw;
         max-width: 100%;
     }
@@ -173,7 +173,7 @@ header.headerSecundario .container .botoes .dropdown>button img {
 
 @media (max-width: 769px){
 
-    .container{
+    .headerSecundario .container{
         flex-wrap: wrap;
     }
     header.headerSecundario .container{

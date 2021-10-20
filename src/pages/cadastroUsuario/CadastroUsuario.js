@@ -163,7 +163,7 @@ function CardCadastrese() {
   }
 
   return (
-    <body className="cadastroUsuario">
+    <div className="cadastroUsuario">
       <main className="container">
         <section className="card-cadastre-se">
           <h1>
@@ -316,7 +316,7 @@ function CardCadastrese() {
           </div>
         </section>
       </main>
-    </body>
+    </div>
   );
 }
 
