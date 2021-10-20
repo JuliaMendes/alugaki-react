@@ -3,6 +3,7 @@ import Footer from "../../components/footer/Footer";
 import "./paginaInicial.css";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import apiProdutos from "../../services/apiProdutos";
 
 import iconeLupa from "../../img/icones/search.png";
 import iconeSetaDireita from "../../img/icones/seta-direita.png";
@@ -148,10 +149,6 @@ function ProdutosPorCategoria() {
   const [categoriaAtual, setcategoriaAtual] = useState("Esporte e Lazer");
   const [produtosExibidos, setProdutosExibidos] = useState([]);
 
-  function categoria(elemento) {
-    return elemento.category === categoriaAtual;
-  }
-
   useEffect(() => {
     buscaFiltrados();
   }, []);
@@ -161,12 +158,9 @@ function ProdutosPorCategoria() {
   }, [categoriaAtual]);
 
   function buscaFiltrados() {
-    fetch(
-      `https://raw.githubusercontent.com/JuliaMendes/alugaki-react/main/src/database/db.json`
-    )
-      .then((response) => response.json())
-      .then((data) => {
-        setProdutosExibidos(data.products.filter(categoria).slice(0, 4));
+    apiProdutos.get(`/products?q=${categoriaAtual}&_start=0&_end=4`)
+      .then((response) => {
+        setProdutosExibidos(response.data);
       });
   }
 
