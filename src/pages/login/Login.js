@@ -193,7 +193,7 @@ function CardLogin() {
               />
               <img className="olho" src={iconeOlho} alt="Ícone olho" />
               <div className="esqueci-senha">
-                <a href="#">Esqueci a senha</a>
+                <Link to="#">Esqueci a senha</Link>
               </div>
               <ul className="erros">
                 {listaErros.lista.map((erro) => {

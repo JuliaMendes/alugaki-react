@@ -287,9 +287,9 @@ function BannerExperimenteAnunciar() {
               <h2>Experimente anunciar</h2>
             </div>
             <div className="botao-saiba-mais">
-              <a href="cadastro-produto.html">
+              <Link to="/cadastro-produtos">
                 <button>Saiba mais</button>
-              </a>
+              </Link>
             </div>
           </div>
         </div>
