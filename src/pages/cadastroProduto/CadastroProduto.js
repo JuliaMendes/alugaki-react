@@ -153,6 +153,8 @@ function Formulario() {
                                             <option value="por-mes">/ Mês</option>
                                             <option value="por-hora">/ Hora</option>
                                         </select>
+
+                                    
                                     </div>
                                 </div>
                                 <div className="cat">
@@ -221,6 +223,7 @@ function Formulario() {
             </section>
         </body>
     )
+
 }
 export default PaginaCadastroProduto;
 
