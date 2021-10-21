@@ -7,30 +7,33 @@ import Star from "../../img/icones/star1.png"
 import Location from "../../img/icones/location.png"
 
 function Cards(props) {
-    console.log('props', props)
-    const {categoria = props.category} = useParams()
-    const [produtos, setProdutos]  = useState([])
+
     const [showProdutos, setShowProdutos] = useState(false)
+
+    const [produtos, setProdutos] = useState([])
+
+    const url = props.produtosRequest
+    const [produtosExibidos, setProdutosExibidos] = useState()
 
     useEffect(() => {
         setShowProdutos(true)
-    }, [produtos])
+    }, [produtosExibidos])
 
     useEffect(() => {
-        apiProdutos.get(`/products?category_like=${categoria}`)
-            .then(response => response.data)
-            .then(response => setProdutos(response))
-    }, [categoria])
+        apiProdutos
+          .get(`/products${url}`)
+          .then((response) => {
+            setProdutosExibidos(response.data);
+          });
+    }, [url])
 
-    console.log(produtos)
+    if (produtosExibidos) {
 
-    if (props.produtosRequest) {
-
-        if (props.produtosRequest.length === 0) {
+        if (produtosExibidos.length === 0) {
             return <h1>Nenhum produto encontrado</h1>
         }
 
-        return props.produtosRequest.map(item => {
+        return produtosExibidos.map(item => {
             return(
                 <div className="card-produto">
                     <div className="thumb">

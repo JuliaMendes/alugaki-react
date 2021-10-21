@@ -21,24 +21,9 @@ function PaginaProdutosPorCat() {
 
 
 function Produtos() {
-    const teste = useLocation() 
-    const teste2 = new URLSearchParams(teste.search)
-    const teste3 = teste.search
-    const [produtosExibidos, setProdutosExibidos] = useState([]);
-    
-    function buscaFiltradosURL() {
-        apiProdutos
-          .get(`/products${teste3}`)
-          .then((response) => {
-            setProdutosExibidos(response.data);
-          });
-      }
-
-      useEffect(() => {
-        buscaFiltradosURL();
-      }, []);
-
-    
+    const urlBusca = useLocation()
+    const urlBuscaSearch = urlBusca.search
+    const [produtosExibidos, setProdutosExibidos] = useState(urlBuscaSearch);
  
     const [paginaAcessada, setPaginaAcessada] = useState(1)
     const links = [1, 2, 3]
@@ -130,10 +115,11 @@ function Produtos() {
                         </div>
 
                         <ul>
-                            <li className="botao-cat"><a href="#" onClick={() => { setCat("Esporte e Lazer")}}>Esporte e Lazer</a></li>
-                            <li className="botao-cat"><a href="#" onClick={() => { setCat("Moda")}}>Moda</a></li>
-                            <li className="botao-cat"><a href="#" onClick={() => { setCat("Eletrônicos")}}>Eletrônicos</a></li>
-                            <li className="botao-cat"><a href="#" onClick={() => { setCat("Ferramentas e Utilitários")}}>Ferramentas e Utilitários</a></li>
+                            {/* <li className="botao-cat"><a href="#" onClick={() => { setCat("Esporte e Lazer")}}>Esporte e Lazer</a></li> */}
+                            <li className="botao-cat"><a href="#" onClick={() => {setProdutosExibidos("?category_like=Esporte e Lazer")}}>Esporte e Lazer</a></li>
+                            <li className="botao-cat"><a href="#" onClick={() => {setProdutosExibidos("?category_like=Moda")}}>Moda</a></li>
+                            <li className="botao-cat"><a href="#" onClick={() => {setProdutosExibidos("?category_like=Eletrônicos")}}>Eletrônicos</a></li>
+                            <li className="botao-cat"><a href="#" onClick={() => {setProdutosExibidos("?category_like=Ferramentas e Utilitários")}}>Ferramentas e Utilitários</a></li>
                         </ul>
 
                         <div className="titulo-filtro">
@@ -195,11 +181,12 @@ function Produtos() {
                     </div>
                     {/* lista dos produtos */}
                     <div className="lista-produtos">
-                        {teste3 ? (
+                        <Cards produtosRequest={produtosExibidos} />
+                        {/* {teste3 ? (
                             <Cards produtosRequest={produtosExibidos} />
                         ) : (
                             <Cards produtosRequest={false} category={cat} />
-                        )}
+                        )} */}
                     </div>
                 </div>
 
