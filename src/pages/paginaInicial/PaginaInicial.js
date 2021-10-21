@@ -249,7 +249,7 @@ function ProdutosPorCategoria() {
                       <img src={estrela} alt="Ícone estrela" />
                       <div>
                         <small class="pontuacao">{elemento.avaliacao}</small>
-                        <small>•{elemento.navaliacao} avaliações</small>
+                        <small>• {elemento.navaliacao} avaliações</small>
                       </div>
                     </div>
                     <div class="localiz">

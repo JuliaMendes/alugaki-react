@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import apiProdutos from "../../services/apiProdutos";
 import { useParams } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 import produtoBlank from "../../img/icones/productBlank.png"
 import Star from "../../img/icones/star1.png"
@@ -53,7 +54,9 @@ function Cards(props) {
             return(
                 <div className="card-produto">
                     <div className="thumb">
-                        <a href="listagem-prod.html"><img src={item.img} alt="Produto" /></a>
+                        <Link to={`/listagem-produto/${item.id}`}>
+                                <img src={item.img} alt={item.titulo} />
+                        </Link>
                     </div>
                     <div className="info">
                         <h3>{item.titulo}</h3>
@@ -61,7 +64,7 @@ function Cards(props) {
                             <img src={Star} alt="Ícone estrela" />
                             <div>
                                 <small className="pontuacao">{item.avaliacao}</small>
-                                <small>•{item.navaliacao} avaliações</small>
+                                <small>• {item.navaliacao} avaliações</small>
                             </div>
                         </div>
                         <div className="localiz">
@@ -106,7 +109,9 @@ function Cards(props) {
                     return(
                         <div className="card-produto">
                             <div className="thumb">
-                                <a href="listagem-prod.html"><img src={item.img} alt="Produto" /></a>
+                            <Link to={`/listagem-produto/${item.id}`}>
+                                <img src={item.img} alt={item.titulo} />
+                            </Link>
                             </div>
                             <div className="info">
                                 <h3>{item.titulo}</h3>
@@ -114,7 +119,7 @@ function Cards(props) {
                                     <img src={Star} alt="Ícone estrela" />
                                     <div>
                                         <small className="pontuacao">{item.avaliacao}</small>
-                                        <small>•{item.navaliacao} avaliações</small>
+                                        <small>• {item.navaliacao} avaliações</small>
                                     </div>
                                 </div>
                                 <div className="localiz">

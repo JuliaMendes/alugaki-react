@@ -65,7 +65,7 @@ function ProdutosPerfilPublico(props) {
                                     <img src={star} alt="Ícone estrela" />
                                     <div>
                                         <small className="pontuacao">{item.avaliacao}</small>
-                                        <small>•{item.navaliacao} avaliações</small>
+                                        <small>• {item.navaliacao} avaliações</small>
                                     </div>
                                 </div>
                                 <div className="localiz">
