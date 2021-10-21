@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import Helmet from "react-helmet";
 
 import "./login.css";
 
@@ -10,6 +11,7 @@ import iconeOlho from "../../img/icones/icone_olho.png";
 function PaginaLogin() {
   return (
     <div style={{ backgroundImage: `url(${backgroundGreen})` }}>
+      <Helmet title="Faça login | alugaKi" />
       <HeaderSimples />
 
       <CardLogin />
@@ -132,7 +134,7 @@ function CardLogin() {
   }
 
   return (
-    <body className="paginaLogin">
+    <div className="paginaLogin">
       <main className="container">
         <section className="card-login">
           <h1>
@@ -191,7 +193,7 @@ function CardLogin() {
               />
               <img className="olho" src={iconeOlho} alt="Ícone olho" />
               <div className="esqueci-senha">
-                <a href="#">Esqueci a senha</a>
+                <Link to="#">Esqueci a senha</Link>
               </div>
               <ul className="erros">
                 {listaErros.lista.map((erro) => {
@@ -221,7 +223,7 @@ function CardLogin() {
           </div>
         </section>
       </main>
-    </body>
+    </div>
   );
 }
 

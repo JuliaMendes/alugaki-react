@@ -16,14 +16,11 @@ function Routes() {
             <Route path ="/produtos-por-categoria">
                 <PaginaProdutosPorCat/>
             </Route>
-            <Route path="/listagem-produto">
-                <PaginaListagemProduto/>
+            <Route path="/listagem-produto/:product" component={PaginaListagemProduto}>
             </Route>
-            <Route path="/perfil-privado">
-                <PaginaPerfilPrivado/>
+            <Route path="/perfil-privado/:profile" component={PaginaPerfilPrivado}>
             </Route>
-            <Route path="/perfil-publico">
-                <PaginaPerfilPublico/>
+            <Route path="/perfil-publico/:profile" component={PaginaPerfilPublico}>
             </Route>
             <Route path="/cadastro-produtos">
                 <PaginaCadastroProduto/>

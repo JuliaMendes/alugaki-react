@@ -32,6 +32,10 @@
 }
 .paginaCategorias .produtos .dropdown {
     display: none;
+} 
+.paginaCategorias .produtos .dropdown .dropdown-menu.dropdown-menu-escondido{
+    /* opacity: 0 !important; */
+    position: absolute;
 }
 /*titulo do filtro e divisor*/
 
@@ -163,6 +167,7 @@
     color: #484848;
 }
 .produtos .container-fim li a:hover{
+    cursor: pointer;
     color:#FF5722;
     transition: 0.5s;
 }
@@ -226,25 +231,24 @@
         display: flex;
     }
     .paginaCategorias .produtos .dropdown .dropdown-menu {
-        position: absolute;
+        position: relative;
         left: 0;
         width: 70%;
         height: 700px;
         top: calc(100% + .99rem);
         background-color: #FFFFFF;
         border-radius: 15px;
-        opacity: 0;
-        pointer-events: none;
+        opacity: 1;
         transform: translateY(-10px);
         transition: all 150ms ease-in-out;
         box-shadow: 0px -2px 4px rgba(0, 0, 0, 0.25);
-        z-index: 1;
+        z-index: 10;
     }
-    .paginaCategorias .produtos .dropdown.active>.menu-filtros+.dropdown-menu {
+    /* .paginaCategorias .produtos .dropdown.active>.menu-filtros+.dropdown-menu {
         opacity: 1;
         transform: translateY(0);
         pointer-events: auto;
-    }
+    } */
     .paginaCategorias .produtos .dropdown h3{
         color: #419488;
         font-weight: bold;
@@ -260,14 +264,14 @@
         list-style: none;
         margin: 10px;
     }
-    .paginaCategorias .produtos .dropdown-menu ul a {
+    .paginaCategorias .produtos .dropdown .dropdown-menu ul a {
         text-decoration: none;
         color: #757575;
         font-weight: bold;
         font-size: 15px;
         font-family: 'Roboto';
     }
-    .paginaCategorias .produtos .dropdown-menu ul a:hover, label:hover {
+    .paginaCategorias .produtos .dropdown .dropdown-menu ul a:hover, label:hover {
         color: #419488;
         transition: 0.5s;
     }

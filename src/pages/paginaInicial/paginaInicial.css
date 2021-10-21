@@ -144,7 +144,10 @@ select {
     color: #757575;
 }
 
-.paginaInicial .produtos-por-categoria .container .botoes-categoria button.ativo,
+.botoes-categoria-selecionado {
+    color: #FF5722 !important;
+
+}
 .paginaInicial .produtos-por-categoria .container .botoes-categoria button:hover {
     color: #FF5722;
 }
@@ -311,12 +314,16 @@ select {
     }
 
     .paginaInicial .parte-principal .container .barra-de-pesquisa .pesquisar-produto-mobile ::placeholder {
-        font-size: 12px;
+        font-size: 11px;
     }
 
     .paginaInicial .parte-principal .container .barra-de-pesquisa .pesquisar-produto-mobile input {
         width: 100%;
         border-radius: 20px;
+    }
+
+    .paginaInicial .parte-principal .container .barra-de-pesquisa .pesquisar-produto-mobile .lupa img {
+        width: 20px;
     }
 
     .produtos-por-categoria .container .botoes-categoria {

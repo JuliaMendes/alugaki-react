@@ -143,12 +143,14 @@
     align-items: center;
     justify-content: flex-start;
 }
-.paginaListagem .segunda .vendedor .avatar{
+.paginaListagem .segunda .vendedor .avatar,
+.paginaListagem .segunda .vendedor .avatar img{
     border-radius: 50%;
     width: 80px;
     height: 80px;
     margin-right: 10px;
 }
+
 .paginaListagem .segunda .vendedor .info{
     display: flex;
     flex-direction: column;
@@ -171,18 +173,19 @@
 }
 
 
-
 .paginaListagem .terceira {
-    margin-top: 100px;
+    margin-top: 60px;
 }
 .paginaListagem .terceira .container{
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
     justify-content: space-between;
 }
 .paginaListagem .terceira h2{
     font-family: Roboto;
-    margin-left: 60px;
+    margin-left: 0px;
+    margin-bottom: 25px;
 }
 .paginaListagem .terceira button {
     padding: 0;
@@ -191,43 +194,49 @@
     border: none;
     cursor: pointer;
 }
-.paginaListagem .terceira .lista-produtos .card-produto{
+.paginaListagem .terceira .lista-produtos{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.paginaListagem .terceira .lista-produtos .cardProduto{
     width: 240px;
     margin-bottom: 30px;
 }
-.paginaListagem .terceira .lista-produtos .card-produto .thumb img{
+.paginaListagem .terceira .lista-produtos .cardProduto .thumb img{
     width: 240px;
     max-width: 100%;
     height: 150px;
 }
-.paginaListagem .terceira .lista-produtos .card-produto h3{
+.paginaListagem .terceira .lista-produtos .cardProduto h3{
     font-family: Roboto;
     color: #484848;
     margin-bottom: 5px;
 }
-.paginaListagem .terceira .lista-produtos .card-produto .info > div {
+.paginaListagem .terceira .lista-produtos .cardProduto .info > div {
     display: flex;
     align-items: center;
 }
-.paginaListagem .terceira .lista-produtos .card-produto img{
+.paginaListagem .terceira .lista-produtos .cardProduto img{
     width: 25px;
     height: 21px;
     margin-right: 2px;
 }
-.paginaListagem .terceira .lista-produtos .card-produto .info small{
+.paginaListagem .terceira .lista-produtos .cardProduto .info small{
     font-family: Roboto;
     font-size: 15px;
     margin-right: 5px;
 }
-.paginaListagem .terceira .lista-produtos .card-produto .localiz{
+.paginaListagem .terceira .lista-produtos .cardProduto .localiz{
     margin-top: 5px;
 }
-.paginaListagem .terceira .lista-produtos .card-produto .localiz img{
+.paginaListagem .terceira .lista-produtos .cardProduto .localiz img{
     width: 17px;
     height: 17px;
     margin-right: 2px;
 }
-.paginaListagem .terceira .lista-produtos .card-produto .preco{
+.paginaListagem .terceira .lista-produtos .cardProduto .preco{
     font-family: Roboto;
     font-size: 20px;
     color: #FF5722;

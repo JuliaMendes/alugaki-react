@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import Helmet from "react-helmet";
 
 import "./cadastroUsuario.css";
 
@@ -10,6 +11,7 @@ import iconeOlho from "../../img/icones/icone_olho.png";
 function PaginaCadastroUsuario() {
   return (
     <div style={{ backgroundImage: `url(${backgroundGreen})` }}>
+    <Helmet title="Crie sua conta | alugaKi" />
       <HeaderSimples />
 
       <CardCadastrese />
@@ -163,7 +165,7 @@ function CardCadastrese() {
   }
 
   return (
-    <body className="cadastroUsuario">
+    <div className="cadastroUsuario">
       <main className="container">
         <section className="card-cadastre-se">
           <h1>
@@ -316,7 +318,7 @@ function CardCadastrese() {
           </div>
         </section>
       </main>
-    </body>
+    </div>
   );
 }
 

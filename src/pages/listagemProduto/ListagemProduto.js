@@ -1,248 +1,45 @@
 import "./listagemProduto.css"
+import { useParams } from 'react-router-dom';
 
 import HeaderSecundario from "../../components/headerSecundario/HeaderSecundario"
 import Footer from "../../components/footer/Footer"
+import Helmet from 'react-helmet'
+import PrimeiraSegundaListagem from "../../components/primeiraSegundaListagem/PrimeiraSegundaListagem";
+import TerceiraListagemProduto from "../../components/terceiraListagemProduto/TerceiraListagemProduto";
 
 import star from "../../img/icones/star1.png"
-import local from "../../img/icones/location.png"
-import favorite from "../../img/icones/favorite_border.png"
-import share from "../../img/icones/share.png"
-import calendario from "../../img/imagens/calendario.png"
-import whatsapp from "../../img/icones/whatsapp-verde.png"
-import arrowBack from "../../img/icones/arrow_back_ios.png"
-import arrowForward from "../../img/icones/arrow_forward_ios.png"
-import arduinoImage from "../../img/imagens/arduino.jpeg"
-import barracaImage from "../../img/imagens/barraca.jpg"
-import bicicletaImage from "../../img/imagens/bicicleta.jpg"
-import betoneiraImage from "../../img/imagens/betoneira.jpg"
 import perfilImage from "../../img/icones/bolinha_perfil.png"
 import dropDown2 from "../../img/icones/drop_down2.png"
 
 function PaginaListagemProduto() {
+    const { product } = useParams();
+
     return (
         <div>
+            <Helmet title="Listagem de Produto | alugaKi" />
             <HeaderSecundario />
-            <Primeira />
-            <Segunda />
-            <Terceira />
+            <Corpo productID={product}/>
             <Quarta />
             <Footer />
         </div>
     )
 }
 
-function Primeira() {
+function Corpo(props) {
+
+    const product = props.productID
+
     return (
-        <body className="paginaListagem">
-            <section className="primeira">
-                <div className="container">
-                    <div className="produto">
-                        <div className="info">
-                            <h1>Título produto</h1>
-                            <div className="subtitulo">
-                                <img src={star} alt="" />
-                                <small>4,8</small>
-                                <img src={local} alt="" />
-                                <small style={{ color: '#757575' }}>São Paulo, SP</small>
-                            </div>
-                        </div>
-                        <div className="thumb" style={{ 'background-color': 'darkgray'}}></div>
-                        <div className="info2">
-                            <div className="esq">
-                                <img src={star} alt="" />
-                                <small>4,8</small>
-                                <small style={{ color: '#757575' }}>• 750 avaliações</small> <br />
-                                <small className="price">R$15,00 /dia</small>
-                            </div>
-                            <div className="dir">
-                                <button>
-                                    <img className="fav" src={favorite} alt="" />
-                                </button>
-                                <button className="share">
-                                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://juliamendes.github.io/alugaki/app/listagem-prod.html" target="blank">
-                                        <img src={share} alt="" />
-                                    </a>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="calendario">
-                        <h2>Precisa pra quando?</h2>
-                        <img src={calendario} alt="" />
-                        <small>Total: R$45,00</small>
-                        <a href="https://api.whatsapp.com/send?phone=550" target="blank"><div className="botao"><button><img src={whatsapp} alt="" /> Alugar</button></div></a>
-                    </div>
-                </div>
-            </section>
-        </body>
-    )
-}
-
-function Segunda() {
-    return (
-        <body className="paginaListagem">
-            <section className="segunda">
-                <div className="container">
-                    <div className="descricao">
-                        <h2>Descrição</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam <br />
-                            hendrerit nulla nec mollis venenatis. Donec dapibus molestie ornare. <br />
-                            Nam sit amet arcu posuere, pulvinar dolor et, porta diam. Duis fermentum <br />
-                            tortor eu nibh mattis, id sodales nisl vestibulum. </p>
-                    </div>
-                    <div className="vendedor">
-                        <a href="https://juliamendes.github.io/alugaki/app/perfil-publico.html" target="blank">
-                            <div className="avatar" style={{ 'background-color': 'darkgray'}}></div>
-                        </a>
-                        <div className="info">
-                            <a href="https://juliamendes.github.io/alugaki/app/perfil-publico.html" target="blank"><h3>John Doe</h3></a>
-                            <div>
-                                <img src={local} alt="" />
-                                <small style={{ color: '#757575' }}>São Paulo, SP</small>
-                            </div>
-                            <div>
-                                <img src={star} alt="" />
-                                <small>4,8</small>
-                                <small style={{ color: '#757575' }}>• 750 avaliações</small> <br />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </body>
-    )
-}
-
-function Terceira() {
-    return (
-        <body className="paginaListagem">
-            <section className="terceira">
-                <h2>Produtos Similares</h2>
-                <div className="container">
-                    <button id="botaoEsquerda" onClick="setaAnuncioEsquerda(this)"><img src={arrowBack} alt="" /></button>
-
-                    <div className="lista-produtos">
-                        <div className="card-produto">
-                            {/* <!--imagem do produto--> */}
-                            <div className="thumb">
-                                <a href="listagem-prod.html"><img src={arduinoImage} alt="Arduino" /></a>
-                            </div>
-                            {/* <!--informações do produto: nome, avaliação, localiz., preço--> */}
-                            <div className="info">
-                                <h3>Nome do produto</h3>
-                                <div>
-                                    {/* <!--div com infos sobre avaliação--> */}
-                                    <img src={star} alt="" />
-                                    <div>
-                                        <small>4,8</small>
-                                        <small style={{ color: '#757575' }}>• 750 avaliações</small>
-                                    </div>
-                                </div>
-                                {/* <!--div com infos sobre localiz.--> */}
-                                <div className="localiz">
-                                    <img src={local} alt="" />
-                                    <small style={{ color: '#757575' }}>São Paulo, SP</small>
-                                </div>
-                                {/* <!--preço--> */}
-                                <h3 className="preco">R$preço /dia</h3>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="lista-produtos">
-                        <div className="card-produto">
-                            {/* <!--imagem do produto--> */}
-                            <div className="thumb">
-                                <a href="listagem-prod.html"><img src={barracaImage} alt="Barraca de camping" /></a>
-                            </div>
-                            {/* <!--informações do produto: nome, avaliação, localiz., preço--> */}
-                            <div className="info">
-                                <h3>Nome do produto</h3>
-                                <div>
-                                    {/* <!--div com infos sobre avaliação--> */}
-                                    <img src={star} alt="" />
-                                    <div>
-                                        <small>4,8</small>
-                                        <small style={{ color: '#757575' }}>• 750 avaliações</small>
-                                    </div>
-                                </div>
-                                {/* <!--div com infos sobre localiz.--> */}
-                                <div className="localiz">
-                                    <img src={local} alt="" />
-                                    <small style={{ color: '#757575' }}>São Paulo, SP</small>
-                                </div>
-                                {/* <!--preço--> */}
-                                <h3 className="preco">R$preço /dia</h3>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="lista-produtos">
-                        <div className="card-produto">
-                            {/* <!--imagem do produto--> */}
-                            <div className="thumb">
-                                <a href="listagem-prod.html"><img src={bicicletaImage} alt="Bicicleta aro 29" /></a>
-                            </div>
-                            {/* <!--informações do produto: nome, avaliação, localiz., preço--> */}
-                            <div className="info">
-                                <h3>Nome do produto</h3>
-                                <div>
-                                    {/* <!--div com infos sobre avaliação--> */}
-                                    <img src={star} alt="" />
-                                    <div>
-                                        <small>4,8</small>
-                                        <small style={{ color: '#757575' }}>• 750 avaliações</small>
-                                    </div>
-                                </div>
-                                {/* <!--div com infos sobre localiz.--> */}
-                                <div className="localiz">
-                                    <img src={local} alt="" />
-                                    <small style={{ color: '#757575' }}>São Paulo, SP</small>
-                                </div>
-                                {/* <!--preço--> */}
-                                <h3 className="preco">R$preço /dia</h3>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="lista-produtos">
-                        <div className="card-produto">
-                            {/* <!--imagem do produto--> */}
-                            <div className="thumb">
-                                <a href="listagem-prod.html"><img src={betoneiraImage} alt="Betoneira" /></a>
-                            </div>
-                            {/* <!--informações do produto: nome, avaliação, localiz., preço--> */}
-                            <div className="info">
-                                <h3>Nome do produto</h3>
-                                <div>
-                                    {/* <!--div com infos sobre avaliação--> */}
-                                    <img src={star} alt="" />
-                                    <div>
-                                        <small>4,8</small>
-                                        <small style={{ color: '#757575' }}>• 750 avaliações</small>
-                                    </div>
-                                </div>
-                                {/* <!--div com infos sobre localiz.--> */}
-                                <div className="localiz">
-                                    <img src={local} alt="" />
-                                    <small style={{ color: '#757575' }}>São Paulo, SP</small>
-                                </div>
-                                {/* <!--preço--> */}
-                                <h3 className="preco">R$preço /dia</h3>
-                            </div>
-                        </div>
-                    </div>
-
-                    <button id="botaoDireita" onClick="setaAnuncioDireita(this)"><img src={arrowForward} alt="" /></button>
-                </div>
-            </section>
-        </body>
+        <div className="paginaListagem">
+            <PrimeiraSegundaListagem productID={product}/>
+            <TerceiraListagemProduto productID={product}/>
+        </div>
     )
 }
 
 function Quarta() {
     return (
-        <body className="paginaListagem">
+        <div className="paginaListagem">
             <section className="quarta">
                 <div className="container">
                     <h2>Avaliações</h2>
@@ -310,7 +107,7 @@ function Quarta() {
                     <button id="botaoCarregar">Carregar mais avaliações<img src={dropDown2} alt="" /></button>
                 </div>
             </section>
-            </body>
+        </div>
     )
 }
 

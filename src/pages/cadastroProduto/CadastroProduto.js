@@ -34,7 +34,6 @@ function Formulario() {
     function handleSubmitMain(event) {
         let erros = !((errosTitulo == "") && (errosDescricao == "") && (errosPreco == "") && (errosLocalizacao == ""));
         if (erros) {
-            // o que se tiver erro
             window.alert("Favor verificar campo(s) com erro.");
             event.preventDefault();
         }
@@ -190,9 +189,7 @@ function Formulario() {
                             <br />
                             <input 
                                 className={`${(errosLocalizacao.length != 0) ? 'campo-com-erro' : ''}`}
-                                type="text" 
-                                id="localizacao" placeholder="CEP " 
-                                required
+                                type="text" id="localizacao" placeholder="CEP " required
                                 value = {localizacao}
                                 onChange={(e)=>setLocalizacao(e.target.value)} 
                             />
@@ -236,7 +233,6 @@ function Formulario() {
             </section>
         </body>
     )
-
 
 }
 
