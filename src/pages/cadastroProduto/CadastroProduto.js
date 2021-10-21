@@ -1,6 +1,10 @@
 import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
+
 import "./cadastroProduto.css"
+
+import apiCep from "../../services/apiCep";
+
 import HeaderSecundario from "../../components/headerSecundario/HeaderSecundario"
 import Footer from "../../components/footer/Footer"
 import calendario from '../../img/imagens/calendario.png'
@@ -19,10 +23,15 @@ function Formulario() {
     const [descricao, setDescricao] = useState("");
     const [preco, setPreco] = useState("");
     const [localizacao, setLocalizacao] = useState("");
+
+    const [cidade, setCidade] = useState("");
+    const [estado, setEstado] = useState("");
+
     const [errosTitulo, setErrosTitulo] = useState("");
     const [errosDescricao, setErrosDescricao] = useState("");
     const [errosPreco, setErrosPreco] = useState("");
     const [errosLocalizacao, setErrosLocalizacao] = useState("");
+
     function handleSubmitMain(event) {
         let erros = !((errosTitulo == "") && (errosDescricao == "") && (errosPreco == "") && (errosLocalizacao == ""));
         if (erros) {
@@ -30,6 +39,7 @@ function Formulario() {
             event.preventDefault();
         }
     }
+
     useEffect(() => {
         if (titulo != "") {
             if (titulo.length < 5 || titulo.length > 100) {
@@ -43,6 +53,7 @@ function Formulario() {
             setErrosTitulo("");
         }
     }, [titulo])
+
     useEffect(() => {
         if (descricao != "") {
             if (descricao.length < 5 || descricao.length > 400) {
@@ -56,11 +67,13 @@ function Formulario() {
             setErrosDescricao("");
         }
     }, [descricao])
+
     useEffect(() => {
         if (preco == "") {
             setErrosPreco("");
         }
     }, [preco])
+
     useEffect(() => {
         if (localizacao != "") {
             if (localizacao.length != 8) {
@@ -74,6 +87,16 @@ function Formulario() {
             setErrosLocalizacao("");
         }
     }, [localizacao])
+
+    useEffect(() => {
+        apiCep.get(`/${localizacao}/json`)
+            .then(response => response.data)
+            .then(response => {
+                setCidade(response.localidade)
+                setEstado(response.uf)
+            })
+    }, [localizacao])
+
     return (
         <body className="cadastroProduto">
             <section className="formulario">
@@ -168,8 +191,8 @@ function Formulario() {
                             <ul>
                                 <li>{errosLocalizacao}</li>
                             </ul>
-                            <label htmlFor="cidade"> Cidade<br /><input type="text" id="cidade" /> </label><br />
-                            <label htmlFor="estado"> Estado<br /><input type="text" id="estado" /> </label><br />
+                            <label htmlFor="cidade"> Cidade<br /><input type="text" id="cidade" value={cidade} /> </label><br />
+                            <label htmlFor="estado"> Estado<br /><input type="text" id="estado" value={estado} /> </label><br />
                         </div>
                         <div className="dir">
                             <label htmlFor="disponibilidade">Disponibilidade</label>
