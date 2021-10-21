@@ -30,11 +30,13 @@ function Corpo(){
     const [stateHidden, setStateHidden] = useState("hidden");
     const [stateDisabled, setStateDisabled] = useState("disabled");
 
+    // useState pro valor de cada campo que tem validacao
     const [nome, setNome]  = useState("");
     const [telefone, setTelefone] = useState("");
     const [emailP, setEmailP] = useState("");
     const [senha, setSenha] = useState("");
 
+    // useState pros erros de cada campo que tem validacao 
     const [errosNome, setErrosNome] = useState("");
     const [errosTelefone, setErrosTelefone] = useState("");
     const [errosEmail, setErrosEmail] = useState([]);
@@ -55,6 +57,7 @@ function Corpo(){
         
     }
 
+    // funcao pra analisar se tem erros quando usuario clica pra enviar
     function handleSubmitMain(event) {
         if(botaoMain == "Editar"){
             event.preventDefault();

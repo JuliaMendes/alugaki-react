@@ -143,7 +143,10 @@ function PrimeiraSegundaListagem(props) {
                                                 <img className="fav" src={favoritar} alt="" />
                                             </button>
                                             <button className="share">
-                                                <a href={`https://www.facebook.com/sharer/sharer.php?u=http://localhost:3000/listagem-produto/${produto.id}`} target="blank">
+                                                <a href={`https://api.whatsapp.com/send?text= 
+                                                Veja o anúncio de ${produto.titulo} no alugaKi!
+                                                Entre no link: http://localhost:3000/listagem-produto/${produto.id}`
+                                                } data-action="share/whatsapp/share" target="blank">
                                                     <img src={share} alt="" />
                                                 </a>
                                             </button>

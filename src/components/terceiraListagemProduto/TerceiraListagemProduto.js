@@ -26,7 +26,7 @@ function TerceiraListagemProduto(props) {
             .then(response => response.data)
             .then(response => setCategory(response.category))
     }, [productID])
-    
+
     return(
         <>
             {!showProdutos &&
@@ -38,7 +38,7 @@ function TerceiraListagemProduto(props) {
                                 <h2>Produtos Similares</h2>
 
                                 <div className="lista-produtos">
-                                    <button id="botaoEsquerda" onClick="setaAnuncioEsquerda(this)"><img src={arrowBack} alt="" /></button>
+                                    <button id="botaoEsquerda"> <img src={arrowBack} alt="" /> </button>
 
                                     <div className="cardProduto">
                                         <div className="thumb">
@@ -124,7 +124,7 @@ function TerceiraListagemProduto(props) {
                                         </div>
                                     </div>
 
-                                    <button id="botaoDireita" onClick="setaAnuncioDireita(this)"><img src={arrowForward} alt="" /></button>
+                                    <button id="botaoDireita"> <img src={arrowForward} alt="" /> </button>
                                 </div>
 
                             </div>
@@ -141,11 +141,9 @@ function TerceiraListagemProduto(props) {
                                 <h2>Produtos Similares</h2>
 
                                 <div className="lista-produtos">
-                                    <button id="botaoEsquerda" onClick="setaAnuncioEsquerda()"><img src={arrowBack} alt="" /></button>
 
-                                    <CategoriasListagemProduto category={category}/>
+                                    <CategoriasListagemProduto category={category} />
 
-                                    <button id="botaoDireita" onClick="setaAnuncioDireita()"><img src={arrowForward} alt="" /></button>
                                 </div>
 
                             </div>
