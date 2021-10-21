@@ -148,10 +148,10 @@ function Corpo(props){
                         </div>
             
                         <ul>
-                            <li><a href="produtos-por-categoria">Esporte e Lazer</a></li>
-                            <li><a href="produtos-por-categoria">Moda</a></li>
-                            <li><a href="produtos-por-categoria">Eletrônicos</a></li>
-                            <li><a href="produtos-por-categoriagit">Ferramentas e Utilitários</a></li>
+                            <li><Link to={`/produtos-por-categoria?id_anunciante=${profile}&category_like=Esporte e Lazer`}>Esporte e Lazer</Link></li>
+                            <li><Link to={`/produtos-por-categoria?id_anunciante=${profile}&category_like=Moda`}>Moda</Link></li>
+                            <li><Link to={`/produtos-por-categoria?id_anunciante=${profile}&category_like=Eletrônicos`}>Eletrônicos</Link></li>
+                            <li><Link to={`/produtos-por-categoria?id_anunciante=${profile}&category_like=Ferramentas e Utilitários`}>Ferramentas e Utilitários</Link></li>
                         </ul>       
                     </div> 
                 </section>
