@@ -129,7 +129,7 @@ function PrimeiraSegundaListagem(props) {
                                             <img src={star} alt="" />
                                             <small>{produto.avaliacao}</small>
                                             <small style={{ color: '#757575' }}>• {produto.navaliacao} avaliações</small> <br />
-                                            <small className="price">R$ {produto.preco}</small>
+                                            <small className="price">R$ {produto.preco} /{produto.tempo}</small>
                                         </div>
                                         <div className="dir">
                                             <button onClick={() => {
