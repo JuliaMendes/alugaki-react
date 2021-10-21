@@ -19,8 +19,8 @@ function PaginaPerfilPrivado() {
     return (
         <div>
             <Helmet title="Minha Conta | alugaKi" />
-            <HeaderSecundario profile={profile}/>
-            <Corpo/>
+            <HeaderSecundario />
+            <Corpo userID={profile}/>
             <Footer />
         </div>
     )
@@ -28,8 +28,7 @@ function PaginaPerfilPrivado() {
 
 function Corpo(props){
 
-    const profile = props.profile;
-    const [user, setUser] = useState({})
+    let profile = props.userID;
 
     const [botaoMain, setBotaoMain] = useState("Editar");
     const [botaoFoto, setBotaoFoto] = useState("Alterar");
@@ -43,6 +42,9 @@ function Corpo(props){
     const [telefone, setTelefone] = useState("");
     const [emailP, setEmailP] = useState("");
     const [senha, setSenha] = useState("");
+    const [foto, setFoto] = useState(perfilBlank);
+
+    const [showProfile, setShowProfile] = useState(false)
 
     // useState pros erros de cada campo que tem validacao 
     const [errosNome, setErrosNome] = useState("");
@@ -53,11 +55,11 @@ function Corpo(props){
     const [checkedState, setCheckedState] = useState(null)
 
     function validaPrivacidade() {
-        if(checkedState=="true"){
+        if(checkedState==true){
             setCheckedState(null);
         }
         else{
-            setCheckedState("true");
+            setCheckedState(true);
         }
     }
 
@@ -106,8 +108,8 @@ function Corpo(props){
 
     useEffect(() => {
         if(nome != ""){
-            if(nome.length<6){
-                setErrosNome("O campo Nome deve ter no mínimo 6 caracteres.");
+            if(nome.length<3){
+                setErrosNome("O campo Nome deve ter no mínimo 4 caracteres.");
             }
             else if(nome.length > 100){
                 setErrosNome("O campo Nome deve ter no máximo 100 caraceteres.");
@@ -174,13 +176,21 @@ function Corpo(props){
     }, [senha])
 
     useEffect(() => {
-        apiProdutos.get(`/users/1`)
+        apiProdutos.get(`/users/${profile}`)
             .then(response => response.data)
             .then(response => {
-                setUser(response)
-                console.log(user)
+                setNome(response.nome)
+                setTelefone(response.telefone)
+                setEmailP(response.email)
+                setSenha("********")
+                setFoto("/" + response.img)
+                if(response.privacidade == true){
+                    setCheckedState(true)
+                }
+                else{
+                    setCheckedState(null)
+                }
             })
-            .catch(error => window.alert("Usuário não encontrado."))
     }, [profile])
 
     return(
@@ -194,7 +204,7 @@ function Corpo(props){
 
                 <section className="barraLateral">
                         <div className="foto">
-                            <img src={perfilBlank} alt="Foto de Perfil" />
+                            <img src={foto} alt="Foto de Perfil" />
                             <form>
                                 <input type="file" name="fotos" id="fotos" accept="image/*, .png .jpg" hidden={stateHidden} />
                                 <div className="botao"><button onClick={handleSubmitFoto}>{botaoFoto}</button></div>
@@ -223,7 +233,7 @@ function Corpo(props){
                                 <button onClick={handleSubmitMain}>{botaoMain}</button>
                             </div>
 
-                            <label htmlFor="nome">Nome Completo</label>
+                            <label htmlFor="nome">Nome</label>
                             <input className={`${(errosNome != "") ? 'campo-com-erro' : ''}`} type="text" id="nome" name="nome" placeholder="Nome Sobrenome" readOnly={stateRead} value={nome} onChange={(e)=>setNome(e.target.value)}/>
                             <ul>
                                 <li>{errosNome}</li>

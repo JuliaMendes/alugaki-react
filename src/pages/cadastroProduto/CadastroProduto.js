@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
+import Helmet from 'react-helmet'
 
 import "./cadastroProduto.css"
 
@@ -12,6 +13,7 @@ import camera from '../../img/icones/photo_camera.png'
 function PaginaCadastroProduto() {
     return (
         <div>
+            <Helmet title="Cadastro de Produto | alugaKi" />
             <HeaderSecundario />
             <Formulario />
             <Footer />
