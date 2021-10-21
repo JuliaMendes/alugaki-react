@@ -170,11 +170,11 @@ function Produtos() {
                         </div>
                         <ul>
                             <li>
-                                <input type="checkbox" name="localizacao" id="SP" />
+                                <input type="radio" name="localizacao" id="SP" onClick={() => {setProdutosExibidos("?localizacao=São Paulo, SP")}}/>
                                 <label for="SP">São Paulo, SP</label>
                             </li>
                             <li>
-                                <input type="checkbox" name="localizacao" id="RJ" />
+                                <input type="radio" name="localizacao" id="RJ" onClick={() => {setProdutosExibidos("?localizacao=Rio de Janeiro, RJ")}}/>
                                 <label for="RJ">Rio de Janeiro, RJ</label>
                             </li>
                         </ul>
