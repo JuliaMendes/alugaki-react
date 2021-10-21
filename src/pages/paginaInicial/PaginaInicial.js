@@ -263,7 +263,7 @@ function ProdutosPorCategoria() {
             })}
           </div>
           <div className="botao-ver-mais">
-            <Link to="/produtos-por-categoria">
+            <Link to={`/produtos-por-categoria?category_like=${categoriaAtual}`}>
               <span>ver mais</span>
               <img src={iconeSetaDireita} alt="botao ver mais" />
             </Link>
