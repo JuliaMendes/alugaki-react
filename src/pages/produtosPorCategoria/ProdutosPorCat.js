@@ -21,24 +21,9 @@ function PaginaProdutosPorCat() {
 
 
 function Produtos() {
-    const teste = useLocation() 
-    const teste2 = new URLSearchParams(teste.search)
-    const teste3 = teste.search
-    const [produtosExibidos, setProdutosExibidos] = useState([]);
-    
-    function buscaFiltradosURL() {
-        apiProdutos
-          .get(`/products${teste3}`)
-          .then((response) => {
-            setProdutosExibidos(response.data);
-          });
-      }
-
-      useEffect(() => {
-        buscaFiltradosURL();
-      }, []);
-
-    
+    const urlBusca = useLocation()
+    const urlBuscaSearch = urlBusca.search
+    const [produtosExibidos, setProdutosExibidos] = useState(urlBuscaSearch);
  
     const [paginaAcessada, setPaginaAcessada] = useState(1)
     const links = [1, 2, 3]
@@ -130,10 +115,11 @@ function Produtos() {
                         </div>
 
                         <ul>
-                            <li className="botao-cat"><a href="#" onClick={() => { setCat("Esporte e Lazer")}}>Esporte e Lazer</a></li>
-                            <li className="botao-cat"><a href="#" onClick={() => { setCat("Moda")}}>Moda</a></li>
-                            <li className="botao-cat"><a href="#" onClick={() => { setCat("Eletrônicos")}}>Eletrônicos</a></li>
-                            <li className="botao-cat"><a href="#" onClick={() => { setCat("Ferramentas e Utilitários")}}>Ferramentas e Utilitários</a></li>
+                            {/* <li className="botao-cat"><a href="#" onClick={() => { setCat("Esporte e Lazer")}}>Esporte e Lazer</a></li> */}
+                            <li className="botao-cat"><a href="#" onClick={() => {setProdutosExibidos("?category_like=Esporte e Lazer")}}>Esporte e Lazer</a></li>
+                            <li className="botao-cat"><a href="#" onClick={() => {setProdutosExibidos("?category_like=Moda")}}>Moda</a></li>
+                            <li className="botao-cat"><a href="#" onClick={() => {setProdutosExibidos("?category_like=Eletrônicos")}}>Eletrônicos</a></li>
+                            <li className="botao-cat"><a href="#" onClick={() => {setProdutosExibidos("?category_like=Ferramentas e Utilitários")}}>Ferramentas e Utilitários</a></li>
                         </ul>
 
                         <div className="titulo-filtro">
@@ -161,19 +147,19 @@ function Produtos() {
                         </div>
                         <ul>
                             <li>
-                                <input type="checkbox" name="avaliacao" id="uma-duas" value="1" />
+                                <input type="radio" name="avaliacao" id="uma-duas" value="1" />
                                 <label for="uma-duas">entre 1 e 2 estrelas</label>
                             </li>
                             <li>
-                                <input type="checkbox" name="avaliacao" id="duas-tres" value="2" />
+                                <input type="radio" name="avaliacao" id="duas-tres" value="2" />
                                 <label for="duas-tres">entre 2 e 3 estrelas</label>
                             </li>
                             <li>
-                                <input type="checkbox" name="avaliacao" id="tres-quatro" value="3" />
+                                <input type="radio" name="avaliacao" id="tres-quatro" value="3" />
                                 <label for="tres-quatro">entre 3 e 4 estrelas</label>
                             </li>
                             <li>
-                                <input type="checkbox" name="avaliacao" id="quatro-cinco" value="4" />
+                                <input type="radio" name="avaliacao" id="quatro-cinco" value="4" />
                                 <label for="quatro-cinco">entre 4 e 5 estrelas</label>
                             </li>
                         </ul>
@@ -184,22 +170,23 @@ function Produtos() {
                         </div>
                         <ul>
                             <li>
-                                <input type="checkbox" name="localizacao" id="SP" />
+                                <input type="radio" name="localizacao" id="SP" onClick={() => {setProdutosExibidos("?localizacao=São Paulo, SP")}}/>
                                 <label for="SP">São Paulo, SP</label>
                             </li>
                             <li>
-                                <input type="checkbox" name="localizacao" id="RJ" />
+                                <input type="radio" name="localizacao" id="RJ" onClick={() => {setProdutosExibidos("?localizacao=Rio de Janeiro, RJ")}}/>
                                 <label for="RJ">Rio de Janeiro, RJ</label>
                             </li>
                         </ul>
                     </div>
                     {/* lista dos produtos */}
                     <div className="lista-produtos">
-                        {teste3 ? (
+                        <Cards produtosRequest={produtosExibidos} />
+                        {/* {teste3 ? (
                             <Cards produtosRequest={produtosExibidos} />
                         ) : (
                             <Cards produtosRequest={false} category={cat} />
-                        )}
+                        )} */}
                     </div>
                 </div>
 

@@ -79,8 +79,6 @@ function ProdutosPerfilPublico(props) {
                 })
             }
 
-            <button onclick="setaAnuncio(this)"><img src={botaoCar} alt="Seta - Ir para próximo anuncio" /></button>
-
         </section>
     )
 }
