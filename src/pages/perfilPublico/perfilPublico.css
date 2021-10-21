@@ -63,6 +63,8 @@
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-evenly;
+    align-items: center;
+    font-size: 18px;
 }
 
 .perfilPublico section.barraLateral .infos .estrelas img{

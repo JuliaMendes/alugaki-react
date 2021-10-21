@@ -3,7 +3,7 @@ import apiProdutos from "../../services/apiProdutos";
 
 import perfilBlank from "../../img/icones/bolinha_perfil.png"
 import linhaCinza from "../../img/icones/linha_cinza.png"
-import Star from "../../img/icones/star1.png"
+import star from "../../img/icones/star1.png"
 
 function BarraPerfilPublico(props) {
 
@@ -35,11 +35,9 @@ function BarraPerfilPublico(props) {
                         <img src={perfilBlank} alt="Foto de Perfil do Usuário" id="foto_perfil" />
                 
                         <div className="estrelas">
-                            <img src={Star} alt="Estrela de Avaliação" />
-                            <img src={Star} alt="Estrela de Avaliação" />
-                            <img src={Star} alt="Estrela de Avaliação" />
-                            <img src={Star} alt="Estrela de Avaliação" />
-                            <img src={Star} alt="Estrela de Avaliação" />
+                            <img src={star} alt="" />
+                            <small>Avaliação</small>
+                            <small style={{ color: '#757575' }}>•  avaliações</small> <br />
                         </div>
                 
                         <img src={linhaCinza} alt="Linha horizontal" id="linha_cinza" />
@@ -55,16 +53,15 @@ function BarraPerfilPublico(props) {
                         <img src={"/" + profile.img} alt="Foto de Perfil do Usuário" id="foto_perfil" />
 
                         <div className="estrelas">
-                            <img src={Star} alt="Estrela de Avaliação" />
-                            <img src={Star} alt="Estrela de Avaliação" />
-                            <img src={Star} alt="Estrela de Avaliação" />
-                            <img src={Star} alt="Estrela de Avaliação" />
-                            <img src={Star} alt="Estrela de Avaliação" />
+                            <img src={star} alt="" />
+                            <small>{profile.avaliacao}</small>
+                            <small style={{ color: '#757575' }}>• {profile.navaliacao} avaliações</small> <br />
+                        
                         </div>
 
                         <img src={linhaCinza} alt="Linha horizontal" id="linha_cinza" />
 
-                        <a href="https://api.whatsapp.com/send?phone=550">{profile.telefone}</a>
+                        <a href={`https://api.whatsapp.com/send?phone=${profile.telefone}`}>{profile.telefone}</a>
                     </>
                 )
             }
