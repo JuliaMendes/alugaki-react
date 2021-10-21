@@ -1,6 +1,8 @@
 //imports
 import { useState } from 'react';
 import { useParams } from 'react-router-dom';
+import {Link} from 'react-router-dom';
+
 import Helmet from 'react-helmet'
 
 import './perfilPublico.css';
@@ -159,9 +161,11 @@ function Corpo(props){
                     <h2>Anúncios</h2>
 
                     <ProdutosPerfilPublico userID={profile}/>
-                    
+
                     <div className="botaoVerMais">
-                        <a href="produtos-por-cat.html"><span>ver mais</span><img src={seta} alt="botao ver mais" /></a>
+                        <Link to={`/produtos-por-categoria?id_anunciante=${profile}`}>
+                            <span>ver mais</span><img src={seta} alt="botao ver mais" />
+                        </Link>
                     </div>
             
                     <h2 id="titulo_avaliacao">Avaliações</h2>
