@@ -147,19 +147,19 @@ function Produtos() {
                         </div>
                         <ul>
                             <li>
-                                <input type="checkbox" name="avaliacao" id="uma-duas" value="1" />
+                                <input type="radio" name="avaliacao" id="uma-duas" value="1" />
                                 <label for="uma-duas">entre 1 e 2 estrelas</label>
                             </li>
                             <li>
-                                <input type="checkbox" name="avaliacao" id="duas-tres" value="2" />
+                                <input type="radio" name="avaliacao" id="duas-tres" value="2" />
                                 <label for="duas-tres">entre 2 e 3 estrelas</label>
                             </li>
                             <li>
-                                <input type="checkbox" name="avaliacao" id="tres-quatro" value="3" />
+                                <input type="radio" name="avaliacao" id="tres-quatro" value="3" />
                                 <label for="tres-quatro">entre 3 e 4 estrelas</label>
                             </li>
                             <li>
-                                <input type="checkbox" name="avaliacao" id="quatro-cinco" value="4" />
+                                <input type="radio" name="avaliacao" id="quatro-cinco" value="4" />
                                 <label for="quatro-cinco">entre 4 e 5 estrelas</label>
                             </li>
                         </ul>
