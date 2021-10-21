@@ -37,7 +37,7 @@ function BarraPerfilPublico(props) {
                         <div className="estrelas">
                             <img src={star} alt="" />
                             <small>Avaliação</small>
-                            <small style={{ color: '#757575' }}>•  avaliações</small> <br />
+                            <small style={{ color: '#757575' }}>•  avaliações</small>
                         </div>
                 
                         <img src={linhaCinza} alt="Linha horizontal" id="linha_cinza" />
@@ -55,8 +55,7 @@ function BarraPerfilPublico(props) {
                         <div className="estrelas">
                             <img src={star} alt="" />
                             <small>{profile.avaliacao}</small>
-                            <small style={{ color: '#757575' }}>• {profile.navaliacao} avaliações</small> <br />
-                        
+                            <small style={{ color: '#757575' }}>• {profile.navaliacao} avaliações</small>
                         </div>
 
                         <img src={linhaCinza} alt="Linha horizontal" id="linha_cinza" />
