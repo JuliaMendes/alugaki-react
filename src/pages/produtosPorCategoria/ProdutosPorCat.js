@@ -36,7 +36,7 @@ function Produtos() {
 
       useEffect(() => {
         buscaFiltradosURL();
-      }, []);
+      }, [teste3]);
 
     
  
