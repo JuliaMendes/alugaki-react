@@ -32,10 +32,10 @@ function Produtos() {
 
     const [cat, setCat] = useState("Produtos")
 
-    useEffect(() => {
-        urlBuscaSearch = urlBusca.search
-        setProdutosExibidos(urlBuscaSearch)
-    }, [urlBusca])
+    // useEffect(() => {
+    //     urlBuscaSearch = urlBusca.search
+    //     setProdutosExibidos(urlBuscaSearch)
+    // }, [urlBusca])
 
     const [localiz, setLocaliz] = useState()
 
@@ -134,15 +134,15 @@ function Produtos() {
                         </div>
                         <ul className="preco">
                             <li>
-                                <input type="radio" name="preco" id="menor" />
+                                <input type="radio" name="preco" id="menor" onClick={() => {setProdutosExibidos("?preco_lte=99")}}/>
                                 <label for="menor">até R$99</label>
                             </li>
                             <li>
-                                <input type="radio" name="preco" id="medio" />
+                                <input type="radio" name="preco" id="medio" onClick={() => {setProdutosExibidos("?preco_gte=100&preco_lte=199")}}/>
                                 <label for="medio">entre R$99 e R$199</label>
                             </li>
                             <li>
-                                <input type="radio" name="preco" id="maior" />
+                                <input type="radio" name="preco" id="maior" onClick={() => {setProdutosExibidos("?preco_gte=200")}}/>
                                 <label for="maior">de R$199 para cima</label>
                             </li>
                         </ul>
@@ -153,19 +153,19 @@ function Produtos() {
                         </div>
                         <ul>
                             <li>
-                                <input type="radio" name="avaliacao" id="uma-duas" value="1" />
+                                <input type="radio" name="avaliacao" id="uma-duas" value="1" onClick={() => {setProdutosExibidos("?avaliacao_gte=1&avaliacao_lte=2")}}/>
                                 <label for="uma-duas">entre 1 e 2 estrelas</label>
                             </li>
                             <li>
-                                <input type="radio" name="avaliacao" id="duas-tres" value="2" />
+                                <input type="radio" name="avaliacao" id="duas-tres" value="2" onClick={() => {setProdutosExibidos("?avaliacao_gte=2&avaliacao_lte=3")}}/>
                                 <label for="duas-tres">entre 2 e 3 estrelas</label>
                             </li>
                             <li>
-                                <input type="radio" name="avaliacao" id="tres-quatro" value="3" />
+                                <input type="radio" name="avaliacao" id="tres-quatro" value="3" onClick={() => {setProdutosExibidos("?avaliacao_gte=3&avaliacao_lte=4")}}/>
                                 <label for="tres-quatro">entre 3 e 4 estrelas</label>
                             </li>
                             <li>
-                                <input type="radio" name="avaliacao" id="quatro-cinco" value="4" />
+                                <input type="radio" name="avaliacao" id="quatro-cinco" value="4" onClick={() => {setProdutosExibidos("?avaliacao_gte=4&avaliacao_lte=5")}}/>
                                 <label for="quatro-cinco">entre 4 e 5 estrelas</label>
                             </li>
                         </ul>
