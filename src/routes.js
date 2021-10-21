@@ -18,8 +18,7 @@ function Routes() {
             </Route>
             <Route path="/listagem-produto/:product" component={PaginaListagemProduto}>
             </Route>
-            <Route path="/perfil-privado">
-                <PaginaPerfilPrivado/>
+            <Route path="/perfil-privado:/profile" component={PaginaPerfilPrivado}>
             </Route>
             <Route path="/perfil-publico/:profile" component={PaginaPerfilPublico}>
             </Route>
