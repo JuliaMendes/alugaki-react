@@ -191,6 +191,7 @@ function Corpo(props){
                     setCheckedState(null)
                 }
             })
+            .catch(error => window.alert("Usuário não encontrado!"))
     }, [profile])
 
     return(

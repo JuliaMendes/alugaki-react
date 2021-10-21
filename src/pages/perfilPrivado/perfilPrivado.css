@@ -292,9 +292,28 @@ section.conteudo .excluir p{
 
 @media (max-width: 440px){
 
+    .perfilPrivado h2{
+        text-align: center;
+    }
+
     .perfilPrivado section.barraLateral{
         flex-direction: column;
         justify-content: space-between;
     }
 
+    .perfilPrivado section.conteudo .dados .botao{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .perfilPrivado section.conteudo .excluir div{
+        flex-direction: column;
+        align-content: flex-start;
+        align-items: flex-start;
+    }
+
+    .perfilPrivado section.conteudo .excluir button{
+        padding: 0px;
+        padding-top: 15px;
+    }
 }
