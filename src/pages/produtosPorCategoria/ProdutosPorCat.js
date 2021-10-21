@@ -1,4 +1,6 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
+import apiProdutos from "../../services/apiProdutos";
 import HeaderSecundario from "../../components/headerSecundario/HeaderSecundario"
 import Footer from "../../components/footer/Footer"
 import './produtosPorCat.css';
@@ -17,13 +19,34 @@ function PaginaProdutosPorCat() {
     )
 }
 
+
 function Produtos() {
+    const teste = useLocation() 
+    const teste2 = new URLSearchParams(teste.search)
+    const teste3 = teste.search
+    const [produtosExibidos, setProdutosExibidos] = useState([]);
+    
+    function buscaFiltradosURL() {
+        apiProdutos
+          .get(`/products${teste3}`)
+          .then((response) => {
+            setProdutosExibidos(response.data);
+          });
+      }
+
+      useEffect(() => {
+        buscaFiltradosURL();
+      }, []);
+
+    
+ 
     const [paginaAcessada, setPaginaAcessada] = useState(1)
     const links = [1, 2, 3]
 
     const [menuAberto, setMenuAberto] = useState(false)
 
     const [cat, setCat] = useState("Moda")
+
 
     return (
         <div className="paginaCategorias">
@@ -172,7 +195,11 @@ function Produtos() {
                     </div>
                     {/* lista dos produtos */}
                     <div className="lista-produtos">
-                        <Cards category={cat} />
+                        {teste3 ? (
+                            <Cards produtosRequest={produtosExibidos} />
+                        ) : (
+                            <Cards category={cat} />
+                        )}
                     </div>
                 </div>
 

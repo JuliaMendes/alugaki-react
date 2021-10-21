@@ -125,7 +125,7 @@ function PartePrincipal() {
                 <div className="lupa">
                   <button>
                     <Link
-                      to={`/produtos-por-categoria?categoria=${categoriaAtual}&localizacao=${localizacaoAtual}&busca=${buscaAtual}`}
+                      to={`/produtos-por-categoria?category_like=${categoriaAtual}&localizacao_like=${localizacaoAtual}&q=${buscaAtual}`}
                     >
                       <img src={iconeLupa} alt="Botao de lupa" />
                     </Link>
@@ -145,7 +145,7 @@ function PartePrincipal() {
               <div className="lupa">
                 <button>
                   <Link
-                    to={`/produtos-por-categoria?localizacao=${localizacaoAtual}&busca=${buscaAtual}`}
+                    to={`/produtos-por-categoria?localizacao_like=${localizacaoAtual}&q=${buscaAtual}`}
                   >
                     <img src={iconeLupa} alt="Botao de lupa" />
                   </Link>
