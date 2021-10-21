@@ -17,7 +17,7 @@ function Cards(props) {
     }, [produtos])
 
     useEffect(() => {
-        apiProdutos.get(`/products?category=${categoria}`)
+        apiProdutos.get(`/products?category_like=${categoria}`)
             .then(response => response.data)
             .then(response => setProdutos(response))
     }, [categoria])

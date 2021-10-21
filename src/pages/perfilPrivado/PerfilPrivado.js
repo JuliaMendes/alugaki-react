@@ -29,7 +29,7 @@ function PaginaPerfilPrivado() {
 function Corpo(props){
 
     const profile = props.profile;
-    const [user, setUser] = useState()
+    const [user, setUser] = useState({})
 
     const [botaoMain, setBotaoMain] = useState("Editar");
     const [botaoFoto, setBotaoFoto] = useState("Alterar");
@@ -174,9 +174,13 @@ function Corpo(props){
     }, [senha])
 
     useEffect(() => {
-        apiProdutos.get(`/users/${profile}`)
+        apiProdutos.get(`/users/1`)
             .then(response => response.data)
-            .then(response => setUser(response))
+            .then(response => {
+                setUser(response)
+                console.log(user)
+            })
+            .catch(error => window.alert("Usuário não encontrado."))
     }, [profile])
 
     return(

@@ -198,7 +198,7 @@ function Produtos() {
                         {teste3 ? (
                             <Cards produtosRequest={produtosExibidos} />
                         ) : (
-                            <Cards category={cat} />
+                            <Cards produtosRequest={false} category={cat} />
                         )}
                     </div>
                 </div>
