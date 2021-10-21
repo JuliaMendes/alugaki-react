@@ -170,3 +170,51 @@
    padding-top: 10px;
    margin-bottom: 20px;
 } 
+
+
+@media (max-width: 1255px){
+   .container{
+       flex-wrap: wrap;
+       width: 100%;
+   }
+   .formulario .container{
+       margin-right: 30px;
+       flex-wrap: wrap;
+   }
+   header .container{
+       padding: 20px;
+   }
+}
+@media (max-width: 995px){
+   .container{
+       width: 100%;
+   }
+   .formulario .container form{
+       flex-direction: column;
+       align-items: center;
+       justify-content: flex-start;
+       gap: 20px;
+       width: 100%;
+       margin-left: 0;
+   }
+   .formulario h1{
+       text-align: center;
+       margin-left: 0;
+   }
+   header .container{
+       flex-direction: column;
+   }
+}
+@media (max-width: 669px){
+   .logo-e-barra{
+       flex-wrap: wrap;
+       flex-direction: column;
+       align-items: center;
+       justify-content: center;
+   }
+}
+@media (max-width: 518px){
+   .logo-e-barra .barra input{
+       width: 20%;
+   }
+}

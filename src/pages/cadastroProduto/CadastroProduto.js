@@ -197,6 +197,7 @@ function Formulario() {
                             <label htmlFor="estado"> Estado<br /><input type="text" id="estado" value={estado} /> </label><br />
                         </div>
                         <div className="dir">
+                            <br />
                             <label htmlFor="disponibilidade">Disponibilidade</label>
                             <br />
                             <img src={calendario} alt="calendário" />
