@@ -13,17 +13,32 @@ function Cards(props) {
     const [produtos, setProdutos] = useState([])
 
     const url = props.produtosRequest
-    const [produtosExibidos, setProdutosExibidos] = useState()
+    const [produtosExibidos, setProdutosExibidos] = useState([])
+    const [produtosAPI, setProdutosAPI] = useState([])
 
     useEffect(() => {
         setShowProdutos(true)
     }, [produtosExibidos])
 
     useEffect(() => {
+        if (props.localizacao) {
+            const produtos = produtosAPI.filter(item=> {
+                    if(props.localizacao !== undefined) {
+                        return item.localizacao === props.localizacao
+                    }
+                    return true
+                });
+                setProdutosExibidos(produtos);
+        }
+        
+    }, [props]);
+
+    useEffect(() => {
         apiProdutos
           .get(`/products${url}`)
           .then((response) => {
             setProdutosExibidos(response.data);
+            setProdutosAPI(response.data);
           });
     }, [url])
 
@@ -33,7 +48,8 @@ function Cards(props) {
             return <h1>Nenhum produto encontrado</h1>
         }
 
-        return produtosExibidos.map(item => {
+        return produtosExibidos
+        .map(item => {
             return(
                 <div className="card-produto">
                     <div className="thumb">

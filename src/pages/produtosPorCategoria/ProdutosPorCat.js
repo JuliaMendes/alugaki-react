@@ -37,6 +37,7 @@ function Produtos() {
         setProdutosExibidos(urlBuscaSearch)
     }, [urlBusca])
 
+    const [localiz, setLocaliz] = useState()
 
     return (
         <div className="paginaCategorias">
@@ -121,10 +122,10 @@ function Produtos() {
 
                         <ul>
                             {/* <li className="botao-cat"><a href="#" onClick={() => { setCat("Esporte e Lazer")}}>Esporte e Lazer</a></li> */}
-                            <li className="botao-cat"><a href="#" onClick={() => {setProdutosExibidos("?category_like=Esporte e Lazer")}}>Esporte e Lazer</a></li>
-                            <li className="botao-cat"><a href="#" onClick={() => {setProdutosExibidos("?category_like=Moda")}}>Moda</a></li>
-                            <li className="botao-cat"><a href="#" onClick={() => {setProdutosExibidos("?category_like=Eletrônicos")}}>Eletrônicos</a></li>
-                            <li className="botao-cat"><a href="#" onClick={() => {setProdutosExibidos("?category_like=Ferramentas e Utilitários")}}>Ferramentas e Utilitários</a></li>
+                            <li className="botao-cat"><a href="#" onClick={() => {setProdutosExibidos("?category_like=Esporte e Lazer"); setCat("Esporte e Lazer")}}>Esporte e Lazer</a></li>
+                            <li className="botao-cat"><a href="#" onClick={() => {setProdutosExibidos("?category_like=Moda"); setCat("Moda")} }>Moda</a></li>
+                            <li className="botao-cat"><a href="#" onClick={() => {setProdutosExibidos("?category_like=Eletrônicos"); setCat("Eletrônicos")}}>Eletrônicos</a></li>
+                            <li className="botao-cat"><a href="#" onClick={() => {setProdutosExibidos("?category_like=Ferramentas e Utilitários"); setCat("Ferramentas e Utilitários")}}>Ferramentas e Utilitários</a></li>
                         </ul>
 
                         <div className="titulo-filtro">
@@ -175,18 +176,18 @@ function Produtos() {
                         </div>
                         <ul>
                             <li>
-                                <input type="radio" name="localizacao" id="SP" onClick={() => {setProdutosExibidos("?localizacao=São Paulo, SP")}}/>
+                                <input type="radio" name="localizacao" id="SP" onClick={() => {setLocaliz("São Paulo, SP")}}/>
                                 <label for="SP">São Paulo, SP</label>
                             </li>
                             <li>
-                                <input type="radio" name="localizacao" id="RJ" onClick={() => {setProdutosExibidos("?localizacao=Rio de Janeiro, RJ")}}/>
+                                <input type="radio" name="localizacao" id="RJ" onClick={() => {setLocaliz("Rio de Janeiro, RJ")}}/>
                                 <label for="RJ">Rio de Janeiro, RJ</label>
                             </li>
                         </ul>
                     </div>
                     {/* lista dos produtos */}
                     <div className="lista-produtos">
-                        <Cards produtosRequest={produtosExibidos} />
+                        <Cards produtosRequest={produtosExibidos} localizacao={localiz}/>
                         {/* {teste3 ? (
                             <Cards produtosRequest={produtosExibidos} />
                         ) : (
