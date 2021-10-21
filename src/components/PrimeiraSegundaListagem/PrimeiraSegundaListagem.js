@@ -11,12 +11,15 @@ import favorite from "../../img/icones/favorite_border.png"
 import share from "../../img/icones/share.png"
 import calendario from "../../img/imagens/calendario.png"
 import whatsapp from "../../img/icones/whatsapp-verde.png"
+import coracaoVazio from "../../img/icones/favorite_border.png"
+import coracaoCheio from "../../img/icones/red-heart.png"
 
 function PrimeiraSegundaListagem(props) {
 
     const productID = props.productID
     const [produto, setProduto] = useState({})
     const [showProduto, setShowProduto] = useState(false)
+    const [favoritar, setFavoritar] = useState(coracaoVazio)
 
     useEffect(() => {
         setShowProduto(true)
@@ -55,13 +58,18 @@ function PrimeiraSegundaListagem(props) {
                                             <small className="price">R$ Preço/dia</small>
                                         </div>
                                         <div className="dir">
-                                            <button>
-                                                <img className="fav" src={favorite} alt="" />
+                                            <button onClick={() => {
+                                                    if(favoritar == coracaoVazio){
+                                                        setFavoritar(coracaoCheio)
+                                                    }
+                                                    else{
+                                                        setFavoritar(coracaoVazio)
+                                                    }
+                                                }}>
+                                                <img className="fav" src={favoritar} alt="" />
                                             </button>
                                             <button className="share">
-                                                <a href="https://www.facebook.com/sharer/sharer.php?u=https://juliamendes.github.io/alugaki/app/listagem-prod.html" target="blank">
-                                                    <img src={share} alt="" />
-                                                </a>
+                                                <img src={share} alt="" />
                                             </button>
                                         </div>
                                     </div>
@@ -124,11 +132,18 @@ function PrimeiraSegundaListagem(props) {
                                             <small className="price">R$ {produto.preco}</small>
                                         </div>
                                         <div className="dir">
-                                            <button>
-                                                <img className="fav" src={favorite} alt="" />
+                                            <button onClick={() => {
+                                                    if(favoritar == coracaoVazio){
+                                                        setFavoritar(coracaoCheio)
+                                                    }
+                                                    else{
+                                                        setFavoritar(coracaoVazio)
+                                                    }
+                                                }}>
+                                                <img className="fav" src={favoritar} alt="" />
                                             </button>
                                             <button className="share">
-                                                <a href="https://www.facebook.com/sharer/sharer.php?u=https://juliamendes.github.io/alugaki/app/listagem-prod.html" target="blank">
+                                                <a href={`https://www.facebook.com/sharer/sharer.php?u=http://localhost:3000/listagem-produto/${produto.id}`} target="blank">
                                                     <img src={share} alt="" />
                                                 </a>
                                             </button>

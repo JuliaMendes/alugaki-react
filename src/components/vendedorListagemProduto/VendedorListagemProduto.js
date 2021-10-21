@@ -31,11 +31,7 @@ function VendedorListagemProduto(props) {
                         <div className="vendedor">
                                     <div className="avatar" style={{ 'backgroundColor': 'darkgray'}}></div>
                                     <div className="info">
-                                        <a href="https://juliamendes.github.io/alugaki/app/perfil-publico.html" target="blank"><h3>Nome</h3></a>
-                                        <div>
-                                            <img src={local} alt="" />
-                                            <small style={{ color: '#757575' }}>Localização</small>
-                                        </div>
+                                        <h3>Nome</h3>
                                         <div>
                                             <img src={star} alt="" />
                                             <small>Avaliação</small>
@@ -57,10 +53,6 @@ function VendedorListagemProduto(props) {
                                 <Link to={`/perfil-publico/${profile.id}`}>
                                     <h3>{profile.nome}</h3>
                                 </Link>
-                                <div>
-                                    <img src={local} alt="" />
-                                    <small style={{ color: '#757575' }}>Localização</small>
-                                </div>
                                 <div>
                                     <img src={star} alt="" />
                                     <small>{profile.avaliacao}</small>

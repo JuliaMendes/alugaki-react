@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 import HeaderSecundario from "../../components/headerSecundario/HeaderSecundario"
 import Footer from "../../components/footer/Footer"
 import Helmet from 'react-helmet'
-import PrimeiraSegundaListagem from "../../components/primeiraSegundaListagem/PrimeiraSegundaListagem"
+import PrimeiraSegundaListagem from "../../components/primeiraSegundaListagem/PrimeiraSegundaListagem";
 import TerceiraListagemProduto from "../../components/terceiraListagemProduto/TerceiraListagemProduto";
 
 import star from "../../img/icones/star1.png"
