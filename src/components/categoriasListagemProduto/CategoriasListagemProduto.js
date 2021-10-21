@@ -12,8 +12,8 @@ import arrowForward from "../../img/icones/arrow_forward_ios.png"
 function CategoriasListagemProduto(props) {
 
     const category = props.category
+    let produtosExibidos = [];
     const [produtos, setProdutos] = useState([])
-    const produtosExibidos = [];
     const [showProdutos, setShowProdutos] = useState(false)
     const [produtoInicial, setProdutoInicial] = useState(0)
 
@@ -25,7 +25,9 @@ function CategoriasListagemProduto(props) {
     useEffect(() => {
         apiProdutos.get(`/products?category_like=${category}`)
             .then(response => response.data)
-            .then(response => setProdutos(response))
+            .then(response => {
+                setProdutos(response)
+            })
             .catch(error => setShowProdutos(false))
     }, [category])
 
@@ -33,23 +35,11 @@ function CategoriasListagemProduto(props) {
         if(produtoInicial>0){
             setProdutoInicial(produtoInicial-1)
         }
-        else{
-            setProdutoInicial(0)
-        }
     }
 
     function setaAnuncioDireita() {
         if(produtoInicial<(produtos.length-4)){
             setProdutoInicial(produtoInicial+1)
-        }
-        else{
-            setProdutoInicial(produtos.length-4)
-        }
-    }
-
-    if(showProdutos == true){
-        for(let i=produtoInicial; i<produtoInicial+4;i++){
-            produtosExibidos.push(produtos[i])
         }
     }
     
@@ -84,7 +74,9 @@ function CategoriasListagemProduto(props) {
                 )
             }
             {showProdutos &&
-                produtosExibidos.map(item => {
+                produtos
+                    .slice(produtoInicial, produtoInicial+4)
+                    .map(item => {
                     return(
                         <div className="cardProduto">
                             <div className="thumb">

@@ -1,5 +1,6 @@
 //imports
 import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import Helmet from 'react-helmet'
 
 import './perfilPrivado.css';
@@ -7,21 +8,28 @@ import './perfilPrivado.css';
 import HeaderSecundario from "../../components/headerSecundario/HeaderSecundario"
 import Footer from "../../components/footer/Footer"
 
+import apiProdutos from '../../services/apiProdutos';
+
 import perfilBlank from "../../img/icones/bolinha_perfil.png"
 import linhaAzul from "../../img/icones/Line-azul.png"
 
 function PaginaPerfilPrivado() {
+    const { profile } = useParams();
+
     return (
         <div>
             <Helmet title="Minha Conta | alugaKi" />
-            <HeaderSecundario />
+            <HeaderSecundario profile={profile}/>
             <Corpo/>
             <Footer />
         </div>
     )
 }
 
-function Corpo(){
+function Corpo(props){
+
+    const profile = props.profile;
+    const [user, setUser] = useState()
 
     const [botaoMain, setBotaoMain] = useState("Editar");
     const [botaoFoto, setBotaoFoto] = useState("Alterar");
@@ -42,19 +50,15 @@ function Corpo(){
     const [errosEmail, setErrosEmail] = useState([]);
     const [errosSenha, setErrosSenha] = useState("");
 
-    let checked = localStorage.getItem("checked");
-    const [checkedState, setCheckedState] = useState(checked);
+    const [checkedState, setCheckedState] = useState(null)
 
     function validaPrivacidade() {
         if(checkedState=="true"){
-            setCheckedState("false");
-            localStorage.setItem("checked", "false");
+            setCheckedState(null);
         }
         else{
             setCheckedState("true");
-            localStorage.setItem("checked", "true");
         }
-        
     }
 
     // funcao pra analisar se tem erros quando usuario clica pra enviar
@@ -168,6 +172,12 @@ function Corpo(){
             setErrosSenha("");
         }
     }, [senha])
+
+    useEffect(() => {
+        apiProdutos.get(`/users/${profile}`)
+            .then(response => response.data)
+            .then(response => setUser(response))
+    }, [profile])
 
     return(
         <div className="perfilPrivado">

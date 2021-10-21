@@ -45,7 +45,7 @@ function Produtos() {
 
     const [menuAberto, setMenuAberto] = useState(false)
 
-    const [cat, setCat] = useState("Moda")
+    const [cat, setCat] = useState("Produtos")
 
 
     return (
