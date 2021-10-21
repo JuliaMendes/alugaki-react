@@ -8,10 +8,10 @@ import lupa from "../../img/icones/lupa.png";
 
 function HeaderSecundario() {
   const [menuAberto, setMenuAberto] = useState(false);
+  const [buscaAtual, setBuscaAtual] = useState("");
   const [localizacaoAtual, setLocalizacaoAtual] = useState("");
 
   useEffect(() => {
-    if (window.screen.width < 768) {
       if ("geolocation" in navigator) {
         navigator.geolocation.getCurrentPosition(
           function (position) {
@@ -36,7 +36,6 @@ function HeaderSecundario() {
       } else {
         alert("ops, não foi possível pegar a sua localização");
       }
-    }
   }, []);
 
   return (
@@ -50,10 +49,12 @@ function HeaderSecundario() {
           </div>
           <div className="barra">
             <form>
-              <input type="text" id="barra" name="barra" />
-              <button className="lupa">
-                <img src={lupa} alt="Icone de lupa" />
-              </button>
+              <input type="text" id="barra" name="barra" onChange={(e) => setBuscaAtual(e.target.value)} />
+              <Link to={`/produtos-por-categoria?localizacao_like=${localizacaoAtual}&q=${buscaAtual}`}>
+                <button className="lupa">
+                  <img src={lupa} alt="Icone de lupa" />
+                </button>
+              </Link>
             </form>
           </div>
         </div>
