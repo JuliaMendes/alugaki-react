@@ -92,12 +92,26 @@ footer .copyright {
     }
 
     footer .container .logo-e-menu {
+        flex-direction: column;
         flex-wrap: wrap;
         justify-content: center;
     }
 
+    footer .container .menu {
+        padding-left: 0px;
+        text-align: center;
+    }
+
+    footer .container .menu ul{
+        padding-left: 0px;
+    }
+
+    footer .container .logo img {
+        margin-right: 0px;
+    }
+
     footer .container .redes-sociais{
-        padding-left: 30px;
+        padding: 0px;
     }
 
 } 

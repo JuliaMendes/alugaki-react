@@ -22,7 +22,7 @@ function PaginaProdutosPorCat() {
 
 function Produtos() {
     const urlBusca = useLocation()
-    const urlBuscaSearch = urlBusca.search
+    let urlBuscaSearch = urlBusca.search
     const [produtosExibidos, setProdutosExibidos] = useState(urlBuscaSearch);
  
     const [paginaAcessada, setPaginaAcessada] = useState(1)
@@ -31,6 +31,11 @@ function Produtos() {
     const [menuAberto, setMenuAberto] = useState(false)
 
     const [cat, setCat] = useState("Produtos")
+
+    useEffect(() => {
+        urlBuscaSearch = urlBusca.search
+        setProdutosExibidos(urlBuscaSearch)
+    }, [urlBusca])
 
 
     return (

@@ -1,5 +1,6 @@
 import './headerSimples.css';
 import { useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import logoAlugaki from '../../img/imagens/alugaKi-removebg-preview.png'
 import iconeSetaEsquerda from '../../img/icones/seta.svg'
@@ -15,9 +16,9 @@ function HeaderSimples(){
                 </button>
             </div>
 
-            <a href="index.html" className="logo">
+            <Link to="/" className="logo">
                 <img src={logoAlugaki} alt="Logo alugaki"/>
-            </a>
+            </Link>
         </header>
     )
 }

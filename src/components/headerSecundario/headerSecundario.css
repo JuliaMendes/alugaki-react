@@ -215,18 +215,4 @@ header.headerSecundario .container .botoes .dropdown>button img {
         padding-right: 20px;
     }
 
-    footer .container {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    footer .container .logo-e-menu {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    footer .container .redes-sociais{
-        padding-left: 30px;
-    }
-
-} 
+}

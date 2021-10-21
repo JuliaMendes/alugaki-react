@@ -143,17 +143,17 @@
 /* section anuncios */
 .perfilPublico section.anuncios{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 
 .perfilPublico section.anuncios .cardProduto {
     cursor: pointer;
-    width: 240px;
+    width: 270px;
 }
 
 .perfilPublico section.anuncios .cardProduto .thumb img {
-    width: 240px;
-    height: 150px;
+    width: 270px;
+    height: 170px;
     background-size: cover;
 }
 

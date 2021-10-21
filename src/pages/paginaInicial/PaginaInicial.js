@@ -256,7 +256,7 @@ function ProdutosPorCategoria() {
                       <img src={localizacao} alt="ícone localização" />
                       <small>{elemento.localizacao}</small>
                     </div>
-                    <h3 class="preco">R$ {elemento.preco}</h3>
+                    <h3 class="preco">R$ {elemento.preco + "/" + elemento.tempo}</h3>
                   </div>
                 </div>
               );
