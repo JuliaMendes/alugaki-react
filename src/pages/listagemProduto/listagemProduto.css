@@ -87,6 +87,22 @@
     max-width: 100%;
     height: 260px;
 }
+.paginaListagem .primeira .calendario .dias{
+    display: flex;
+}
+.paginaListagem .primeira .calendario .dias label{
+    margin-right: 20px;
+    font-family: Roboto;
+    color:#009688;
+    font-size: 18px;
+}
+.paginaListagem .primeira .calendario .dias input{
+    width: 50px;
+}
+.paginaListagem .primeira .calendario .dias input:focus-visible{
+    outline-color: transparent;
+    outline-width: 0px;
+}
 .paginaListagem .primeira .calendario h2{
     margin-top: 30px;
     font-family: Roboto;

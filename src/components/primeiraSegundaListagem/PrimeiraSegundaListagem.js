@@ -20,6 +20,7 @@ function PrimeiraSegundaListagem(props) {
     const [produto, setProduto] = useState({})
     const [showProduto, setShowProduto] = useState(false)
     const [favoritar, setFavoritar] = useState(coracaoVazio)
+    const [dias, setDias] = useState(1)
 
     let numero = ""
 
@@ -166,8 +167,12 @@ function PrimeiraSegundaListagem(props) {
                                 <div className="calendario">
                                     <h2>Precisa pra quando?</h2>
                                     <img src={calendario} alt="" />
-                                    <small>Total: R$45,00</small>
-                                    <a href={`https://api.whatsapp.com/send?phone=${numero}&text=Olá, tenho interesse no produto ${produto.titulo}.`} target="blank"><div className="botao"><button><img src={whatsapp} alt="" /> Alugar</button></div></a>
+                                    <div className="dias">
+                                        <label for="dias">Quantos dias?</label>
+                                        <input type="number" name="dias" value={dias} onChange={e => setDias(e.target.value)}/>
+                                    </div>
+                                    <small>Total: R$ {produto.preco*dias}</small>
+                                    <a href={`https://api.whatsapp.com/send?phone=${numero}&text=Olá, tenho interesse em alugar o produto ${produto.titulo} por ${dias} dia(s).`} target="blank"><div className="botao"><button><img src={whatsapp} alt="" /> Alugar</button></div></a>
                                 </div>
                             </div>
                         </section>
