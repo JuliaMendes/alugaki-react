@@ -369,6 +369,14 @@
 
 }
 
+@media (max-width: 820px){
+
+    .paginaListagem .terceira .lista-produtos .cardProduto{
+        max-width: 25vw;
+    }
+
+}
+
 @media (max-width: 700px){
 
     .paginaListagem .primeira .container{
@@ -377,6 +385,10 @@
 
     .paginaListagem .primeira .produto{
         max-width: 90vw;
+    }
+
+    .paginaListagem .terceira .lista-produtos .cardProduto{
+        max-width: 37vw;
     }
 
     .paginaListagem .terceira div.cardProduto:nth-child(4){
