@@ -7,11 +7,13 @@ import './produtosPorCat.css';
 import linha from "../../img/icones/Line-azul.png"
 import dropdown from "../../img/icones/drop_down1.png"
 import Cards from "../../components/produtosProdPorCat/Cards"
+import Helmet from "react-helmet";
 
 
 function PaginaProdutosPorCat() {
     return (
         <div>
+            <Helmet title="Produtos | alugaKi" />
             <HeaderSecundario />
             <Produtos />
             <Footer />
