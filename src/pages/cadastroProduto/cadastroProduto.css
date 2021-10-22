@@ -14,6 +14,11 @@
    font-size: 44px;
    color: #FF5722;
 }
+.cadastroProduto form input:focus-visible,
+.cadastroProduto form textarea:focus-visible{
+   outline-color: transparent ;
+   outline-width: 0px;
+}
 /* formulário */
 .cadastroProduto .formulario .container form{
    display: flex;
