@@ -83,7 +83,7 @@ function HeaderSecundario() {
                   <Link to="/login">Login</Link>
                 </li>
                 <li>
-                  <Link to="/perfil-privado">Meu perfil</Link>
+                  <Link to="/perfil-privado/1">Meu perfil</Link>
                 </li>
                 <li>
                   <Link to="/cadastro-produtos">Anunciar</Link>

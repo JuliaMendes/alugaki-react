@@ -34,7 +34,7 @@ function Header() {
                                         </Link>
                                     </li>
                                     <li>
-                                        <Link to="/perfil-privado">
+                                        <Link to="/perfil-privado/1">
                                             Meu perfil
                                         </Link>
                                     </li>
