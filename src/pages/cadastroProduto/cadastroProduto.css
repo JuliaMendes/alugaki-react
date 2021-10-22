@@ -199,6 +199,13 @@
        text-align: center;
        margin-left: 0;
    }
+   .cadastroProduto form{
+      max-width: 100vw;
+   }
+   .cadastroProduto input,
+   .cadastroProduto textarea{
+      max-width: 90vw;
+   }
 
 }
 @media (max-width: 669px){
@@ -207,6 +214,16 @@
        flex-direction: column;
        align-items: center;
        justify-content: center;
+   }
+   .cadastroProduto .preco-cat{
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+   }
+   .cadastroProduto form .dir,
+   .cadastroProduto form .dir img{
+      max-width: 90vw;
+      max-heigth: 65vw;
    }
 }
 @media (max-width: 518px){
