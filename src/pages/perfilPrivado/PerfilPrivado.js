@@ -241,7 +241,7 @@ function Corpo(props){
                             </ul>
                 
                             <label htmlFor="telefone">Telefone</label>
-                            <input className={`${(errosTelefone != "") ? 'campo-com-erro' : ''}`}type="tel" id="telefone" name="telefone" placeholder="(xx) 9xxxx-xxxx" readOnly={stateRead} value={telefone} onChange={(e)=>setTelefone(e.target.value)}/>
+                            <input className={`${(errosTelefone != "") ? 'campo-com-erro' : ''}`}type="tel" id="telefone" name="telefone" placeholder="xx 9xxxx-xxxx" readOnly={stateRead} value={telefone} onChange={(e)=>setTelefone(e.target.value)}/>
                             <ul>
                                 <li>{errosTelefone}</li>
                             </ul>
