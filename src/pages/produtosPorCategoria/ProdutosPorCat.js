@@ -133,15 +133,15 @@ function Produtos() {
                         </div>
                         <ul className="preco">
                             <li>
-                                <input type="radio" name="preco" id="menor" onClick={() => {setProdutosExibidos("?preco_lte=99"); setCat("Produtos")}}/>
+                                <input type="radio" name="filtro" id="menor" onClick={() => {setProdutosExibidos("?preco_lte=99"); setCat("Produtos")}}/>
                                 <label for="menor">até R$99</label>
                             </li>
                             <li>
-                                <input type="radio" name="preco" id="medio" onClick={() => {setProdutosExibidos("?preco_gte=100&preco_lte=199"); setCat("Produtos")}}/>
+                                <input type="radio" name="filtro" id="medio" onClick={() => {setProdutosExibidos("?preco_gte=100&preco_lte=199"); setCat("Produtos")}}/>
                                 <label for="medio">entre R$99 e R$199</label>
                             </li>
                             <li>
-                                <input type="radio" name="preco" id="maior" onClick={() => {setProdutosExibidos("?preco_gte=200"); setCat("Produtos")}}/>
+                                <input type="radio" name="filtro" id="maior" onClick={() => {setProdutosExibidos("?preco_gte=200"); setCat("Produtos")}}/>
                                 <label for="maior">de R$199 para cima</label>
                             </li>
                         </ul>
@@ -152,19 +152,19 @@ function Produtos() {
                         </div>
                         <ul>
                             <li>
-                                <input type="radio" name="avaliacao" id="uma-duas" value="1" onClick={() => {setProdutosExibidos("?avaliacao_gte=1&avaliacao_lte=2"); setCat("Produtos")}}/>
+                                <input type="radio" name="filtro" id="uma-duas" value="1" onClick={() => {setProdutosExibidos("?avaliacao_gte=1&avaliacao_lte=2"); setCat("Produtos")}}/>
                                 <label for="uma-duas">entre 1 e 2 estrelas</label>
                             </li>
                             <li>
-                                <input type="radio" name="avaliacao" id="duas-tres" value="2" onClick={() => {setProdutosExibidos("?avaliacao_gte=2&avaliacao_lte=3"); setCat("Produtos")}}/>
+                                <input type="radio" name="filtro" id="duas-tres" value="2" onClick={() => {setProdutosExibidos("?avaliacao_gte=2&avaliacao_lte=3"); setCat("Produtos")}}/>
                                 <label for="duas-tres">entre 2 e 3 estrelas</label>
                             </li>
                             <li>
-                                <input type="radio" name="avaliacao" id="tres-quatro" value="3" onClick={() => {setProdutosExibidos("?avaliacao_gte=3&avaliacao_lte=4"); setCat("Produtos")}}/>
+                                <input type="radio" name="filtro" id="tres-quatro" value="3" onClick={() => {setProdutosExibidos("?avaliacao_gte=3&avaliacao_lte=4"); setCat("Produtos")}}/>
                                 <label for="tres-quatro">entre 3 e 4 estrelas</label>
                             </li>
                             <li>
-                                <input type="radio" name="avaliacao" id="quatro-cinco" value="4" onClick={() => {setProdutosExibidos("?avaliacao_gte=4&avaliacao_lte=5"); setCat("Produtos")}}/>
+                                <input type="radio" name="filtro" id="quatro-cinco" value="4" onClick={() => {setProdutosExibidos("?avaliacao_gte=4&avaliacao_lte=5"); setCat("Produtos")}}/>
                                 <label for="quatro-cinco">entre 4 e 5 estrelas</label>
                             </li>
                         </ul>
@@ -175,11 +175,11 @@ function Produtos() {
                         </div>
                         <ul>
                             <li>
-                                <input type="radio" name="localizacao" id="SP" onClick={() => {setLocaliz("São Paulo, SP")}}/>
+                                <input type="radio" name="filtro" id="SP" onClick={() => {setLocaliz("São Paulo, SP")}}/>
                                 <label for="SP">São Paulo, SP</label>
                             </li>
                             <li>
-                                <input type="radio" name="localizacao" id="RJ" onClick={() => {setLocaliz("Rio de Janeiro, RJ")}}/>
+                                <input type="radio" name="filtro" id="RJ" onClick={() => {setLocaliz("Rio de Janeiro, RJ")}}/>
                                 <label for="RJ">Rio de Janeiro, RJ</label>
                             </li>
                         </ul>
