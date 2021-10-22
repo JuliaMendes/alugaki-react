@@ -69,6 +69,10 @@
     background-color: #C4C4C4;
     transition: 0.5s;
 }
+.paginaListagem .primeira .produto .info2 .dir{
+    display: flex;
+    gap: 5px;
+}
 .paginaListagem .primeira .produto .info2 .dir img{
     width: 20px;
     margin-top: 4px;

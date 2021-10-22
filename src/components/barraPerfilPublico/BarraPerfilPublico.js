@@ -11,6 +11,8 @@ function BarraPerfilPublico(props) {
     const [profile, setProfile]  = useState({})
     const [showProfile, setShowProfile] = useState(false)
 
+    let numero = "55"
+
     useEffect(() => {
         setShowProfile(true)
     }, [profile])
@@ -26,6 +28,20 @@ function BarraPerfilPublico(props) {
             })
     }, [user])
     
+    if(showProfile == true){
+        try{
+            for(let i=0; i < profile.telefone.length; i++){
+                if(profile.telefone[i]!=' ' && profile.telefone[i]!='-'){
+                    numero += profile.telefone[i]
+                }
+            }
+        }
+        catch(error){
+            numero="55"
+        }
+    }
+
+
     return(
         <div className="infos">
             {!showProfile &&
@@ -60,7 +76,7 @@ function BarraPerfilPublico(props) {
 
                         <img src={linhaCinza} alt="Linha horizontal" id="linha_cinza" />
 
-                        <a href={`https://api.whatsapp.com/send?phone=${profile.telefone}`}>{profile.telefone}</a>
+                        <a href={`https://api.whatsapp.com/send?phone=${numero}`}>{profile.telefone}</a>
                     </>
                 )
             }

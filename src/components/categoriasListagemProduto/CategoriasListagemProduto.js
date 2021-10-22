@@ -97,7 +97,7 @@ function CategoriasListagemProduto(props) {
                                     <img src={local} alt="ícone localização" />
                                     <small>{item.localizacao}</small>
                                 </div>
-                                <h3 className="preco">R$ {item.preco}</h3>
+                                <h3 className="preco">R$ {item.preco + "/" + item.tempo}</h3>
                             </div>
                         </div>
                     )

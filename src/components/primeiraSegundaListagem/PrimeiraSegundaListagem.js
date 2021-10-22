@@ -21,6 +21,8 @@ function PrimeiraSegundaListagem(props) {
     const [showProduto, setShowProduto] = useState(false)
     const [favoritar, setFavoritar] = useState(coracaoVazio)
 
+    let numero = ""
+
     useEffect(() => {
         setShowProduto(true)
     }, [produto])
@@ -29,8 +31,20 @@ function PrimeiraSegundaListagem(props) {
         apiProdutos.get(`/products/${productID}`)
             .then(response => response.data)
             .then(response => setProduto(response))
-            .catch(error => window.alert("Produto não encontrado."))
+            .catch(error => {
+                window.alert("Produto não encontrado.")
+                setShowProduto(false)
+            })
     }, [productID])
+
+    if(showProduto == true){
+        if(produto.localizacao == "São Paulo, SP"){
+            numero = "5511900000000"
+        }
+        else{
+            numero = "5521900000000"
+        }
+    }
 
     return(
         <>
@@ -93,10 +107,6 @@ function PrimeiraSegundaListagem(props) {
                                     <div className="info">
                                         <a href="https://juliamendes.github.io/alugaki/app/perfil-publico.html" target="blank"><h3>Nome</h3></a>
                                         <div>
-                                            <img src={local} alt="" />
-                                            <small style={{ color: '#757575' }}>Localização</small>
-                                        </div>
-                                        <div>
                                             <img src={star} alt="" />
                                             <small>Avaliação</small>
                                             <small style={{ color: '#757575' }}>•  avaliações</small> <br />
@@ -157,7 +167,7 @@ function PrimeiraSegundaListagem(props) {
                                     <h2>Precisa pra quando?</h2>
                                     <img src={calendario} alt="" />
                                     <small>Total: R$45,00</small>
-                                    <a href="https://api.whatsapp.com/send?phone=550" target="blank"><div className="botao"><button><img src={whatsapp} alt="" /> Alugar</button></div></a>
+                                    <a href={`https://api.whatsapp.com/send?phone=${numero}&text=Olá, tenho interesse no produto ${produto.titulo}.`} target="blank"><div className="botao"><button><img src={whatsapp} alt="" /> Alugar</button></div></a>
                                 </div>
                             </div>
                         </section>
