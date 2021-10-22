@@ -32,10 +32,10 @@ function Produtos() {
 
     const [cat, setCat] = useState("Produtos")
 
-    // useEffect(() => {
-    //     urlBuscaSearch = urlBusca.search
-    //     setProdutosExibidos(urlBuscaSearch)
-    // }, [urlBusca])
+    useEffect(() => {
+        urlBuscaSearch = urlBusca.search
+        setProdutosExibidos(urlBuscaSearch)
+    }, [urlBusca])
 
     const [localiz, setLocaliz] = useState()
 
@@ -121,11 +121,10 @@ function Produtos() {
                         </div>
 
                         <ul>
-                            {/* <li className="botao-cat"><a href="#" onClick={() => { setCat("Esporte e Lazer")}}>Esporte e Lazer</a></li> */}
-                            <li className="botao-cat"><a href="#" onClick={() => {setProdutosExibidos("?category_like=Esporte e Lazer"); setCat("Esporte e Lazer")}}>Esporte e Lazer</a></li>
-                            <li className="botao-cat"><a href="#" onClick={() => {setProdutosExibidos("?category_like=Moda"); setCat("Moda")} }>Moda</a></li>
-                            <li className="botao-cat"><a href="#" onClick={() => {setProdutosExibidos("?category_like=Eletrônicos"); setCat("Eletrônicos")}}>Eletrônicos</a></li>
-                            <li className="botao-cat"><a href="#" onClick={() => {setProdutosExibidos("?category_like=Ferramentas e Utilitários"); setCat("Ferramentas e Utilitários")}}>Ferramentas e Utilitários</a></li>
+                            <li className="botao-cat"><a onClick={() => {setProdutosExibidos("?category_like=Esporte e Lazer"); setCat("Esporte e Lazer")}}>Esporte e Lazer</a></li>
+                            <li className="botao-cat"><a onClick={() => {setProdutosExibidos("?category_like=Moda"); setCat("Moda")} }>Moda</a></li>
+                            <li className="botao-cat"><a onClick={() => {setProdutosExibidos("?category_like=Eletrônicos"); setCat("Eletrônicos")}}>Eletrônicos</a></li>
+                            <li className="botao-cat"><a onClick={() => {setProdutosExibidos("?category_like=Ferramentas e Utilitários"); setCat("Ferramentas e Utilitários")}}>Ferramentas e Utilitários</a></li>
                         </ul>
 
                         <div className="titulo-filtro">
