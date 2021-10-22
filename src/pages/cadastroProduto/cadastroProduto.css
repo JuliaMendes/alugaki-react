@@ -37,7 +37,8 @@
 /* calendario */
 
 .cadastroProduto section.formulario .dir img{
-   width: 400px;
+   width: 360px;
+   height: 234px;
    margin: 0;
 }
 
@@ -173,23 +174,20 @@
 
 
 @media (max-width: 1255px){
-   .container{
+   .cadastroProduto .container{
        flex-wrap: wrap;
        width: 100%;
    }
-   .formulario .container{
+   .cadastroProduto .formulario .container{
        margin-right: 30px;
        flex-wrap: wrap;
    }
-   header .container{
-       padding: 20px;
-   }
 }
 @media (max-width: 995px){
-   .container{
+   .cadastroProduto .container{
        width: 100%;
    }
-   .formulario .container form{
+   .cadastroProduto .formulario .container form{
        flex-direction: column;
        align-items: center;
        justify-content: flex-start;
@@ -197,16 +195,14 @@
        width: 100%;
        margin-left: 0;
    }
-   .formulario h1{
+   .cadastroProduto .formulario h1{
        text-align: center;
        margin-left: 0;
    }
-   header .container{
-       flex-direction: column;
-   }
+
 }
 @media (max-width: 669px){
-   .logo-e-barra{
+   .cadastroProduto .logo-e-barra{
        flex-wrap: wrap;
        flex-direction: column;
        align-items: center;
@@ -214,7 +210,7 @@
    }
 }
 @media (max-width: 518px){
-   .logo-e-barra .barra input{
+   .cadastroProduto .logo-e-barra .barra input{
        width: 20%;
    }
 }
